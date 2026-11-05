@@ -1,11 +1,12 @@
 """Static HTML pages for GitHub Pages."""
 from __future__ import annotations
 
+import json
 import shutil
 from html import escape
 from pathlib import Path
 
-from .feed import _dt, _hms, audio_url, build_feed, show_notes
+from .feed import _dt, _hms, audio_url, build_feed, chapters_json, show_notes
 from .model import ROOT, Episode
 
 _STYLE_HREF = "style.css"
@@ -99,4 +100,7 @@ def build_site(podcast: dict, episodes: list[Episode], audio: dict[int, dict], o
 {transcript_section}"""
         d = out / "episodes" / ep.code
         d.mkdir(parents=True)
+        if info.get("chapters"):
+            (d / "chapters.json").write_text(json.dumps(chapters_json(ep, info), ensure_ascii=False, indent=1),
+                                             encoding="utf-8")
         (d / "index.html").write_text(_page(ep.meta["title"], body, 2, podcast), encoding="utf-8")

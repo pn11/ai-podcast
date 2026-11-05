@@ -18,6 +18,12 @@ def test_parse_script_reads_only_speaker_lines():
     assert [(l.speaker, l.text) for l in lines] == [("ミナ", "こんにちは。"), ("ケン", "どうも。")]
 
 
+def test_parse_script_chapters():
+    text = "# 番組タイトル（h1 はチャプターにしない）\n## 前半\nミナ: あ。\nケン: い。\n## 後半\n\nケン: う。\n"
+    lines = parse_script(text, {"ミナ", "ケン"})
+    assert [l.chapter for l in lines] == ["前半", None, "後半"]
+
+
 def test_split_sentences():
     assert split_sentences("はい。そうです！本当？") == ["はい。", "そうです！", "本当？"]
     long = "あ" * 100 + "、" + "い" * 100 + "。"
@@ -45,6 +51,16 @@ def test_end_to_end_dummy(tmp_path):
         assert int(enc.get("length")) == (audio / f"{num:04d}.mp3").stat().st_size == info["bytes"]
         assert enc.get("url").endswith(f"/ep-{num:04d}/{num:04d}.mp3")
     assert (site / "index.html").exists() and (site / "artwork.png").exists()
+    # chapters: embedded in the MP3 (ID3 CHAP) and published as Podcasting 2.0 JSON
+    chaps = json.loads(subprocess.run(["ffprobe", "-v", "error", "-show_chapters", "-of", "json",
+                                       str(audio / "0002.mp3")], capture_output=True, text=True).stdout)["chapters"]
+    info = json.loads((audio / "0002.json").read_text())
+    assert len(chaps) == len(info["chapters"]) > 1
+    assert chaps[0]["tags"]["title"] == "オープニング" and float(chaps[0]["start_time"]) == 0
+    assert [c["start"] for c in info["chapters"]] == sorted(c["start"] for c in info["chapters"])
+    cj = json.loads((site / "episodes" / "0002" / "chapters.json").read_text())
+    assert cj["chapters"][1]["title"] == "ACT / ALOHA"
+    assert "podcast:chapters" in (site / "feed.xml").read_text()
 
 
 @pytest.mark.skipif(subprocess.run(["which", "ffmpeg"], capture_output=True).returncode, reason="ffmpeg missing")
@@ -58,6 +74,7 @@ def test_supplied_audio(tmp_path):
     (ep / "episode.yaml").write_text(
         "number: 9\nguid: test-guid-9\ntitle: 持ち込み音声\nsummary: テスト\n"
         "published_at: 2026-11-05T22:00:00+09:00\naudio_credit: NotebookLM で生成\n"
+        "chapters: [{start: '0:00', title: 'A=1;#'}, {start: '0:01', title: 後半}]\n"
         "papers: [{title: X, url: https://arxiv.org/abs/0000.00000}]\n", encoding="utf-8")
     # a 2-second tone carrying metadata that must not survive re-encoding
     subprocess.run(["ffmpeg", "-loglevel", "error", "-f", "lavfi", "-i", "sine=frequency=440:duration=2",
@@ -71,6 +88,9 @@ def test_supplied_audio(tmp_path):
     tags = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format_tags", "-of", "json",
                            str(root / "a" / "0009.mp3")], capture_output=True, text=True).stdout
     assert "PRIVATE-NOTE" not in tags and "持ち込み音声" in tags
+    chaps = json.loads(subprocess.run(["ffprobe", "-v", "error", "-show_chapters", "-of", "json",
+                                       str(root / "a" / "0009.mp3")], capture_output=True, text=True).stdout)["chapters"]
+    assert [c["tags"]["title"] for c in chaps] == ["A=1;#", "後半"]
     run("site", "--audio", str(root / "a"), "--out", str(root / "s"))
     feed = (root / "s" / "feed.xml").read_text()
     assert "podcast:transcript" not in feed and "NotebookLM で生成" in feed

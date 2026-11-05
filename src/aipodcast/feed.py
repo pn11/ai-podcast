@@ -24,9 +24,27 @@ def page_url(podcast: dict, ep: Episode) -> str:
     return f"{podcast['site_url'].rstrip('/')}/episodes/{ep.code}/"
 
 
+def _ts(sec: float) -> str:
+    sec = int(sec)
+    return f"{sec // 3600}:{sec % 3600 // 60:02d}:{sec % 60:02d}" if sec >= 3600 else f"{sec // 60:02d}:{sec % 60:02d}"
+
+
+def chapters_url(podcast: dict, ep: Episode) -> str:
+    return page_url(podcast, ep) + "chapters.json"
+
+
+def chapters_json(ep: Episode, info: dict) -> dict:
+    """Podcasting 2.0 JSON chapters (https://github.com/Podcastindex-org/podcast-namespace)."""
+    return {"version": "1.2.0", "title": ep.meta["title"],
+            "chapters": [{"startTime": c["start"], "title": c["title"]} for c in info.get("chapters", [])]}
+
+
 def show_notes(podcast: dict, ep: Episode, info: dict) -> str:
     """Plain-text-ish description used in the feed and on the episode page."""
-    parts = [ep.meta["summary"].strip(), "", "紹介した論文:"]
+    parts = [ep.meta["summary"].strip()]
+    if info.get("chapters"):
+        parts += ["", "チャプター:"] + [f"{_ts(c['start'])} {c['title']}" for c in info["chapters"]]
+    parts += ["", "紹介した論文:"]
     for p in ep.meta.get("papers", []):
         authors = f" ({p['authors']})" if p.get("authors") else ""
         parts.append(f"・{p['title']}{authors} {p['url']}")
@@ -55,6 +73,9 @@ def build_feed(podcast: dict, episodes: list[Episode], audio: dict[int, dict]) -
         page = page_url(podcast, ep)
         transcript = ("" if ep.audio_source else
                       f'      <podcast:transcript url={quoteattr(page)} type="text/html" language="{podcast["language"]}"/>\n')
+        if info.get("chapters"):
+            transcript += (f'      <podcast:chapters url={quoteattr(chapters_url(podcast, ep))}'
+                           f' type="application/json+chapters"/>\n')
         html_notes = "<p>" + escape(notes).replace("\n\n", "</p><p>").replace("\n", "<br/>") + "</p>"
         items.append(f"""    <item>
       <title>{escape(ep.meta['title'])}</title>

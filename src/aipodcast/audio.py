@@ -10,7 +10,7 @@ import tempfile
 import wave
 from pathlib import Path
 
-from .model import Episode, audio_fingerprint
+from .model import Episode, audio_fingerprint, parse_timestamp
 from .tts import TTS
 
 _SENT = re.compile(r"(?<=[。！？!?])")
@@ -46,6 +46,8 @@ def render_episode(ep: Episode, podcast: dict, tts: TTS, out_dir: Path, log=prin
     total = sum(len(split_sentences(l.text)) for l in ep.lines)
     done = 0
     prev = None
+    chapters: list[tuple[float, str]] = []
+    nbytes = 0  # PCM bytes so far, for chapter timestamps
     for line in ep.lines:
         for i, sent in enumerate(split_sentences(line.text)):
             p, pcm = _read_wav(tts.synth(sent, voices[line.speaker]))
@@ -55,8 +57,13 @@ def render_episode(ep: Episode, podcast: dict, tts: TTS, out_dir: Path, log=prin
                 raise ValueError(f"inconsistent WAV format {p} != {params}")
             if prev is not None:
                 gap = pause_t if i == 0 else pause_s  # new turn vs. next sentence
-                frames.append(b"\0" * (int(params[2] * gap) * params[0] * params[1]))
+                silence = b"\0" * (int(params[2] * gap) * params[0] * params[1])
+                frames.append(silence)
+                nbytes += len(silence)
+            if i == 0 and line.chapter:
+                chapters.append((nbytes / (params[2] * params[0] * params[1]), line.chapter))
             frames.append(pcm)
+            nbytes += len(pcm)
             prev = line.speaker
             done += 1
             if done % 25 == 0 or done == total:
@@ -69,25 +76,51 @@ def render_episode(ep: Episode, podcast: dict, tts: TTS, out_dir: Path, log=prin
             w.setsampwidth(params[1])
             w.setframerate(params[2])
             w.writeframes(b"".join(frames))
-        return _encode(ep, podcast, wav_path, out_dir, tts.credits(voices))
+        return _encode(ep, podcast, wav_path, out_dir, tts.credits(voices), chapters)
 
 
 def render_supplied(ep: Episode, podcast: dict, out_dir: Path, log=print) -> dict:
     """Use audio made elsewhere (e.g. NotebookLM): re-encode to the feed format and strip its metadata."""
     log(f"  [{ep.code}] using supplied audio {ep.audio_source.name}")
     credit = ep.meta.get("audio_credit")
-    return _encode(ep, podcast, ep.audio_source, out_dir, [credit] if credit else [])
+    chapters = [(parse_timestamp(c["start"]), c["title"]) for c in ep.meta.get("chapters") or []]
+    return _encode(ep, podcast, ep.audio_source, out_dir, [credit] if credit else [], chapters)
 
 
-def _encode(ep: Episode, podcast: dict, src: Path, out_dir: Path, credits: list[str]) -> dict:
+def _ffmeta_escape(s: str) -> str:
+    return re.sub(r"([=;#\\\n])", r"\\\1", s)
+
+
+def _ffmetadata(chapters: list[tuple[float, str]], duration: float) -> str:
+    out = [";FFMETADATA1"]
+    for n, (start, title) in enumerate(chapters):
+        end = chapters[n + 1][0] if n + 1 < len(chapters) else duration
+        out += ["[CHAPTER]", "TIMEBASE=1/1000", f"START={round(start * 1000)}",
+                f"END={round(end * 1000)}", f"title={_ffmeta_escape(title)}"]
+    return "\n".join(out) + "\n"
+
+
+def _normalize_chapters(chapters: list[tuple[float, str]], duration: float) -> list[tuple[float, str]]:
+    chapters = sorted((max(0.0, s), t) for s, t in chapters if s < duration)
+    if chapters:
+        chapters[0] = (0.0, chapters[0][1])  # 冒頭（断り書きなど）は最初のチャプターに含める
+    return chapters
+
+
+def _encode(ep: Episode, podcast: dict, src: Path, out_dir: Path, credits: list[str],
+            chapters: list[tuple[float, str]] | None = None) -> dict:
     out_dir.mkdir(parents=True, exist_ok=True)
     mp3 = out_dir / f"{ep.code}.mp3"
+    chapters = _normalize_chapters(chapters or [], probe_duration(src, exact=True))
+    meta_file = out_dir / f"{ep.code}.ffmeta"
+    meta_file.write_text(_ffmetadata(chapters, probe_duration(src, exact=True)), encoding="utf-8")
     subprocess.run([
-        "ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", str(src),
-        "-vn", "-af", "loudnorm=I=-16:TP=-1.5:LRA=11", "-ar", "44100", "-ac", "1",
+        "ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", str(src), "-i", str(meta_file),
+        "-map", "0:a", "-af", "loudnorm=I=-16:TP=-1.5:LRA=11", "-ar", "44100", "-ac", "1",
         "-c:a", "libmp3lame", "-b:a", "64k",
-        # drop all inherited metadata, then set only what we choose to publish
-        "-map_metadata", "-1", "-map_chapters", "-1", "-fflags", "+bitexact", "-flags:a", "+bitexact",
+        # take global tags/chapters only from our own ffmetadata file (drops everything in the source),
+        # then set only what we choose to publish
+        "-map_metadata", "1", "-map_chapters", "1", "-fflags", "+bitexact", "-flags:a", "+bitexact",
         "-id3v2_version", "3", "-write_xing", "1",
         "-metadata", f"title={ep.meta['title']}",
         "-metadata", f"artist={podcast['author']}",
@@ -96,6 +129,7 @@ def _encode(ep: Episode, podcast: dict, src: Path, out_dir: Path, credits: list[
         "-metadata", "genre=Podcast",
         str(mp3),
     ], check=True)
+    meta_file.unlink()
     info = {
         "number": ep.number,
         "fingerprint": audio_fingerprint(ep, podcast["tts"]),
@@ -104,12 +138,14 @@ def _encode(ep: Episode, podcast: dict, src: Path, out_dir: Path, credits: list[
         "sha256": hashlib.sha256(mp3.read_bytes()).hexdigest(),
         "credits": credits,
         "supplied": ep.audio_source is not None,
+        "chapters": [{"start": round(s, 2), "title": t} for s, t in chapters],
     }
     (out_dir / f"{ep.code}.json").write_text(json.dumps(info, ensure_ascii=False, indent=2), encoding="utf-8")
     return info
 
 
-def probe_duration(path: Path) -> int:
+def probe_duration(path: Path, exact: bool = False):
     out = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
                           "-of", "default=nw=1:nk=1", str(path)], check=True, capture_output=True, text=True)
-    return round(float(out.stdout.strip()))
+    d = float(out.stdout.strip())
+    return d if exact else round(d)

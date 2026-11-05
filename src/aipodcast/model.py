@@ -18,6 +18,7 @@ ROOT = Path(os.environ.get("AIPODCAST_ROOT", os.getcwd())).resolve()
 class Line:
     speaker: str
     text: str
+    chapter: str | None = None  # このせりふから始まるチャプターのタイトル
 
 
 @dataclass
@@ -53,19 +54,37 @@ SUPPLIED_AUDIO_NAMES = ("audio.mp3", "audio.m4a")
 
 _FRONT_MATTER = re.compile(r"\A---\n(.*?)\n---\n", re.S)
 _LINE = re.compile(r"^\s*([^\s:：]+)\s*[:：]\s*(\S.*)$")
+_CHAPTER = re.compile(r"^##\s+(\S.*?)\s*$")
 
 
 def parse_script(text: str, speakers: set[str]) -> list[Line]:
     """Return spoken lines. Only `<speaker>: text` lines for known speakers are read;
-    headings, cast lists, and other notes are ignored."""
+    other headings, cast lists, and notes are ignored.
+    A `## title` heading starts a chapter at the next spoken line."""
     text = _FRONT_MATTER.sub("", text, count=1)
     text = re.sub(r"<!--.*?-->", "", text, flags=re.S)
     lines = []
+    pending = None
     for raw in text.splitlines():
+        h = _CHAPTER.match(raw)
+        if h:
+            pending = h.group(1)
+            continue
         m = _LINE.match(raw)
         if m and m.group(1) in speakers:
-            lines.append(Line(m.group(1), m.group(2).strip()))
+            lines.append(Line(m.group(1), m.group(2).strip(), pending))
+            pending = None
     return lines
+
+
+def parse_timestamp(value) -> float:
+    """'1:02:03', '02:03', '123', 123 → seconds."""
+    if isinstance(value, (int, float)):
+        return float(value)
+    sec = 0.0
+    for part in str(value).split(":"):
+        sec = sec * 60 + float(part)
+    return sec
 
 
 def load_episodes(podcast: dict, root: Path = ROOT) -> list[Episode]:
@@ -105,13 +124,14 @@ def audio_fingerprint(ep: Episode, tts: dict) -> str:
     if ep.audio_source:
         payload = {
             "source_sha256": hashlib.sha256(ep.audio_source.read_bytes()).hexdigest(),
+            "chapters": ep.meta.get("chapters"),
             "title": ep.meta["title"],
             "number": ep.number,
             "v": 1,
         }
         return hashlib.sha256(json.dumps(payload, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
     payload = {
-        "lines": [[l.speaker, l.text] for l in ep.lines],
+        "lines": [[l.speaker, l.text, l.chapter] for l in ep.lines],
         "tts": tts,
         "title": ep.meta["title"],
         "number": ep.number,

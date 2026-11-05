@@ -17,6 +17,18 @@ GitHub Actions で音声を作り、GitHub Pages で RSS フィードを公開�
    - `episode.yaml`: 番号・GUID（`python -c "import uuid;print(uuid.uuid4())"`）・タイトル・概要・公開日時・論文リスト
 2. `main` に push → `publish` ワークフローが新規・変更分だけ音声合成し、Releases に MP3 を添付、フィードを更新
 
+### チャプター
+
+`script.md` に `## 見出し` を書くと、次のせりふからチャプターになる（`#` 1 つの見出しは無視）。
+チャプターは MP3 の ID3 チャプター（Apple Podcasts 等）、`chapters.json`（Podcasting 2.0: Pocket Casts, AntennaPod 等）、概要欄のタイムスタンプの 3 か所に入る。
+持ち込み音声の場合は `episode.yaml` に書く:
+
+```yaml
+chapters:
+  - { start: "0:00", title: オープニング }
+  - { start: "3:25", title: 1本目 }
+```
+
 ### NotebookLM などで作った音声を使う場合
 
 `script.md` の代わりに音声ファイルを `episodes/NNNN-slug/audio.m4a`（または `audio.mp3`）として置く。
