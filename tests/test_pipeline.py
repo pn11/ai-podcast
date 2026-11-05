@@ -45,3 +45,32 @@ def test_end_to_end_dummy(tmp_path):
         assert int(enc.get("length")) == (audio / f"{num:04d}.mp3").stat().st_size == info["bytes"]
         assert enc.get("url").endswith(f"/ep-{num:04d}/{num:04d}.mp3")
     assert (site / "index.html").exists() and (site / "artwork.png").exists()
+
+
+@pytest.mark.skipif(subprocess.run(["which", "ffmpeg"], capture_output=True).returncode, reason="ffmpeg missing")
+def test_supplied_audio(tmp_path):
+    import shutil
+    root = tmp_path / "repo"
+    (root / "episodes" / "0009-byo").mkdir(parents=True)
+    shutil.copy(ROOT / "podcast.yaml", root / "podcast.yaml")
+    shutil.copytree(ROOT / "site", root / "site")
+    ep = root / "episodes" / "0009-byo"
+    (ep / "episode.yaml").write_text(
+        "number: 9\nguid: test-guid-9\ntitle: 持ち込み音声\nsummary: テスト\n"
+        "published_at: 2026-11-05T22:00:00+09:00\naudio_credit: NotebookLM で生成\n"
+        "papers: [{title: X, url: https://arxiv.org/abs/0000.00000}]\n", encoding="utf-8")
+    # a 2-second tone carrying metadata that must not survive re-encoding
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-f", "lavfi", "-i", "sine=frequency=440:duration=2",
+                    "-metadata", "comment=PRIVATE-NOTE", "-c:a", "aac", str(ep / "audio.m4a")], check=True)
+    env = {**os.environ, "AIPODCAST_ROOT": str(root)}
+    run = lambda *a: subprocess.run(["python", "-m", "aipodcast.cli", *a], cwd=root, env=env, check=True)
+    # no VOICEVOX needed: provider would fail to connect if it were used
+    run("audio", "--out", str(root / "a"), "--tts-url", "http://127.0.0.1:9")
+    info = json.loads((root / "a" / "0009.json").read_text())
+    assert info["supplied"] and info["duration_sec"] == 2 and info["credits"] == ["NotebookLM で生成"]
+    tags = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format_tags", "-of", "json",
+                           str(root / "a" / "0009.mp3")], capture_output=True, text=True).stdout
+    assert "PRIVATE-NOTE" not in tags and "持ち込み音声" in tags
+    run("site", "--audio", str(root / "a"), "--out", str(root / "s"))
+    feed = (root / "s" / "feed.xml").read_text()
+    assert "podcast:transcript" not in feed and "NotebookLM で生成" in feed

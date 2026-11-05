@@ -25,6 +25,8 @@ class Episode:
     dir: Path
     meta: dict
     lines: list[Line] = field(default_factory=list)
+    # 持ち込み音声（NotebookLM などで作ったもの）。あれば TTS の代わりにこれを使う
+    audio_source: Path | None = None
 
     @property
     def number(self) -> int:
@@ -46,6 +48,8 @@ class Episode:
 def load_podcast(root: Path = ROOT) -> dict:
     return yaml.safe_load((root / "podcast.yaml").read_text(encoding="utf-8"))
 
+
+SUPPLIED_AUDIO_NAMES = ("audio.mp3", "audio.m4a")
 
 _FRONT_MATTER = re.compile(r"\A---\n(.*?)\n---\n", re.S)
 _LINE = re.compile(r"^\s*([^\s:：]+)\s*[:：]\s*(\S.*)$")
@@ -69,8 +73,18 @@ def load_episodes(podcast: dict, root: Path = ROOT) -> list[Episode]:
     eps = []
     for meta_path in sorted((root / "episodes").glob("*/episode.yaml")):
         meta = yaml.safe_load(meta_path.read_text(encoding="utf-8"))
-        script = (meta_path.parent / "script.md").read_text(encoding="utf-8")
-        lines = parse_script(script, speakers)
+        supplied = [meta_path.parent / n for n in SUPPLIED_AUDIO_NAMES if (meta_path.parent / n).exists()]
+        if len(supplied) > 1:
+            raise ValueError(f"{meta_path.parent}: put only one of {SUPPLIED_AUDIO_NAMES}")
+        script_path = meta_path.parent / "script.md"
+        if supplied:
+            # 持ち込み音声の回: script.md は任意（あっても読み上げない。ページに参考として載せる）
+            lines = parse_script(script_path.read_text(encoding="utf-8"), speakers) if script_path.exists() else []
+            eps.append(Episode(meta_path.parent, meta, lines, supplied[0]))
+            continue
+        if not script_path.exists():
+            raise ValueError(f"{meta_path.parent}: needs script.md or one of {SUPPLIED_AUDIO_NAMES}")
+        lines = parse_script(script_path.read_text(encoding="utf-8"), speakers)
         if not lines:
             raise ValueError(f"{meta_path.parent}: no spoken lines found in script.md")
         intro = podcast.get("intro")
@@ -88,6 +102,14 @@ def load_episodes(podcast: dict, root: Path = ROOT) -> list[Episode]:
 
 def audio_fingerprint(ep: Episode, tts: dict) -> str:
     """Hash of everything that affects the audio. Unchanged hash → reuse published MP3."""
+    if ep.audio_source:
+        payload = {
+            "source_sha256": hashlib.sha256(ep.audio_source.read_bytes()).hexdigest(),
+            "title": ep.meta["title"],
+            "number": ep.number,
+            "v": 1,
+        }
+        return hashlib.sha256(json.dumps(payload, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
     payload = {
         "lines": [[l.speaker, l.text] for l in ep.lines],
         "tts": tts,

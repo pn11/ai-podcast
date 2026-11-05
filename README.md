@@ -17,6 +17,15 @@ GitHub Actions で音声を作り、GitHub Pages で RSS フィードを公開�
    - `episode.yaml`: 番号・GUID（`python -c "import uuid;print(uuid.uuid4())"`）・タイトル・概要・公開日時・論文リスト
 2. `main` に push → `publish` ワークフローが新規・変更分だけ音声合成し、Releases に MP3 を添付、フィードを更新
 
+### NotebookLM などで作った音声を使う場合
+
+`script.md` の代わりに音声ファイルを `episodes/NNNN-slug/audio.m4a`（または `audio.mp3`）として置く。
+`episode.yaml` に `audio_credit: NotebookLM の音声解説で生成` のように書くと概要欄に表示される。
+音声は 64kbps モノラルに再エンコードされ、元ファイルのメタデータ（タグ・チャプター等）は除去される。
+`script.md` を一緒に置いた場合は「参考：台本メモ」としてページに載る（読み上げはされない）。
+
+> 音声ファイルは Git の履歴に残り続けるので、差し替えるたびにリポジトリが大きくなる点に注意。
+
 台本を直して push すると、その回だけ作り直されます（全部作り直すなら Actions から `publish` を `force` 付きで手動実行）。
 
 ## ローカルでの確認

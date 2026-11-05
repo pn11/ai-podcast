@@ -86,14 +86,17 @@ def build_site(podcast: dict, episodes: list[Episode], audio: dict[int, dict], o
         info = audio[ep.number]
         transcript = "\n".join(
             f'<p class="line"><span class="who">{escape(l.speaker)}</span>{escape(l.text)}</p>' for l in ep.lines)
+        if not ep.lines:
+            transcript_section = ""
+        elif ep.audio_source:
+            transcript_section = f'<h2>参考：台本メモ</h2>\n<p class="meta">音声はこの台本を読み上げたものではありません。</p>\n<div class="transcript">\n{transcript}\n</div>'
+        else:
+            transcript_section = f'<h2>文字起こし（台本）</h2>\n<div class="transcript">\n{transcript}\n</div>'
         body = f"""<p><a href="../../">← {escape(podcast['title'])}</a></p>
 <h1>#{ep.number} {escape(ep.meta['title'])}</h1>
 <audio controls preload="none" src="{escape(audio_url(podcast, ep))}"></audio>
 {_notes_html(show_notes(podcast, ep, info))}
-<h2>文字起こし（台本）</h2>
-<div class="transcript">
-{transcript}
-</div>"""
+{transcript_section}"""
         d = out / "episodes" / ep.code
         d.mkdir(parents=True)
         (d / "index.html").write_text(_page(ep.meta["title"], body, 2, podcast), encoding="utf-8")

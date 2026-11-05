@@ -62,8 +62,6 @@ def render_episode(ep: Episode, podcast: dict, tts: TTS, out_dir: Path, log=prin
             if done % 25 == 0 or done == total:
                 log(f"  [{ep.code}] {done}/{total} sentences")
 
-    out_dir.mkdir(parents=True, exist_ok=True)
-    mp3 = out_dir / f"{ep.code}.mp3"
     with tempfile.TemporaryDirectory() as td:
         wav_path = Path(td) / "full.wav"
         with wave.open(str(wav_path), "wb") as w:
@@ -71,28 +69,41 @@ def render_episode(ep: Episode, podcast: dict, tts: TTS, out_dir: Path, log=prin
             w.setsampwidth(params[1])
             w.setframerate(params[2])
             w.writeframes(b"".join(frames))
-        subprocess.run([
-            "ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", str(wav_path),
-            "-af", "loudnorm=I=-16:TP=-1.5:LRA=11", "-ar", "44100", "-ac", "1",
-            "-c:a", "libmp3lame", "-b:a", "64k",
-            # drop all inherited metadata, then set only what we choose to publish
-            "-map_metadata", "-1", "-fflags", "+bitexact", "-flags:a", "+bitexact",
-            "-id3v2_version", "3", "-write_xing", "1",
-            "-metadata", f"title={ep.meta['title']}",
-            "-metadata", f"artist={podcast['author']}",
-            "-metadata", f"album={podcast['title']}",
-            "-metadata", f"track={ep.number}",
-            "-metadata", "genre=Podcast",
-            str(mp3),
-        ], check=True)
+        return _encode(ep, podcast, wav_path, out_dir, tts.credits(voices))
 
+
+def render_supplied(ep: Episode, podcast: dict, out_dir: Path, log=print) -> dict:
+    """Use audio made elsewhere (e.g. NotebookLM): re-encode to the feed format and strip its metadata."""
+    log(f"  [{ep.code}] using supplied audio {ep.audio_source.name}")
+    credit = ep.meta.get("audio_credit")
+    return _encode(ep, podcast, ep.audio_source, out_dir, [credit] if credit else [])
+
+
+def _encode(ep: Episode, podcast: dict, src: Path, out_dir: Path, credits: list[str]) -> dict:
+    out_dir.mkdir(parents=True, exist_ok=True)
+    mp3 = out_dir / f"{ep.code}.mp3"
+    subprocess.run([
+        "ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", str(src),
+        "-vn", "-af", "loudnorm=I=-16:TP=-1.5:LRA=11", "-ar", "44100", "-ac", "1",
+        "-c:a", "libmp3lame", "-b:a", "64k",
+        # drop all inherited metadata, then set only what we choose to publish
+        "-map_metadata", "-1", "-map_chapters", "-1", "-fflags", "+bitexact", "-flags:a", "+bitexact",
+        "-id3v2_version", "3", "-write_xing", "1",
+        "-metadata", f"title={ep.meta['title']}",
+        "-metadata", f"artist={podcast['author']}",
+        "-metadata", f"album={podcast['title']}",
+        "-metadata", f"track={ep.number}",
+        "-metadata", "genre=Podcast",
+        str(mp3),
+    ], check=True)
     info = {
         "number": ep.number,
-        "fingerprint": audio_fingerprint(ep, cfg),
+        "fingerprint": audio_fingerprint(ep, podcast["tts"]),
         "bytes": mp3.stat().st_size,
         "duration_sec": probe_duration(mp3),
         "sha256": hashlib.sha256(mp3.read_bytes()).hexdigest(),
-        "credits": tts.credits(voices),
+        "credits": credits,
+        "supplied": ep.audio_source is not None,
     }
     (out_dir / f"{ep.code}.json").write_text(json.dumps(info, ensure_ascii=False, indent=2), encoding="utf-8")
     return info

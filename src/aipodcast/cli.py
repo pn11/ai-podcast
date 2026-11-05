@@ -1,7 +1,7 @@
 """aipodcast CLI.
 
   aipodcast check                       privacy / consistency checks
-  aipodcast audio [--existing DIR]      synthesize MP3s that are new or changed
+  aipodcast audio [--existing DIR]      synthesize (or re-encode supplied) MP3s that are new or changed
   aipodcast site  --audio DIR           build feed.xml + HTML into build/site
 """
 from __future__ import annotations
@@ -32,7 +32,7 @@ def cmd_check(args) -> int:
 
 
 def cmd_audio(args) -> int:
-    from .audio import render_episode
+    from .audio import render_episode, render_supplied
     from .tts import make_tts
     podcast = load_podcast()
     eps = load_episodes(podcast)
@@ -53,10 +53,15 @@ def cmd_audio(args) -> int:
     if not todo:
         print("nothing to synthesize")
         return 0
-    tts = make_tts(podcast["tts"], args.tts, args.tts_url)
+    tts = None
     for ep in todo:
-        print(f"[{ep.code}] synthesizing {ep.meta['title']}")
-        info = render_episode(ep, podcast, tts, out)
+        if ep.audio_source:
+            print(f"[{ep.code}] encoding supplied audio for {ep.meta['title']}")
+            info = render_supplied(ep, podcast, out)
+        else:
+            tts = tts or make_tts(podcast["tts"], args.tts, args.tts_url)
+            print(f"[{ep.code}] synthesizing {ep.meta['title']}")
+            info = render_episode(ep, podcast, tts, out)
         print(f"[{ep.code}] {info['duration_sec']}s, {info['bytes']} bytes")
     return 0
 

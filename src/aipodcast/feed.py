@@ -53,6 +53,8 @@ def build_feed(podcast: dict, episodes: list[Episode], audio: dict[int, dict]) -
         info = audio[ep.number]
         notes = show_notes(podcast, ep, info)
         page = page_url(podcast, ep)
+        transcript = ("" if ep.audio_source else
+                      f'      <podcast:transcript url={quoteattr(page)} type="text/html" language="{podcast["language"]}"/>\n')
         html_notes = "<p>" + escape(notes).replace("\n\n", "</p><p>").replace("\n", "<br/>") + "</p>"
         items.append(f"""    <item>
       <title>{escape(ep.meta['title'])}</title>
@@ -66,8 +68,7 @@ def build_feed(podcast: dict, episodes: list[Episode], audio: dict[int, dict]) -
       <itunes:episode>{ep.number}</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>{'true' if podcast.get('explicit') else 'false'}</itunes:explicit>
-      <podcast:transcript url={quoteattr(page)} type="text/html" language="{podcast['language']}"/>
-    </item>""")
+{transcript}    </item>""")
 
     block = "\n    <itunes:block>Yes</itunes:block>" if podcast.get("block") else ""
     return f"""<?xml version="1.0" encoding="UTF-8"?>
