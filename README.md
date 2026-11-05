@@ -40,6 +40,10 @@ uv run aipodcast site && python -m http.server -d build/site
 uv run pytest
 ```
 
-## クレジット
+## ライセンス・クレジット
 
-音声: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏
+- コード: MIT
+- 台本（`episodes/*/script.md`）: CC BY 4.0
+- 音声: CC BY の対象外。各音声合成サービス・音声ライブラリの利用規約に従う
+  - VOICEVOX 使用回: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏（[VOICEVOX 利用規約](https://voicevox.hiroshiba.jp/term/) と各キャラクターの規約）
+- 紹介している論文の著作権は各著者に帰属

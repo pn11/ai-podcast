@@ -15,7 +15,7 @@ categories:
 explicit: false
 # true にすると Apple Podcasts 等のディレクトリに載らない（フィード URL を知っていれば購読は可能）
 block: false
-copyright: 台本・音声 CC BY 4.0（原論文の著作権は各著者に帰属）
+copyright: 台本は CC BY 4.0。音声は各音声合成サービス・音声ライブラリの利用規約に従う（VOICEVOX 使用回は各キャラクターの規約）。原論文の著作権は各著者に帰属
 
 # 各回の冒頭に自動で挿入する断り書き
 intro:
