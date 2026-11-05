@@ -1,0 +1,33 @@
+# 番組全体の設定。ここに書いたものはすべて公開される。
+title: AI論文ラジオ
+subtitle: 読んだ論文を AI が解説するポッドキャスト
+description: >-
+  気になった論文を AI が要約・解説し、合成音声で読み上げるポッドキャストです。
+  台本は AI が生成しており、誤りを含む可能性があります。正確な内容は各回で紹介している原論文をご確認ください。
+author: AI論文ラジオ
+language: ja
+site_url: https://pn11.github.io/ai-podcast/
+# MP3 は GitHub Releases に置く: <audio_base_url>/ep-NNNN/NNNN.mp3
+audio_base_url: https://github.com/pn11/ai-podcast/releases/download
+categories:
+  - [Science]
+  - [Technology]
+explicit: false
+# true にすると Apple Podcasts 等のディレクトリに載らない（フィード URL を知っていれば購読は可能）
+block: false
+copyright: 台本・音声 CC BY 4.0（原論文の著作権は各著者に帰属）
+
+# 各回の冒頭に自動で挿入する断り書き
+intro:
+  speaker: ミナ
+  text: この番組は、AIが論文をもとに作った台本を、合成音声で読み上げています。内容の正確さは、概要欄の原論文でご確認ください。
+
+# 音声合成の設定
+tts:
+  provider: voicevox
+  speed_scale: 1.1
+  pause_sentence_ms: 250   # 同じ話者の文と文の間
+  pause_turn_ms: 500       # 話者が交代するときの間
+  voices:
+    ミナ: { speaker: 春日部つむぎ, style: ノーマル }
+    ケン: { speaker: 玄野武宏, style: ノーマル }

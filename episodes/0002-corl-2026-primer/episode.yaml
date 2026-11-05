@@ -1,0 +1,21 @@
+number: 2
+guid: c4e9a7d3-8b2f-4c61-a0e5-5f3d9b7c2e02   # 一度公開したら変更しない
+title: CoRL 2026 予習 ― 模倣学習からVLA、データ、実機RL、Sim-to-Realまで
+summary: >-
+  CoRL 2026 の予習として、ロボット学習の土台になっている論文を駆け足で紹介します。
+  ACT/ALOHA、Diffusion Policy、RT-2、OpenVLA、π0/π0.5、SmolVLA、Open X-Embodiment/DROID、UMI、HIL-SERL、RMA と Domain Randomization。
+published_at: 2026-11-05T21:00:00+09:00
+papers:
+  - { title: "Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware (ACT/ALOHA)", url: "https://arxiv.org/abs/2304.13705" }
+  - { title: "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion", url: "https://arxiv.org/abs/2303.04137" }
+  - { title: "RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control", url: "https://arxiv.org/abs/2307.15818" }
+  - { title: "OpenVLA: An Open-Source Vision-Language-Action Model", url: "https://arxiv.org/abs/2406.09246" }
+  - { title: "π0: A Vision-Language-Action Flow Model for General Robot Control", url: "https://arxiv.org/abs/2410.24164" }
+  - { title: "π0.5: a Vision-Language-Action Model with Open-World Generalization", url: "https://arxiv.org/abs/2504.16054" }
+  - { title: "SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics", url: "https://arxiv.org/abs/2506.01844" }
+  - { title: "Open X-Embodiment: Robotic Learning Datasets and RT-X Models", url: "https://arxiv.org/abs/2310.08864" }
+  - { title: "DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset", url: "https://arxiv.org/abs/2403.12945" }
+  - { title: "Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots", url: "https://arxiv.org/abs/2402.10329" }
+  - { title: "Precise and Dexterous Robotic Manipulation via Human-in-the-Loop Reinforcement Learning (HIL-SERL)", url: "https://arxiv.org/abs/2410.21845" }
+  - { title: "RMA: Rapid Motor Adaptation for Legged Robots", url: "https://arxiv.org/abs/2107.04034" }
+  - { title: "Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World", url: "https://arxiv.org/abs/1703.06907" }

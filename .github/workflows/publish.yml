@@ -1,0 +1,73 @@
+name: publish
+
+# main に push されたら: 新規・変更エピソードだけ VOICEVOX で音声合成 → Releases に MP3 を添付
+# → feed.xml / HTML を生成して gh-pages ブランチへデプロイ（GitHub Pages）
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "全エピソードの音声を作り直す"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # Releases の作成と gh-pages への push
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    services:
+      voicevox:
+        image: voicevox/voicevox_engine:cpu-0.26.0
+        ports: ["50021:50021"]
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Install ffmpeg
+        run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
+      - run: uv sync --locked
+      - name: Privacy / consistency check
+        run: uv run aipodcast check
+
+      - name: Fetch metadata of already-published audio
+        run: |
+          mkdir -p build/existing
+          for tag in $(gh release list --limit 1000 --json tagName -q '.[].tagName' | grep '^ep-' || true); do
+            gh release download "$tag" --pattern '*.json' --dir build/existing --clobber || true
+          done
+          ls -la build/existing
+
+      - name: Synthesize new or changed episodes
+        run: uv run aipodcast audio --existing build/existing ${{ inputs.force && '--force' || '' }}
+
+      - name: Upload MP3 to Releases
+        run: |
+          while read -r code; do
+            [ -n "$code" ] || continue
+            tag="ep-$code"
+            gh release view "$tag" >/dev/null 2>&1 || \
+              gh release create "$tag" --target "$GITHUB_SHA" --title "Episode $code" --latest=false \
+                --notes "Audio for episode $code. See https://pn11.github.io/ai-podcast/episodes/$code/"
+            gh release upload "$tag" "build/audio/$code.mp3" "build/audio/$code.json" --clobber
+          done < build/audio/new.txt
+
+      - name: Build site and feed
+        run: uv run aipodcast site --audio build/audio --out build/site
+
+      - name: Deploy to gh-pages
+        run: |
+          cd build/site
+          git init -q -b gh-pages
+          git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "Deploy ${GITHUB_SHA::7}"
+          git push -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages

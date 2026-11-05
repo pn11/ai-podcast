@@ -1,0 +1,14 @@
+number: 1
+guid: 7b1f6c2e-3d4a-4f0e-9a51-2c8e6d1b4a01   # 一度公開したら変更しない
+title: 産総研 Embodied AI チームの2本 ― 「身体のギャップ」と「指先センシング」
+summary: >-
+  ロボット基盤モデルを別のロボットに移すときに残る作業を整理したサーベイ「The Embodiment Gap in Robot Foundation Models」と、
+  指先の近接・触覚センサーを固有受容感覚と未来の行動に結びつけて事前学習する「ProPrA」を紹介します。
+published_at: 2026-11-05T20:00:00+09:00
+papers:
+  - title: The Embodiment Gap in Robot Foundation Models
+    authors: Domae et al.
+    url: https://arxiv.org/abs/2608.18433
+  - title: Self-Supervised Anchoring of Fingertip Sensing to Proprioception and Proactive Actions for Robot Imitation Learning
+    authors: Motoda et al.
+    url: https://arxiv.org/abs/2609.29822

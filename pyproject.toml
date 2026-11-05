@@ -1,0 +1,16 @@
+[project]
+name = "aipodcast"
+version = "0.1.0"
+description = "Turn paper summaries into a podcast feed on GitHub Pages"
+requires-python = ">=3.11"
+dependencies = ["pyyaml>=6"]
+
+[project.scripts]
+aipodcast = "aipodcast.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

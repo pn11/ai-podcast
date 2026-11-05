@@ -1,5 +1,11 @@
 # AI Podcast 設計書
 
+> **実装状況（2026-11 時点）**: P0〜P2 相当を実装済み。台本の自動生成（P1, P3 の queue → PR）は未実装で、台本は手動で `episodes/` に置く。
+> 設計からの変更点:
+> - TTS は **VOICEVOX ENGINE**（Actions のサービスコンテナで実行、API キー不要）を採用。話者はキャラクター名＋スタイル名で `podcast.yaml` に指定。
+> - 音声メタデータ（bytes / 長さ / sha256 / 台本の fingerprint）は `episode.yaml` に書き戻さず、Release に `NNNN.json` として MP3 と並べて置く。fingerprint が変わった回だけ再合成する（リポジトリへの自動コミットが不要）。
+> - Pages は Actions から `gh-pages` ブランチへ push する方式（Settings → Pages の Source を `gh-pages` にする）。
+
 調べた論文を AI に要約させ、音声合成で読み上げ、RSS フィードとして GitHub Pages で配信する個人ポッドキャストの設計。
 
 ## 1. 目的と前提

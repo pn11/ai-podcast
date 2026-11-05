@@ -1,0 +1,20 @@
+name: ci
+
+# PR 用。Secret は使わない（フォークからの PR でも安全に動く）
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Install ffmpeg
+        run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
+      - run: uv sync --locked
+      - run: uv run aipodcast check
+      - run: uv run pytest -q
