@@ -1,0 +1,16 @@
+number: 6
+guid: 8d1a6e37-4f2b-4c90-b5e8-1a7c3d9f6b06   # 一度公開したら変更しない
+title: 強化学習と模倣学習の基礎 ― 方策ってなに？ DQN ってなに？
+summary: >-
+  これまでの回で使ってきた言葉の基礎をおさらいします。エージェントと環境、報酬、方策、価値と割引、Q学習、
+  DQN（経験リプレイ・ターゲットネットワーク・ε-greedy）、方策勾配とアクター・クリティック、
+  ロボットで強化学習を使う難しさ、模倣学習（ビヘイビア・クローニング、複合誤差、DAgger）、そして両者の組み合わせ。
+published_at: 2026-11-07T08:00:00+09:00
+links_label: もっと知りたい人向けの文献
+papers:
+  - { title: "Sutton & Barto, Reinforcement Learning: An Introduction (2nd ed.)", url: "http://incompleteideas.net/book/the-book.html" }
+  - { title: "Mnih et al., Playing Atari with Deep Reinforcement Learning (2013)", url: "https://arxiv.org/abs/1312.5602" }
+  - { title: "Mnih et al., Human-level control through deep reinforcement learning (Nature, 2015)", url: "https://www.nature.com/articles/nature14236" }
+  - { title: "Schulman et al., Proximal Policy Optimization Algorithms (2017)", url: "https://arxiv.org/abs/1707.06347" }
+  - { title: "Haarnoja et al., Soft Actor-Critic (2018)", url: "https://arxiv.org/abs/1801.01290" }
+  - { title: "Ross, Gordon & Bagnell, A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning (DAgger, 2011)", url: "https://arxiv.org/abs/1011.0686" }
