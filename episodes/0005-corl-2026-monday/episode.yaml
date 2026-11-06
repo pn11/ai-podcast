@@ -1,0 +1,19 @@
+number: 5
+guid: 2c7f4e90-6b1d-4d35-9a72-8e0b3c5f1a05   # 一度公開したら変更しない
+title: CoRL 2026 初日の注目発表 ― 口頭発表・スポットライト・ポスター
+summary: >-
+  CoRL 2026 初日（11月9日）のプログラムから、これまでの回とつながる発表を紹介します。
+  朝のスポットライト S1、口頭発表 O1〜O3、午後のスポットライト S2、ポスターセッション 1。
+  紹介は公式プログラムのタイトル・セッション・時刻にもとづき、論文の中身は未確認です。詳細は各論文と当日のプログラムでご確認ください。
+published_at: 2026-11-07T07:30:00+09:00
+links_label: 取り上げた発表（会場は口頭発表・スポットライトがヒルトン、ポスターが JW マリオット）
+papers:
+  - { title: "[S1 9:00–] EmbodiSteer: Steering Embodiment-Agnostic Visuomotor Policies with Joint-Space Guidance for Zero-Shot Cross-Embodiment Deployment（ポスター 65）", url: "https://openreview.net/venue?id=robot-learning.org%2FCoRL" }
+  - { title: "[S1] ZETA: A Controlled Study of Zero-Shot Cross-Embodiment VLA Transfer for Tabletop Manipulation（ポスター 66）", url: "https://openreview.net/venue?id=robot-learning.org%2FCoRL" }
+  - { title: "[S1] MEM: Multi-Scale Embodied Memory for Vision Language Action Models（42） / MolmoAct2（28） / When Vision Overrides Language（114）", url: "https://openreview.net/venue?id=robot-learning.org%2FCoRL" }
+  - { title: "[O1 10:30–] π0.7 / Being-H0.5 / RoboTTT（ポスター 63, 67, 47）", url: "https://openreview.net/venue?id=robot-learning.org%2FCoRL" }
+  - { title: "[O2 11:00–] World Action Models are Zero-shot Policies / Memory-augmented Action-conditioned World Model / TEMPO（51, 53, 48）", url: "https://openreview.net/venue?id=robot-learning.org%2FCoRL" }
+  - { title: "[O3 11:30–] What Are We Actually Benchmarking in Robot Manipulation? / Diversity You Can Actually Measure / MolmoB0T（116, 199, 196）", url: "https://openreview.net/venue?id=robot-learning.org%2FCoRL" }
+  - { title: "[S2 14:30–] BitVLA / EagleVLA / REACT / Targeting World Models to Compromise Robot Learning Pipelines（59, 60, 61, 54）", url: "https://openreview.net/venue?id=robot-learning.org%2FCoRL" }
+  - { title: "[ポスター1 17:00–] 27 Think Proprioceptively / 33 Modular Sensory Stream / 69 RoboPocket / 85 Learning While Deploying / 90 UniIntervene / 91 Preference-Calibrated HIL RL / 103 Q-OIL / 111 When One Step Is Enough / 124 SuperSuit", url: "https://openreview.net/venue?id=robot-learning.org%2FCoRL" }
+  - { title: "CoRL 2026 公式サイト", url: "https://www.corl.org/" }
