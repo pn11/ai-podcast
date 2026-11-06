@@ -4,7 +4,7 @@
 > 設計からの変更点:
 > - TTS は **VOICEVOX ENGINE**（Actions のサービスコンテナで実行、API キー不要）を採用。話者はキャラクター名＋スタイル名で `podcast.yaml` に指定。
 > - 音声メタデータ（bytes / 長さ / sha256 / 台本の fingerprint）は `episode.yaml` に書き戻さず、Release に `NNNN.json` として MP3 と並べて置く。fingerprint が変わった回だけ再合成する（リポジトリへの自動コミットが不要）。
-> - Pages は `actions/upload-pages-artifact` + `actions/deploy-pages` で直接デプロイ（Settings → Pages の Source を「GitHub Actions」にする）。
+> - Pages は Actions から `gh-pages` ブランチへ push する方式（Settings → Pages の Source は `gh-pages` ブランチ）。
 
 調べた論文を AI に要約させ、音声合成で読み上げ、RSS フィードとして GitHub Pages で配信する個人ポッドキャストの設計。
 

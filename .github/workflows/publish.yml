@@ -1,9 +1,10 @@
 name: publish
 
-# 既定ブランチに push されたら（github-pages 環境は既定ブランチからのデプロイしか受け付けないため）: 新規・変更エピソードだけ VOICEVOX で音声合成 → Releases に MP3 を添付
-# → feed.xml / HTML を生成して GitHub Pages へ直接デプロイ（Settings → Pages の Source は "GitHub Actions"）
+# main に push されたら: 新規・変更エピソードだけ VOICEVOX で音声合成 → Releases に MP3 を添付
+# → feed.xml / HTML を生成して gh-pages ブランチへデプロイ（GitHub Pages）
 on:
   push:
+    branches: [main]
   workflow_dispatch:
     inputs:
       force:
@@ -12,9 +13,7 @@ on:
         default: false
 
 permissions:
-  contents: write   # Releases の作成
-  pages: write      # Pages へのデプロイ
-  id-token: write   # deploy-pages の OIDC 認証
+  contents: write   # Releases の作成と gh-pages への push
 
 concurrency:
   group: publish
@@ -22,12 +21,8 @@ concurrency:
 
 jobs:
   publish:
-    if: github.ref_name == github.event.repository.default_branch
     runs-on: ubuntu-24.04
     timeout-minutes: 90
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     services:
       voicevox:
         image: voicevox/voicevox_engine:cpu-0.26.0
@@ -68,8 +63,11 @@ jobs:
       - name: Build site and feed
         run: uv run aipodcast site --audio build/audio --out build/site
 
-      - uses: actions/upload-pages-artifact@v4
-        with:
-          path: build/site
-      - id: deploy
-        uses: actions/deploy-pages@v4
+      - name: Deploy to gh-pages
+        run: |
+          cd build/site
+          git init -q -b gh-pages
+          git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "Deploy ${GITHUB_SHA::7}"
+          git push -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
