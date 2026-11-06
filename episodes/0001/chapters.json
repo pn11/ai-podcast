@@ -1,0 +1,22 @@
+{
+ "version": "1.2.0",
+ "title": "産総研 Embodied AI チームの2本 ― 「身体のギャップ」と「指先センシング」",
+ "chapters": [
+  {
+   "startTime": 0.0,
+   "title": "オープニング"
+  },
+  {
+   "startTime": 38.88,
+   "title": "1本目：The Embodiment Gap in Robot Foundation Models"
+  },
+  {
+   "startTime": 346.6,
+   "title": "2本目：ProPrA（指先センシング）"
+  },
+  {
+   "startTime": 684.38,
+   "title": "2本を並べて読む"
+  }
+ ]
+}

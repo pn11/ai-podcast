@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CoRL 2026 初日の注目発表 ― 口頭発表・スポットライト・ポスター</title>
+<link rel="alternate" type="application/rss+xml" title="AI論文ラジオ" href="../../feed.xml">
+<link rel="icon" href="../../artwork.png">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<main>
+<p><a href="../../">← AI論文ラジオ</a></p>
+<h1>#5 CoRL 2026 初日の注目発表 ― 口頭発表・スポットライト・ポスター</h1>
+<audio controls preload="none" src="https://github.com/pn11/ai-podcast/releases/download/ep-0005/0005.mp3"></audio>
+<p>CoRL 2026 初日（11月9日）のプログラムから、これまでの回とつながる発表を紹介します。 朝のスポットライト S1、口頭発表 O1〜O3、午後のスポットライト S2、ポスターセッション 1。 紹介は公式プログラムのタイトル・セッション・時刻にもとづき、論文の中身は未確認です。詳細は各論文と当日のプログラムでご確認ください。</p>
+<p>チャプター:<br>00:00 オープニング<br>01:06 朝のスポットライト：汎用方策、記憶、転移<br>02:10 口頭発表1：汎用方策とコンテキストのスケーリング<br>02:58 口頭発表2：ワールドモデルと時間の表現<br>03:36 口頭発表3：データ、シミュレーション、評価<br>04:21 午後のスポットライト：効率的な実行とワールドモデル<br>05:15 ポスターセッション1のおすすめ<br>06:44 まとめ</p>
+<p>取り上げた発表（会場は口頭発表・スポットライトがヒルトン、ポスターが JW マリオット）:<br>・[S1 9:00–] EmbodiSteer: Steering Embodiment-Agnostic Visuomotor Policies with Joint-Space Guidance for Zero-Shot Cross-Embodiment Deployment（ポスター 65） <a href="https://openreview.net/venue?id=robot-learning.org%2FCoRL">https://openreview.net/venue?id=robot-learning.org%2FCoRL</a><br>・[S1] ZETA: A Controlled Study of Zero-Shot Cross-Embodiment VLA Transfer for Tabletop Manipulation（ポスター 66） <a href="https://openreview.net/venue?id=robot-learning.org%2FCoRL">https://openreview.net/venue?id=robot-learning.org%2FCoRL</a><br>・[S1] MEM: Multi-Scale Embodied Memory for Vision Language Action Models（42） / MolmoAct2（28） / When Vision Overrides Language（114） <a href="https://openreview.net/venue?id=robot-learning.org%2FCoRL">https://openreview.net/venue?id=robot-learning.org%2FCoRL</a><br>・[O1 10:30–] π0.7 / Being-H0.5 / RoboTTT（ポスター 63, 67, 47） <a href="https://openreview.net/venue?id=robot-learning.org%2FCoRL">https://openreview.net/venue?id=robot-learning.org%2FCoRL</a><br>・[O2 11:00–] World Action Models are Zero-shot Policies / Memory-augmented Action-conditioned World Model / TEMPO（51, 53, 48） <a href="https://openreview.net/venue?id=robot-learning.org%2FCoRL">https://openreview.net/venue?id=robot-learning.org%2FCoRL</a><br>・[O3 11:30–] What Are We Actually Benchmarking in Robot Manipulation? / Diversity You Can Actually Measure / MolmoB0T（116, 199, 196） <a href="https://openreview.net/venue?id=robot-learning.org%2FCoRL">https://openreview.net/venue?id=robot-learning.org%2FCoRL</a><br>・[S2 14:30–] BitVLA / EagleVLA / REACT / Targeting World Models to Compromise Robot Learning Pipelines（59, 60, 61, 54） <a href="https://openreview.net/venue?id=robot-learning.org%2FCoRL">https://openreview.net/venue?id=robot-learning.org%2FCoRL</a><br>・[ポスター1 17:00–] 27 Think Proprioceptively / 33 Modular Sensory Stream / 69 RoboPocket / 85 Learning While Deploying / 90 UniIntervene / 91 Preference-Calibrated HIL RL / 103 Q-OIL / 111 When One Step Is Enough / 124 SuperSuit <a href="https://openreview.net/venue?id=robot-learning.org%2FCoRL">https://openreview.net/venue?id=robot-learning.org%2FCoRL</a><br>・CoRL 2026 公式サイト <a href="https://www.corl.org/">https://www.corl.org/</a></p>
+<p>台本は AI が生成したものです。誤りを含む可能性があるため、正確な内容は原論文をご確認ください。<br>音声: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏</p>
+<h2>文字起こし（台本）</h2>
+<div class="transcript">
+<p class="line"><span class="who">ミナ</span>この番組は、AIが論文をもとに作った台本を、合成音声で読み上げています。内容の正確さは、概要欄の原論文でご確認ください。</p>
+<p class="line"><span class="who">ミナ</span>こんにちは。今回はコール2026の初日、11月9日月曜日の発表を、プログラムを見ながら紹介していきます。</p>
+<p class="line"><span class="who">ケン</span>よろしくお願いします。最初にお断りすると、今回の材料は公式のプログラム、つまり論文のタイトルとセッションと時刻だけです。論文の中身はまだ読めていないので、タイトルから分かる範囲で、これまでの回とつながりそうなものを選んでいます。気になったものは、ぜひ本文を確認してください。</p>
+<p class="line"><span class="who">ミナ</span>まず全体の構成からお願いします。</p>
+<p class="line"><span class="who">ケン</span>採択は687本で、すべての論文がポスターで発表されます。そのうち21本が口頭発表、72本がスポットライトという短い発表にも選ばれています。口頭発表とスポットライトはヒルトン・オースティン、ポスターはJWマリオットが会場です。月曜は、朝のスポットライト、午前中に口頭発表が三つ、午後にもう一つスポットライト、そして夕方にポスターセッション、という流れです。</p>
+<p class="line"><span class="who">ミナ</span>朝9時からのスポットライトは、汎用方策と記憶と転移、というテーマですね。</p>
+<p class="line"><span class="who">ケン</span>9本ありますが、特に注目したいのが、体の違うロボットへの転移を扱った2本です。一つはエンボディステア。タイトルによると、ロボットの体に依存しない方策を、関節空間からの誘導で操って、別の体のロボットに追加学習なしで持っていく、という研究です。もう一つはゼータ。テーブルの上での操作について、ブイエルエーを別の体に追加学習なしで移すとどうなるかを、条件をそろえて調べた研究のようです。</p>
+<p class="line"><span class="who">ミナ</span>1回目に紹介した、身体のギャップの話そのものですね。</p>
+<p class="line"><span class="who">ケン</span>そうなんです。あのサーベイは、何を共有して、何がロボットごとに残るのかを報告すべきだと言っていました。ゼータのように、条件をそろえて転移を測る研究が出てきたのは、まさにその方向だと思います。</p>
+<p class="line"><span class="who">ケン</span>ほかにも、ブイエルエーに長い時間の記憶を持たせるメム、行動の前に推論するモデルのモルモアクト・ツー、それから、画像と指示文が食い違ったときに、ブイエルエーが言葉より見た目を優先してしまう失敗を調べる研究もあります。</p>
+<p class="line"><span class="who">ミナ</span>10時半からが最初の口頭発表です。</p>
+<p class="line"><span class="who">ケン</span>ここは3本で、どれも大きな話題になりそうです。まず、パイゼロテンナナ。2回目でパイゼロとパイゼロテンゴを紹介しましたが、その続きにあたるモデルです。タイトルには、操縦できる汎用モデル、そして創発的な能力、という言葉が入っています。</p>
+<p class="line"><span class="who">ミナ</span>パイゼロテンゴは、サブタスクを言葉で決めてから行動する、という話でしたね。</p>
+<p class="line"><span class="who">ケン</span>はい。そこから、人がどう指示を与えて方策を操れるようになったのかは、聞いてみたいところです。2本目はビーイング・エイチゼロテンゴ。人の動きを中心にしたロボット学習をスケールさせて、体の違うロボットへの汎化を狙う研究です。3本目はロボティーティーティー。ロボットの方策に与えるコンテキスト、つまり手がかりとなる過去の情報を、どこまで増やすと効くのか、という研究のようです。</p>
+<p class="line"><span class="who">ミナ</span>11時からはワールドモデルのセッション。</p>
+<p class="line"><span class="who">ケン</span>前回の見どころガイドで、ワールドモデルが今年のキーワードになりそうだと話しましたが、その中心にある1本が、ワールド・アクション・モデルは、追加学習なしでそのまま方策になる、という主張のタイトルの論文です。</p>
+<p class="line"><span class="who">ミナ</span>世界の先を予測するモデルが、そのまま行動も出せる、ということですか。</p>
+<p class="line"><span class="who">ケン</span>タイトルからはそう読めます。どこまでのタスクで、どのくらい成功するのかは、発表で確かめたいポイントです。このセッションには、記憶を持たせた、行動を条件にしたワールドモデルの研究と、動きの速い操作のために時間の文脈を学ぶテンポという研究もあります。</p>
+<p class="line"><span class="who">ミナ</span>11時半からは、データとシミュレーションと評価。</p>
+<p class="line"><span class="who">ケン</span>ここは個人的に一番楽しみなセッションです。1本目のタイトルは、ロボット操作で、私たちは実際には何をベンチマークしているのか。</p>
+<p class="line"><span class="who">ミナ</span>これまでの回でずっと話してきた、成功率の数字の裏側の話ですね。</p>
+<p class="line"><span class="who">ケン</span>そうなんです。2本目は、ロボットのデータセットの多様性を、モデルを使わずに速く測る指標の研究。ドロイドのように、環境の多様性を売りにしたデータセットがありましたが、その多様性を数字で比べられるようになると、データ集めの方針も立てやすくなります。3本目のモルモボットは、大規模なシミュレーションだけで、追加学習なしの操作を実現した、という研究です。シミュレーションから実機へ、の話の最新版として注目しています。</p>
+<p class="line"><span class="who">ミナ</span>午後2時半からのスポットライトはどうですか。</p>
+<p class="line"><span class="who">ケン</span>手元の小さな計算機で、ブイエルエーを速く動かす研究が目立ちます。ビットブイエルエーは、重みを1ビットにしたブイエルエー。イーグルブイエルエーは、ロボットに載せた計算機でリアルタイムに制御するために、非同期の推論を工夫したもの。リアクトは、ノイズを少しずつ取り除く処理を順送りにして、反応の速い制御を狙うものです。</p>
+<p class="line"><span class="who">ミナ</span>スモールブイエルエーの非同期推論の話とつながりますね。</p>
+<p class="line"><span class="who">ケン</span>はい。推論待ちでロボットが止まらないようにする、という問題意識が、今年はかなり広がっている印象です。もう一つ気になるのが、ワールドモデルを標的にして、ロボットの学習パイプラインを壊す、という攻撃の研究です。</p>
+<p class="line"><span class="who">ミナ</span>安全性の話ですね。</p>
+<p class="line"><span class="who">ケン</span>ワールドモデルでデータを作ったり方策を鍛えたりするのが当たり前になると、そこが新しい弱点になる。前回紹介した、フィジカルAIの安全性のワークショップとも重なるテーマです。</p>
+<p class="line"><span class="who">ミナ</span>夕方5時からはポスターセッションです。</p>
+<p class="line"><span class="who">ケン</span>一つ目のポスターセッションには、228本が並びます。会場はJWマリオットで、1番から116番が3階のローン・スター、117番から後ろが2階のグリフィンです。ここからは番号付きで、これまでの回とつながるものを挙げます。</p>
+<p class="line"><span class="who">ケン</span>27番は、固有受容感覚、つまりロボット自身の状態をもとに、画像のどこを見るかを選ぶ研究。1回目に紹介した、指先センサーをロボットの状態に結びつける研究と、発想が近そうです。33番は、物理的なフィードバックをブイエルエーに組み込むための、モジュール式の感覚の流れ、という研究です。</p>
+<p class="line"><span class="who">ミナ</span>触覚や力覚を入れる話ですね。</p>
+<p class="line"><span class="who">ケン</span>はい。それから、2回目のヒルサールにつながる、人の介入を使った実機の強化学習が、何本もあります。90番、91番、103番あたりです。85番は、実際に運用しながら、ロボットの群れ全体で強化学習する、という研究。69番は、スマートフォンでロボットの方策をその場で改善する、というタイトルで、データ集めの手軽さという意味で気になります。</p>
+<p class="line"><span class="who">ケン</span>111番は、フローマッチングの方策で、積分を1ステップにしても十分な場合がある、という実験的な研究。パイゼロやスモールブイエルエーで使われていた行動の生成を、もっと軽くできるかもしれない話です。124番は、モバイルマニピュレーションのデータを集めるための、着るタイプのインターフェースのようです。ユミやユービーと並べて見ると面白いと思います。</p>
+<p class="line"><span class="who">ミナ</span>初日だけでも、かなりの量ですね。</p>
+<p class="line"><span class="who">ケン</span>テーマをまとめると、体の違うロボットへの転移、ワールドモデル、評価とデータの測り方、そして手元で速く動かす工夫。これまでの回で話してきたことが、ほぼすべて初日に出そろっています。</p>
+<p class="line"><span class="who">ミナ</span>回り方のおすすめは。</p>
+<p class="line"><span class="who">ケン</span>午前中の口頭発表三つは、どれも聞く価値があると思います。そして夕方のポスターでは、口頭発表で気になった論文の著者に直接質問できます。口頭発表の論文も、同じ日のポスターセッションに出ているので、聞きそびれたらそこで捕まえられます。質問するときは、やはり、デモを何本集めたか、どのロボットで評価したか、人がどれだけ介入したか。これを聞くと、論文の数字がぐっと立体的に見えてきます。</p>
+<p class="line"><span class="who">ミナ</span>今回はコール2026初日の注目発表を紹介しました。時刻や場所は変わることもあるので、当日はプログラムで確認してください。ありがとうございました。</p>
+<p class="line"><span class="who">ケン</span>ありがとうございました。</p>
+</div>
+</main>
+</body>
+</html>

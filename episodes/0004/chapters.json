@@ -1,0 +1,38 @@
+{
+ "version": "1.2.0",
+ "title": "テキサスの州都オースティンってどんな街？",
+ "chapters": [
+  {
+   "startTime": 0.0,
+   "title": "オープニング"
+  },
+  {
+   "startTime": 42.45,
+   "title": "名前と歴史"
+  },
+  {
+   "startTime": 102.49,
+   "title": "音楽の街"
+  },
+  {
+   "startTime": 158.25,
+   "title": "コウモリと自然"
+  },
+  {
+   "startTime": 240.01,
+   "title": "食べ物"
+  },
+  {
+   "startTime": 286.22,
+   "title": "テックと大学"
+  },
+  {
+   "startTime": 347.74,
+   "title": "訪れるときのヒント"
+  },
+  {
+   "startTime": 385.69,
+   "title": "まとめ"
+  }
+ ]
+}

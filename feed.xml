@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:podcast="https://podcastindex.org/namespace/1.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI論文ラジオ</title>
+    <link>https://pn11.github.io/ai-podcast/</link>
+    <atom:link href="https://pn11.github.io/ai-podcast/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>気になった論文を AI が要約・解説し、合成音声で読み上げるポッドキャストです。 台本は AI が生成しており、誤りを含む可能性があります。正確な内容は各回で紹介している原論文をご確認ください。</description>
+    <language>ja</language>
+    <copyright>台本は CC BY 4.0。音声は各音声合成サービス・音声ライブラリの利用規約に従う（VOICEVOX 使用回は各キャラクターの規約）。原論文の著作権は各著者に帰属</copyright>
+    <lastBuildDate>Sat, 07 Nov 2026 09:30:00 +0900</lastBuildDate>
+    <generator>aipodcast</generator>
+    <image><url>https://pn11.github.io/ai-podcast/artwork.png</url><title>AI論文ラジオ</title><link>https://pn11.github.io/ai-podcast/</link></image>
+    <itunes:image href="https://pn11.github.io/ai-podcast/artwork.png"/>
+    <itunes:author>AI論文ラジオ</itunes:author>
+    <itunes:subtitle>読んだ論文を AI が解説するポッドキャスト</itunes:subtitle>
+    <itunes:summary>気になった論文を AI が要約・解説し、合成音声で読み上げるポッドキャストです。 台本は AI が生成しており、誤りを含む可能性があります。正確な内容は各回で紹介している原論文をご確認ください。</itunes:summary>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+    <itunes:category text="Science"></itunes:category>
+    <itunes:category text="Technology"></itunes:category>
+    <item>
+      <title>オースティンとアメリカの配車アプリ・ロボタクシー事情</title>
+      <guid isPermaLink="false">1d5e8b23-c04a-4f9e-b672-3a9f6e1c4d09</guid>
+      <link>https://pn11.github.io/ai-podcast/episodes/0009/</link>
+      <pubDate>Sat, 07 Nov 2026 09:30:00 +0900</pubDate>
+      <description>オースティンを中心に、テキサスとアメリカの配車アプリ・ロボタクシーの状況をまとめます。 Uber・Lyft の基本と使い方、2016年に Uber・Lyft がオースティンから撤退し州法で戻ってきた経緯、 オースティンの Waymo（Uber 経由）・Tesla Robotaxi・Zoox、2026年5月からのテキサス州の認可制度（SB 2807）、 ダラスなど他都市と全米の様子、乗るときの心得、ロボット研究とのつながり。 2026年11月6日時点の情報で、範囲や台数は資料によって食い違いがあり変化も速いため、利用前に各社の公式情報をご確認ください。
+
+チャプター:
+00:00 オープニング
+00:41 アメリカの配車アプリの基本
+01:32 オースティンと配車アプリの因縁
+02:26 オースティンのロボタクシー：ウェイモ
+03:16 オースティンのロボタクシー：テスラとズークス
+04:14 テキサスのルール
+05:12 テキサスのほかの町と全米の様子
+05:58 乗るときの心得
+07:04 ロボット研究とのつながり
+08:24 まとめ
+
+参考にした情報:
+・Waymo on Uber https://waymo.com/waymo-on-uber/
+・Austin American-Statesman: Waymo expands Austin service area https://www.statesman.com/business/technology/article/austin-waymo-uber-service-area-expands-21294497.php
+・Electrek: Tesla expands Robotaxi to entire Austin metro https://electrek.co/2026/06/03/tesla-robotaxi-expands-entire-austin-metro-only-20-vehicles/
+・Not a Tesla App: Tesla's Robotaxi geofences are smaller than advertised https://notateslaapp.com/news/4953/teslas-robotaxi-geofences-are-smaller-than-advertised-their-actual-sizes
+・Not a Tesla App: Tesla launches unsupervised Robotaxi rides in Austin https://www.notateslaapp.com/news/3527/tesla-launches-unsupervised-robotaxi-rides-in-austin
+・TechCrunch: Zoox brings its robotaxis to Austin and Miami https://techcrunch.com/2026/03/24/zoox-brings-its-robotaxis-to-austin-and-miami
+・TxDMV: Automated Vehicles Regulatory Program https://www.txdmv.gov/AVprogram
+・Spectrum News: New Texas law for autonomous vehicles takes effect end of May https://spectrumlocalnews.com/tx/austin/news/2026/05/12/changes-coming-to-avs
+・TechCrunch: Uber and Avride launch robotaxi service in Dallas https://techcrunch.com/2025/12/03/uber-and-avride-launch-robotaxi-service-in-dallas/
+・CNN Money: Uber and Lyft leave Austin over fingerprinting (2016) https://money.cnn.com/2016/05/07/technology/uber-lyft-fingerprints-austin/
+・Planetizen: State legislation forces Austin to lift ban on Lyft and Uber (2017) https://planetizen.com/node/92998/state-legislation-forces-austin-lift-ban-lyft-and-uber
+・Austin-Bergstrom International Airport: Travel tips &amp; FAQ https://www.flyaustin.com/aus-travel-tips-frequently-asked-questions
+
+台本は AI が生成したものです。誤りを含む可能性があるため、正確な内容は原論文をご確認ください。
+音声: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏</description>
+      <content:encoded><![CDATA[<p>オースティンを中心に、テキサスとアメリカの配車アプリ・ロボタクシーの状況をまとめます。 Uber・Lyft の基本と使い方、2016年に Uber・Lyft がオースティンから撤退し州法で戻ってきた経緯、 オースティンの Waymo（Uber 経由）・Tesla Robotaxi・Zoox、2026年5月からのテキサス州の認可制度（SB 2807）、 ダラスなど他都市と全米の様子、乗るときの心得、ロボット研究とのつながり。 2026年11月6日時点の情報で、範囲や台数は資料によって食い違いがあり変化も速いため、利用前に各社の公式情報をご確認ください。</p><p>チャプター:<br/>00:00 オープニング<br/>00:41 アメリカの配車アプリの基本<br/>01:32 オースティンと配車アプリの因縁<br/>02:26 オースティンのロボタクシー：ウェイモ<br/>03:16 オースティンのロボタクシー：テスラとズークス<br/>04:14 テキサスのルール<br/>05:12 テキサスのほかの町と全米の様子<br/>05:58 乗るときの心得<br/>07:04 ロボット研究とのつながり<br/>08:24 まとめ</p><p>参考にした情報:<br/>・Waymo on Uber https://waymo.com/waymo-on-uber/<br/>・Austin American-Statesman: Waymo expands Austin service area https://www.statesman.com/business/technology/article/austin-waymo-uber-service-area-expands-21294497.php<br/>・Electrek: Tesla expands Robotaxi to entire Austin metro https://electrek.co/2026/06/03/tesla-robotaxi-expands-entire-austin-metro-only-20-vehicles/<br/>・Not a Tesla App: Tesla's Robotaxi geofences are smaller than advertised https://notateslaapp.com/news/4953/teslas-robotaxi-geofences-are-smaller-than-advertised-their-actual-sizes<br/>・Not a Tesla App: Tesla launches unsupervised Robotaxi rides in Austin https://www.notateslaapp.com/news/3527/tesla-launches-unsupervised-robotaxi-rides-in-austin<br/>・TechCrunch: Zoox brings its robotaxis to Austin and Miami https://techcrunch.com/2026/03/24/zoox-brings-its-robotaxis-to-austin-and-miami<br/>・TxDMV: Automated Vehicles Regulatory Program https://www.txdmv.gov/AVprogram<br/>・Spectrum News: New Texas law for autonomous vehicles takes effect end of May https://spectrumlocalnews.com/tx/austin/news/2026/05/12/changes-coming-to-avs<br/>・TechCrunch: Uber and Avride launch robotaxi service in Dallas https://techcrunch.com/2025/12/03/uber-and-avride-launch-robotaxi-service-in-dallas/<br/>・CNN Money: Uber and Lyft leave Austin over fingerprinting (2016) https://money.cnn.com/2016/05/07/technology/uber-lyft-fingerprints-austin/<br/>・Planetizen: State legislation forces Austin to lift ban on Lyft and Uber (2017) https://planetizen.com/node/92998/state-legislation-forces-austin-lift-ban-lyft-and-uber<br/>・Austin-Bergstrom International Airport: Travel tips &amp; FAQ https://www.flyaustin.com/aus-travel-tips-frequently-asked-questions</p><p>台本は AI が生成したものです。誤りを含む可能性があるため、正確な内容は原論文をご確認ください。<br/>音声: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏</p>]]></content:encoded>
+      <enclosure url="https://github.com/pn11/ai-podcast/releases/download/ep-0009/0009.mp3" length="4369638" type="audio/mpeg"/>
+      <itunes:duration>00:09:06</itunes:duration>
+      <itunes:episode>9</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <podcast:transcript url="https://pn11.github.io/ai-podcast/episodes/0009/" type="text/html" language="ja"/>
+      <podcast:chapters url="https://pn11.github.io/ai-podcast/episodes/0009/chapters.json" type="application/json+chapters"/>
+    </item>
+    <item>
+      <title>ロボットと通信 ― 遅延、帯域、そして「つながらない」ときの設計</title>
+      <guid isPermaLink="false">6f2c9a84-1e5b-4d27-a3f9-9b4e7c0d2a08</guid>
+      <link>https://pn11.github.io/ai-podcast/episodes/0008/</link>
+      <pubDate>Sat, 07 Nov 2026 09:00:00 +0900</pubDate>
+      <description>ロボティクスと通信の組み合わせを、ロボットの中の配線から遠隔操作、クラウド、宇宙まで順に解説します。 遅延・帯域・ジッター・パケットロス、制御ループと通信の持ち時間、ROS 2 と通信の品質設定、遠隔操作と力覚の遅延、 火星探査車の監視型制御、クラウド・エッジ・手元での推論と非同期推論、Wi-Fi と 5G／ローカル5G、PTP による時刻同期、 マルチロボットと地下での通信中継、通信断のときの安全とセキュリティ。
+
+チャプター:
+00:00 オープニング
+00:39 通信の性能を表す四つの言葉
+01:34 ロボットの中の通信
+02:46 遠隔操作と遅延
+03:33 宇宙では遅延が分単位
+04:24 クラウドで考えるか、手元で考えるか
+05:32 無線の進化：Wi-Fi と 5G
+06:35 時刻をそろえる
+07:13 たくさんのロボットと通信
+08:10 安全とセキュリティ
+09:01 まとめ
+
+もっと知りたい人向けの資料:
+・ROS 2 Documentation: Quality of Service settings https://docs.ros.org/en/rolling/Concepts/Intermediate/About-Quality-of-Service-Settings.html
+・ITU-R M.2410: Minimum requirements related to technical performance for IMT-2020 radio interface(s) https://www.itu.int/pub/R-REP-M.2410
+・IEEE 1588 Precision Time Protocol https://standards.ieee.org/ieee/1588/6825/
+・DARPA Subterranean (SubT) Challenge (Wikipedia) https://en.wikipedia.org/wiki/DARPA_Subterranean_Challenge
+・EtherCAT Technology Group https://www.ethercat.org/
+
+台本は AI が生成したものです。誤りを含む可能性があるため、正確な内容は原論文をご確認ください。
+音声: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏</description>
+      <content:encoded><![CDATA[<p>ロボティクスと通信の組み合わせを、ロボットの中の配線から遠隔操作、クラウド、宇宙まで順に解説します。 遅延・帯域・ジッター・パケットロス、制御ループと通信の持ち時間、ROS 2 と通信の品質設定、遠隔操作と力覚の遅延、 火星探査車の監視型制御、クラウド・エッジ・手元での推論と非同期推論、Wi-Fi と 5G／ローカル5G、PTP による時刻同期、 マルチロボットと地下での通信中継、通信断のときの安全とセキュリティ。</p><p>チャプター:<br/>00:00 オープニング<br/>00:39 通信の性能を表す四つの言葉<br/>01:34 ロボットの中の通信<br/>02:46 遠隔操作と遅延<br/>03:33 宇宙では遅延が分単位<br/>04:24 クラウドで考えるか、手元で考えるか<br/>05:32 無線の進化：Wi-Fi と 5G<br/>06:35 時刻をそろえる<br/>07:13 たくさんのロボットと通信<br/>08:10 安全とセキュリティ<br/>09:01 まとめ</p><p>もっと知りたい人向けの資料:<br/>・ROS 2 Documentation: Quality of Service settings https://docs.ros.org/en/rolling/Concepts/Intermediate/About-Quality-of-Service-Settings.html<br/>・ITU-R M.2410: Minimum requirements related to technical performance for IMT-2020 radio interface(s) https://www.itu.int/pub/R-REP-M.2410<br/>・IEEE 1588 Precision Time Protocol https://standards.ieee.org/ieee/1588/6825/<br/>・DARPA Subterranean (SubT) Challenge (Wikipedia) https://en.wikipedia.org/wiki/DARPA_Subterranean_Challenge<br/>・EtherCAT Technology Group https://www.ethercat.org/</p><p>台本は AI が生成したものです。誤りを含む可能性があるため、正確な内容は原論文をご確認ください。<br/>音声: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏</p>]]></content:encoded>
+      <enclosure url="https://github.com/pn11/ai-podcast/releases/download/ep-0008/0008.mp3" length="4693390" type="audio/mpeg"/>
+      <itunes:duration>00:09:47</itunes:duration>
+      <itunes:episode>8</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <podcast:transcript url="https://pn11.github.io/ai-podcast/episodes/0008/" type="text/html" language="ja"/>
+      <podcast:chapters url="https://pn11.github.io/ai-podcast/episodes/0008/chapters.json" type="application/json+chapters"/>
+    </item>
+    <item>
+      <title>フライスのカッパってなに？ ― 判定の「一致」を測る</title>
+      <guid isPermaLink="false">4b9e2d71-7a3c-4e65-8f10-6c2d8a5b3e07</guid>
+      <link>https://pn11.github.io/ai-podcast/episodes/0007/</link>
+      <pubDate>Sat, 07 Nov 2026 08:30:00 +0900</pubDate>
+      <description>第1回で出てきた「フライスのカッパ 0.78 と 0.33」を入り口に、判定のそろい具合を測る指標を解説します。 一致率の落とし穴（偶然の一致）、コーエンのカッパの考え方と計算例、データが偏ったときのカッパのパラドックス、 3人以上で使えるフライスのカッパ、数字の読み方（Landis &amp; Koch の目安）、重み付きカッパとクリッペンドルフのアルファ、 ロボット研究（ラベル付け・成功判定・AI による自動採点）とのつながり。
+
+チャプター:
+00:00 オープニング
+00:43 そもそも何を測りたいのか
+01:22 一致率だけではだめな理由
+02:13 コーエンのカッパ
+03:42 偏りがあるときの落とし穴
+04:42 フライスのカッパ
+05:35 数字の読み方
+06:32 惜しい不一致をどう扱うか
+07:29 ロボット研究とのつながり
+08:32 まとめ
+
+参考文献:
+・Cohen, A Coefficient of Agreement for Nominal Scales (1960) https://doi.org/10.1177/001316446002000104
+・Cohen, Weighted kappa (1968) https://doi.org/10.1037/h0026256
+・Fleiss, Measuring nominal scale agreement among many raters (1971) https://doi.org/10.1037/h0031619
+・Landis &amp; Koch, The Measurement of Observer Agreement for Categorical Data (1977) https://doi.org/10.2307/2529310
+・Feinstein &amp; Cicchetti, High agreement but low kappa: I. The problems of two paradoxes (1990) https://doi.org/10.1016/0895-4356(90)90158-L
+・Krippendorff's alpha (Wikipedia) https://en.wikipedia.org/wiki/Krippendorff%27s_alpha
+・第1回で紹介: The Embodiment Gap in Robot Foundation Models https://arxiv.org/abs/2608.18433
+
+台本は AI が生成したものです。誤りを含む可能性があるため、正確な内容は原論文をご確認ください。
+音声: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏</description>
+      <content:encoded><![CDATA[<p>第1回で出てきた「フライスのカッパ 0.78 と 0.33」を入り口に、判定のそろい具合を測る指標を解説します。 一致率の落とし穴（偶然の一致）、コーエンのカッパの考え方と計算例、データが偏ったときのカッパのパラドックス、 3人以上で使えるフライスのカッパ、数字の読み方（Landis &amp; Koch の目安）、重み付きカッパとクリッペンドルフのアルファ、 ロボット研究（ラベル付け・成功判定・AI による自動採点）とのつながり。</p><p>チャプター:<br/>00:00 オープニング<br/>00:43 そもそも何を測りたいのか<br/>01:22 一致率だけではだめな理由<br/>02:13 コーエンのカッパ<br/>03:42 偏りがあるときの落とし穴<br/>04:42 フライスのカッパ<br/>05:35 数字の読み方<br/>06:32 惜しい不一致をどう扱うか<br/>07:29 ロボット研究とのつながり<br/>08:32 まとめ</p><p>参考文献:<br/>・Cohen, A Coefficient of Agreement for Nominal Scales (1960) https://doi.org/10.1177/001316446002000104<br/>・Cohen, Weighted kappa (1968) https://doi.org/10.1037/h0026256<br/>・Fleiss, Measuring nominal scale agreement among many raters (1971) https://doi.org/10.1037/h0031619<br/>・Landis &amp; Koch, The Measurement of Observer Agreement for Categorical Data (1977) https://doi.org/10.2307/2529310<br/>・Feinstein &amp; Cicchetti, High agreement but low kappa: I. The problems of two paradoxes (1990) https://doi.org/10.1016/0895-4356(90)90158-L<br/>・Krippendorff's alpha (Wikipedia) https://en.wikipedia.org/wiki/Krippendorff%27s_alpha<br/>・第1回で紹介: The Embodiment Gap in Robot Foundation Models https://arxiv.org/abs/2608.18433</p><p>台本は AI が生成したものです。誤りを含む可能性があるため、正確な内容は原論文をご確認ください。<br/>音声: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏</p>]]></content:encoded>
+      <enclosure url="https://github.com/pn11/ai-podcast/releases/download/ep-0007/0007.mp3" length="4426006" type="audio/mpeg"/>
+      <itunes:duration>00:09:13</itunes:duration>
+      <itunes:episode>7</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <podcast:transcript url="https://pn11.github.io/ai-podcast/episodes/0007/" type="text/html" language="ja"/>
+      <podcast:chapters url="https://pn11.github.io/ai-podcast/episodes/0007/chapters.json" type="application/json+chapters"/>
+    </item>
+    <item>
+      <title>強化学習と模倣学習の基礎 ― 方策ってなに？ DQN ってなに？</title>
+      <guid isPermaLink="false">8d1a6e37-4f2b-4c90-b5e8-1a7c3d9f6b06</guid>
+      <link>https://pn11.github.io/ai-podcast/episodes/0006/</link>
+      <pubDate>Sat, 07 Nov 2026 08:00:00 +0900</pubDate>
+      <description>これまでの回で使ってきた言葉の基礎をおさらいします。エージェントと環境、報酬、方策、価値と割引、Q学習、 DQN（経験リプレイ・ターゲットネットワーク・ε-greedy）、方策勾配とアクター・クリティック、 ロボットで強化学習を使う難しさ、模倣学習（ビヘイビア・クローニング、複合誤差、DAgger）、そして両者の組み合わせ。
+
+チャプター:
+00:00 オープニング
+00:33 登場人物：エージェントと環境
+01:20 方策ってなに？
+02:06 価値と割引
+02:50 キュー学習
+03:35 DQN ってなに？
+05:23 方策を直接学ぶ方法
+06:34 強化学習をロボットで使う難しさ
+07:32 模倣学習ってなに？
+09:02 二つの組み合わせ
+10:04 まとめ
+
+もっと知りたい人向けの文献:
+・Sutton &amp; Barto, Reinforcement Learning: An Introduction (2nd ed.) http://incompleteideas.net/book/the-book.html
+・Mnih et al., Playing Atari with Deep Reinforcement Learning (2013) https://arxiv.org/abs/1312.5602
+・Mnih et al., Human-level control through deep reinforcement learning (Nature, 2015) https://www.nature.com/articles/nature14236
+・Schulman et al., Proximal Policy Optimization Algorithms (2017) https://arxiv.org/abs/1707.06347
+・Haarnoja et al., Soft Actor-Critic (2018) https://arxiv.org/abs/1801.01290
+・Ross, Gordon &amp; Bagnell, A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning (DAgger, 2011) https://arxiv.org/abs/1011.0686
+
+台本は AI が生成したものです。誤りを含む可能性があるため、正確な内容は原論文をご確認ください。
+音声: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏</description>
+      <content:encoded><![CDATA[<p>これまでの回で使ってきた言葉の基礎をおさらいします。エージェントと環境、報酬、方策、価値と割引、Q学習、 DQN（経験リプレイ・ターゲットネットワーク・ε-greedy）、方策勾配とアクター・クリティック、 ロボットで強化学習を使う難しさ、模倣学習（ビヘイビア・クローニング、複合誤差、DAgger）、そして両者の組み合わせ。</p><p>チャプター:<br/>00:00 オープニング<br/>00:33 登場人物：エージェントと環境<br/>01:20 方策ってなに？<br/>02:06 価値と割引<br/>02:50 キュー学習<br/>03:35 DQN ってなに？<br/>05:23 方策を直接学ぶ方法<br/>06:34 強化学習をロボットで使う難しさ<br/>07:32 模倣学習ってなに？<br/>09:02 二つの組み合わせ<br/>10:04 まとめ</p><p>もっと知りたい人向けの文献:<br/>・Sutton &amp; Barto, Reinforcement Learning: An Introduction (2nd ed.) http://incompleteideas.net/book/the-book.html<br/>・Mnih et al., Playing Atari with Deep Reinforcement Learning (2013) https://arxiv.org/abs/1312.5602<br/>・Mnih et al., Human-level control through deep reinforcement learning (Nature, 2015) https://www.nature.com/articles/nature14236<br/>・Schulman et al., Proximal Policy Optimization Algorithms (2017) https://arxiv.org/abs/1707.06347<br/>・Haarnoja et al., Soft Actor-Critic (2018) https://arxiv.org/abs/1801.01290<br/>・Ross, Gordon &amp; Bagnell, A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning (DAgger, 2011) https://arxiv.org/abs/1011.0686</p><p>台本は AI が生成したものです。誤りを含む可能性があるため、正確な内容は原論文をご確認ください。<br/>音声: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏</p>]]></content:encoded>
+      <enclosure url="https://github.com/pn11/ai-podcast/releases/download/ep-0006/0006.mp3" length="5210786" type="audio/mpeg"/>
+      <itunes:duration>00:10:51</itunes:duration>
+      <itunes:episode>6</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <podcast:transcript url="https://pn11.github.io/ai-podcast/episodes/0006/" type="text/html" language="ja"/>
+      <podcast:chapters url="https://pn11.github.io/ai-podcast/episodes/0006/chapters.json" type="application/json+chapters"/>
+    </item>
+    <item>
+      <title>CoRL 2026 初日の注目発表 ― 口頭発表・スポットライト・ポスター</title>
+      <guid isPermaLink="false">2c7f4e90-6b1d-4d35-9a72-8e0b3c5f1a05</guid>
+      <link>https://pn11.github.io/ai-podcast/episodes/0005/</link>
+      <pubDate>Sat, 07 Nov 2026 07:30:00 +0900</pubDate>
+      <description>CoRL 2026 初日（11月9日）のプログラムから、これまでの回とつながる発表を紹介します。 朝のスポットライト S1、口頭発表 O1〜O3、午後のスポットライト S2、ポスターセッション 1。 紹介は公式プログラムのタイトル・セッション・時刻にもとづき、論文の中身は未確認です。詳細は各論文と当日のプログラムでご確認ください。
+
+チャプター:
+00:00 オープニング
+01:06 朝のスポットライト：汎用方策、記憶、転移
+02:10 口頭発表1：汎用方策とコンテキストのスケーリング
+02:58 口頭発表2：ワールドモデルと時間の表現
+03:36 口頭発表3：データ、シミュレーション、評価
+04:21 午後のスポットライト：効率的な実行とワールドモデル
+05:15 ポスターセッション1のおすすめ
+06:44 まとめ
+
+取り上げた発表（会場は口頭発表・スポットライトがヒルトン、ポスターが JW マリオット）:
+・[S1 9:00–] EmbodiSteer: Steering Embodiment-Agnostic Visuomotor Policies with Joint-Space Guidance for Zero-Shot Cross-Embodiment Deployment（ポスター 65） https://openreview.net/venue?id=robot-learning.org%2FCoRL
+・[S1] ZETA: A Controlled Study of Zero-Shot Cross-Embodiment VLA Transfer for Tabletop Manipulation（ポスター 66） https://openreview.net/venue?id=robot-learning.org%2FCoRL
+・[S1] MEM: Multi-Scale Embodied Memory for Vision Language Action Models（42） / MolmoAct2（28） / When Vision Overrides Language（114） https://openreview.net/venue?id=robot-learning.org%2FCoRL
+・[O1 10:30–] π0.7 / Being-H0.5 / RoboTTT（ポスター 63, 67, 47） https://openreview.net/venue?id=robot-learning.org%2FCoRL
+・[O2 11:00–] World Action Models are Zero-shot Policies / Memory-augmented Action-conditioned World Model / TEMPO（51, 53, 48） https://openreview.net/venue?id=robot-learning.org%2FCoRL
+・[O3 11:30–] What Are We Actually Benchmarking in Robot Manipulation? / Diversity You Can Actually Measure / MolmoB0T（116, 199, 196） https://openreview.net/venue?id=robot-learning.org%2FCoRL
+・[S2 14:30–] BitVLA / EagleVLA / REACT / Targeting World Models to Compromise Robot Learning Pipelines（59, 60, 61, 54） https://openreview.net/venue?id=robot-learning.org%2FCoRL
+・[ポスター1 17:00–] 27 Think Proprioceptively / 33 Modular Sensory Stream / 69 RoboPocket / 85 Learning While Deploying / 90 UniIntervene / 91 Preference-Calibrated HIL RL / 103 Q-OIL / 111 When One Step Is Enough / 124 SuperSuit https://openreview.net/venue?id=robot-learning.org%2FCoRL
+・CoRL 2026 公式サイト https://www.corl.org/
+
+台本は AI が生成したものです。誤りを含む可能性があるため、正確な内容は原論文をご確認ください。
+音声: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏</description>
+      <content:encoded><![CDATA[<p>CoRL 2026 初日（11月9日）のプログラムから、これまでの回とつながる発表を紹介します。 朝のスポットライト S1、口頭発表 O1〜O3、午後のスポットライト S2、ポスターセッション 1。 紹介は公式プログラムのタイトル・セッション・時刻にもとづき、論文の中身は未確認です。詳細は各論文と当日のプログラムでご確認ください。</p><p>チャプター:<br/>00:00 オープニング<br/>01:06 朝のスポットライト：汎用方策、記憶、転移<br/>02:10 口頭発表1：汎用方策とコンテキストのスケーリング<br/>02:58 口頭発表2：ワールドモデルと時間の表現<br/>03:36 口頭発表3：データ、シミュレーション、評価<br/>04:21 午後のスポットライト：効率的な実行とワールドモデル<br/>05:15 ポスターセッション1のおすすめ<br/>06:44 まとめ</p><p>取り上げた発表（会場は口頭発表・スポットライトがヒルトン、ポスターが JW マリオット）:<br/>・[S1 9:00–] EmbodiSteer: Steering Embodiment-Agnostic Visuomotor Policies with Joint-Space Guidance for Zero-Shot Cross-Embodiment Deployment（ポスター 65） https://openreview.net/venue?id=robot-learning.org%2FCoRL<br/>・[S1] ZETA: A Controlled Study of Zero-Shot Cross-Embodiment VLA Transfer for Tabletop Manipulation（ポスター 66） https://openreview.net/venue?id=robot-learning.org%2FCoRL<br/>・[S1] MEM: Multi-Scale Embodied Memory for Vision Language Action Models（42） / MolmoAct2（28） / When Vision Overrides Language（114） https://openreview.net/venue?id=robot-learning.org%2FCoRL<br/>・[O1 10:30–] π0.7 / Being-H0.5 / RoboTTT（ポスター 63, 67, 47） https://openreview.net/venue?id=robot-learning.org%2FCoRL<br/>・[O2 11:00–] World Action Models are Zero-shot Policies / Memory-augmented Action-conditioned World Model / TEMPO（51, 53, 48） https://openreview.net/venue?id=robot-learning.org%2FCoRL<br/>・[O3 11:30–] What Are We Actually Benchmarking in Robot Manipulation? / Diversity You Can Actually Measure / MolmoB0T（116, 199, 196） https://openreview.net/venue?id=robot-learning.org%2FCoRL<br/>・[S2 14:30–] BitVLA / EagleVLA / REACT / Targeting World Models to Compromise Robot Learning Pipelines（59, 60, 61, 54） https://openreview.net/venue?id=robot-learning.org%2FCoRL<br/>・[ポスター1 17:00–] 27 Think Proprioceptively / 33 Modular Sensory Stream / 69 RoboPocket / 85 Learning While Deploying / 90 UniIntervene / 91 Preference-Calibrated HIL RL / 103 Q-OIL / 111 When One Step Is Enough / 124 SuperSuit https://openreview.net/venue?id=robot-learning.org%2FCoRL<br/>・CoRL 2026 公式サイト https://www.corl.org/</p><p>台本は AI が生成したものです。誤りを含む可能性があるため、正確な内容は原論文をご確認ください。<br/>音声: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏</p>]]></content:encoded>
+      <enclosure url="https://github.com/pn11/ai-podcast/releases/download/ep-0005/0005.mp3" length="3679330" type="audio/mpeg"/>
+      <itunes:duration>00:07:40</itunes:duration>
+      <itunes:episode>5</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <podcast:transcript url="https://pn11.github.io/ai-podcast/episodes/0005/" type="text/html" language="ja"/>
+      <podcast:chapters url="https://pn11.github.io/ai-podcast/episodes/0005/chapters.json" type="application/json+chapters"/>
+    </item>
+    <item>
+      <title>テキサスの州都オースティンってどんな街？</title>
+      <guid isPermaLink="false">9e3b7c15-2d6f-4a88-b0c4-7d1e5f2a8b04</guid>
+      <link>https://pn11.github.io/ai-podcast/episodes/0004/</link>
+      <pubDate>Sat, 07 Nov 2026 07:00:00 +0900</pubDate>
+      <description>論文から少し離れて、テキサス州の州都オースティンを紹介します。 名前と歴史、議事堂、「ライブミュージックの世界の首都」、橋の下のコウモリ、湧き水のプール、 テキサス・バーベキューとブレックファスト・タコス、テックと大学の街としての顔、訪れるときのヒント。 数字や時期は資料によって幅があるため、最新情報は各公式サイトでご確認ください。
+
+チャプター:
+00:00 オープニング
+00:42 名前と歴史
+01:42 音楽の街
+02:38 コウモリと自然
+04:00 食べ物
+04:46 テックと大学
+05:47 訪れるときのヒント
+06:25 まとめ
+
+参考にした情報:
+・KUT: Field guide to Austin's bats — when to see them at Congress Bridge https://www.kut.org/austin/2024-09-16/field-guide-austin-tx-bats-when-to-see-congress-bridge
+・Texas Historical Commission Atlas: Texas State Capitol https://atlas.thc.texas.gov/Details/5507014150
+・Texas Highways: The lost history of Texas granite https://texashighways.com/culture/the-lost-history-of-texas-granite/
+・KUT: How did Austin become the Live Music Capital of the World? https://www.kut.org/post/how-did-austin-become-live-music-capital-world
+・UT Austin Life &amp; Letters: How Austin became the Live Music Capital of the World https://lifeandletters.la.utexas.edu/2024/10/how-austin-became-the-live-music-capital-of-the-world/
+・Barton Springs Pool (Wikipedia) https://en.wikipedia.org/wiki/Barton_Springs_Pool
+
+台本は AI が生成したものです。誤りを含む可能性があるため、正確な内容は原論文をご確認ください。
+音声: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏</description>
+      <content:encoded><![CDATA[<p>論文から少し離れて、テキサス州の州都オースティンを紹介します。 名前と歴史、議事堂、「ライブミュージックの世界の首都」、橋の下のコウモリ、湧き水のプール、 テキサス・バーベキューとブレックファスト・タコス、テックと大学の街としての顔、訪れるときのヒント。 数字や時期は資料によって幅があるため、最新情報は各公式サイトでご確認ください。</p><p>チャプター:<br/>00:00 オープニング<br/>00:42 名前と歴史<br/>01:42 音楽の街<br/>02:38 コウモリと自然<br/>04:00 食べ物<br/>04:46 テックと大学<br/>05:47 訪れるときのヒント<br/>06:25 まとめ</p><p>参考にした情報:<br/>・KUT: Field guide to Austin's bats — when to see them at Congress Bridge https://www.kut.org/austin/2024-09-16/field-guide-austin-tx-bats-when-to-see-congress-bridge<br/>・Texas Historical Commission Atlas: Texas State Capitol https://atlas.thc.texas.gov/Details/5507014150<br/>・Texas Highways: The lost history of Texas granite https://texashighways.com/culture/the-lost-history-of-texas-granite/<br/>・KUT: How did Austin become the Live Music Capital of the World? https://www.kut.org/post/how-did-austin-become-live-music-capital-world<br/>・UT Austin Life &amp; Letters: How Austin became the Live Music Capital of the World https://lifeandletters.la.utexas.edu/2024/10/how-austin-became-the-live-music-capital-of-the-world/<br/>・Barton Springs Pool (Wikipedia) https://en.wikipedia.org/wiki/Barton_Springs_Pool</p><p>台本は AI が生成したものです。誤りを含む可能性があるため、正確な内容は原論文をご確認ください。<br/>音声: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏</p>]]></content:encoded>
+      <enclosure url="https://github.com/pn11/ai-podcast/releases/download/ep-0004/0004.mp3" length="3261993" type="audio/mpeg"/>
+      <itunes:duration>00:06:48</itunes:duration>
+      <itunes:episode>4</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <podcast:transcript url="https://pn11.github.io/ai-podcast/episodes/0004/" type="text/html" language="ja"/>
+      <podcast:chapters url="https://pn11.github.io/ai-podcast/episodes/0004/chapters.json" type="application/json+chapters"/>
+    </item>
+    <item>
+      <title>CoRL 2026 見どころガイド ― 基調講演・デモ・ワークショップ</title>
+      <guid isPermaLink="false">5a8d2f61-9c3e-4b7a-8e14-3f6b0c9d7e03</guid>
+      <link>https://pn11.github.io/ai-podcast/episodes/0003/</link>
+      <pubDate>Sat, 07 Nov 2026 06:30:00 +0900</pubDate>
+      <description>11月9日からオースティンで開かれる CoRL 2026 の見どころを紹介します。 基調講演・若手研究者の基調講演、実機デモ（AIRoA の YUBI 体験など）、企業展示、 これまでの回とつながるワークショップ（UMI Arena、How Real Is Real Enough?、Agentic Robotics、Physical AI Safety、Do Robots Need World Models?）を取り上げます。 採択687本（口頭発表21本・スポットライト72本）。内容は 2026年11月6日時点の公開情報にもとづきます。日程・会場は資料によって食い違いがあるため、必ず公式プログラムで確認してください。
+
+チャプター:
+00:00 オープニング
+01:24 基調講演
+02:26 若手研究者の基調講演
+03:13 ライブデモ
+04:38 企業展示
+05:07 ワークショップ
+07:07 まとめ
+
+参考にした情報:
+・CoRL 2026 公式サイト（プログラム・基調講演・デモ・ワークショップ） https://www.corl.org/
+・CoRL 2026 Call for Demos https://www.corl.org/contributions/call-for-demos
+・CoRL 2026 Early Career Keynotes https://www.corl.org/program/early-career-keynotes
+・CoRL 2026 採択結果の告知（Georgia Chalvatzaki） https://x.com/GeorgiaChal/status/2095935964786954746
+・NVIDIA at CoRL 2026 https://www.nvidia.com/en-us/events/corl/
+・AIRoA: Three Research Papers and a Demo Proposal Accepted to CoRL 2026 https://airoa.org/updates/20261028/797/
+・AIRoA、CoRL 2026 にてワークショップ「The UMI Arena」の開催が決定 https://prtimes.jp/main/html/rd/p/000000017.000158322.html
+・YUBI: Yielding Universal Bidigital Interface for Bimanual Dexterous Manipulation at Scale https://arxiv.org/abs/2606.10244
+・How Real Is Real Enough? (CoRL 2026 Workshop) https://how-real-is-real-enough.github.io/
+・Workshop on Agentic Robotics (CoRL 2026) https://agentic-robotics-workshop.github.io/
+・The Science of Physical AI Safety (CoRL 2026 Workshop) https://spais-ws.org/
+
+台本は AI が生成したものです。誤りを含む可能性があるため、正確な内容は原論文をご確認ください。
+音声: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏</description>
+      <content:encoded><![CDATA[<p>11月9日からオースティンで開かれる CoRL 2026 の見どころを紹介します。 基調講演・若手研究者の基調講演、実機デモ（AIRoA の YUBI 体験など）、企業展示、 これまでの回とつながるワークショップ（UMI Arena、How Real Is Real Enough?、Agentic Robotics、Physical AI Safety、Do Robots Need World Models?）を取り上げます。 採択687本（口頭発表21本・スポットライト72本）。内容は 2026年11月6日時点の公開情報にもとづきます。日程・会場は資料によって食い違いがあるため、必ず公式プログラムで確認してください。</p><p>チャプター:<br/>00:00 オープニング<br/>01:24 基調講演<br/>02:26 若手研究者の基調講演<br/>03:13 ライブデモ<br/>04:38 企業展示<br/>05:07 ワークショップ<br/>07:07 まとめ</p><p>参考にした情報:<br/>・CoRL 2026 公式サイト（プログラム・基調講演・デモ・ワークショップ） https://www.corl.org/<br/>・CoRL 2026 Call for Demos https://www.corl.org/contributions/call-for-demos<br/>・CoRL 2026 Early Career Keynotes https://www.corl.org/program/early-career-keynotes<br/>・CoRL 2026 採択結果の告知（Georgia Chalvatzaki） https://x.com/GeorgiaChal/status/2095935964786954746<br/>・NVIDIA at CoRL 2026 https://www.nvidia.com/en-us/events/corl/<br/>・AIRoA: Three Research Papers and a Demo Proposal Accepted to CoRL 2026 https://airoa.org/updates/20261028/797/<br/>・AIRoA、CoRL 2026 にてワークショップ「The UMI Arena」の開催が決定 https://prtimes.jp/main/html/rd/p/000000017.000158322.html<br/>・YUBI: Yielding Universal Bidigital Interface for Bimanual Dexterous Manipulation at Scale https://arxiv.org/abs/2606.10244<br/>・How Real Is Real Enough? (CoRL 2026 Workshop) https://how-real-is-real-enough.github.io/<br/>・Workshop on Agentic Robotics (CoRL 2026) https://agentic-robotics-workshop.github.io/<br/>・The Science of Physical AI Safety (CoRL 2026 Workshop) https://spais-ws.org/</p><p>台本は AI が生成したものです。誤りを含む可能性があるため、正確な内容は原論文をご確認ください。<br/>音声: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏</p>]]></content:encoded>
+      <enclosure url="https://github.com/pn11/ai-podcast/releases/download/ep-0003/0003.mp3" length="3842720" type="audio/mpeg"/>
+      <itunes:duration>00:08:00</itunes:duration>
+      <itunes:episode>3</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <podcast:transcript url="https://pn11.github.io/ai-podcast/episodes/0003/" type="text/html" language="ja"/>
+      <podcast:chapters url="https://pn11.github.io/ai-podcast/episodes/0003/chapters.json" type="application/json+chapters"/>
+    </item>
+    <item>
+      <title>CoRL 2026 予習 ― 模倣学習からVLA、データ、実機RL、Sim-to-Realまで</title>
+      <guid isPermaLink="false">c4e9a7d3-8b2f-4c61-a0e5-5f3d9b7c2e02</guid>
+      <link>https://pn11.github.io/ai-podcast/episodes/0002/</link>
+      <pubDate>Thu, 05 Nov 2026 21:00:00 +0900</pubDate>
+      <description>CoRL 2026 の予習として、ロボット学習の土台になっている論文を駆け足で紹介します。 ACT/ALOHA、Diffusion Policy、RT-2、OpenVLA、π0/π0.5、SmolVLA、Open X-Embodiment/DROID、UMI、HIL-SERL、RMA と Domain Randomization。
+
+チャプター:
+00:00 オープニング
+00:35 ACT / ALOHA
+01:58 Diffusion Policy
+02:56 RT-2
+03:43 OpenVLA
+04:18 π0 / π0.5
+05:33 SmolVLA
+06:31 Open X-Embodiment / DROID
+07:37 UMI
+08:37 HIL-SERL
+09:42 RMA / Domain Randomization
+11:17 まとめ
+
+紹介した論文:
+・Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware (ACT/ALOHA) https://arxiv.org/abs/2304.13705
+・Diffusion Policy: Visuomotor Policy Learning via Action Diffusion https://arxiv.org/abs/2303.04137
+・RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control https://arxiv.org/abs/2307.15818
+・OpenVLA: An Open-Source Vision-Language-Action Model https://arxiv.org/abs/2406.09246
+・π0: A Vision-Language-Action Flow Model for General Robot Control https://arxiv.org/abs/2410.24164
+・π0.5: a Vision-Language-Action Model with Open-World Generalization https://arxiv.org/abs/2504.16054
+・SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics https://arxiv.org/abs/2506.01844
+・Open X-Embodiment: Robotic Learning Datasets and RT-X Models https://arxiv.org/abs/2310.08864
+・DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset https://arxiv.org/abs/2403.12945
+・Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots https://arxiv.org/abs/2402.10329
+・Precise and Dexterous Robotic Manipulation via Human-in-the-Loop Reinforcement Learning (HIL-SERL) https://arxiv.org/abs/2410.21845
+・RMA: Rapid Motor Adaptation for Legged Robots https://arxiv.org/abs/2107.04034
+・Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World https://arxiv.org/abs/1703.06907
+
+台本は AI が生成したものです。誤りを含む可能性があるため、正確な内容は原論文をご確認ください。
+音声: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏</description>
+      <content:encoded><![CDATA[<p>CoRL 2026 の予習として、ロボット学習の土台になっている論文を駆け足で紹介します。 ACT/ALOHA、Diffusion Policy、RT-2、OpenVLA、π0/π0.5、SmolVLA、Open X-Embodiment/DROID、UMI、HIL-SERL、RMA と Domain Randomization。</p><p>チャプター:<br/>00:00 オープニング<br/>00:35 ACT / ALOHA<br/>01:58 Diffusion Policy<br/>02:56 RT-2<br/>03:43 OpenVLA<br/>04:18 π0 / π0.5<br/>05:33 SmolVLA<br/>06:31 Open X-Embodiment / DROID<br/>07:37 UMI<br/>08:37 HIL-SERL<br/>09:42 RMA / Domain Randomization<br/>11:17 まとめ</p><p>紹介した論文:<br/>・Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware (ACT/ALOHA) https://arxiv.org/abs/2304.13705<br/>・Diffusion Policy: Visuomotor Policy Learning via Action Diffusion https://arxiv.org/abs/2303.04137<br/>・RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control https://arxiv.org/abs/2307.15818<br/>・OpenVLA: An Open-Source Vision-Language-Action Model https://arxiv.org/abs/2406.09246<br/>・π0: A Vision-Language-Action Flow Model for General Robot Control https://arxiv.org/abs/2410.24164<br/>・π0.5: a Vision-Language-Action Model with Open-World Generalization https://arxiv.org/abs/2504.16054<br/>・SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics https://arxiv.org/abs/2506.01844<br/>・Open X-Embodiment: Robotic Learning Datasets and RT-X Models https://arxiv.org/abs/2310.08864<br/>・DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset https://arxiv.org/abs/2403.12945<br/>・Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots https://arxiv.org/abs/2402.10329<br/>・Precise and Dexterous Robotic Manipulation via Human-in-the-Loop Reinforcement Learning (HIL-SERL) https://arxiv.org/abs/2410.21845<br/>・RMA: Rapid Motor Adaptation for Legged Robots https://arxiv.org/abs/2107.04034<br/>・Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World https://arxiv.org/abs/1703.06907</p><p>台本は AI が生成したものです。誤りを含む可能性があるため、正確な内容は原論文をご確認ください。<br/>音声: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏</p>]]></content:encoded>
+      <enclosure url="https://github.com/pn11/ai-podcast/releases/download/ep-0002/0002.mp3" length="5961457" type="audio/mpeg"/>
+      <itunes:duration>00:12:25</itunes:duration>
+      <itunes:episode>2</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <podcast:transcript url="https://pn11.github.io/ai-podcast/episodes/0002/" type="text/html" language="ja"/>
+      <podcast:chapters url="https://pn11.github.io/ai-podcast/episodes/0002/chapters.json" type="application/json+chapters"/>
+    </item>
+    <item>
+      <title>産総研 Embodied AI チームの2本 ― 「身体のギャップ」と「指先センシング」</title>
+      <guid isPermaLink="false">7b1f6c2e-3d4a-4f0e-9a51-2c8e6d1b4a01</guid>
+      <link>https://pn11.github.io/ai-podcast/episodes/0001/</link>
+      <pubDate>Thu, 05 Nov 2026 20:00:00 +0900</pubDate>
+      <description>ロボット基盤モデルを別のロボットに移すときに残る作業を整理したサーベイ「The Embodiment Gap in Robot Foundation Models」と、 指先の近接・触覚センサーを固有受容感覚と未来の行動に結びつけて事前学習する「ProPrA」を紹介します。
+
+チャプター:
+00:00 オープニング
+00:38 1本目：The Embodiment Gap in Robot Foundation Models
+05:46 2本目：ProPrA（指先センシング）
+11:24 2本を並べて読む
+
+紹介した論文:
+・The Embodiment Gap in Robot Foundation Models (Domae et al.) https://arxiv.org/abs/2608.18433
+・Self-Supervised Anchoring of Fingertip Sensing to Proprioception and Proactive Actions for Robot Imitation Learning (Motoda et al.) https://arxiv.org/abs/2609.29822
+
+台本は AI が生成したものです。誤りを含む可能性があるため、正確な内容は原論文をご確認ください。
+音声: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏</description>
+      <content:encoded><![CDATA[<p>ロボット基盤モデルを別のロボットに移すときに残る作業を整理したサーベイ「The Embodiment Gap in Robot Foundation Models」と、 指先の近接・触覚センサーを固有受容感覚と未来の行動に結びつけて事前学習する「ProPrA」を紹介します。</p><p>チャプター:<br/>00:00 オープニング<br/>00:38 1本目：The Embodiment Gap in Robot Foundation Models<br/>05:46 2本目：ProPrA（指先センシング）<br/>11:24 2本を並べて読む</p><p>紹介した論文:<br/>・The Embodiment Gap in Robot Foundation Models (Domae et al.) https://arxiv.org/abs/2608.18433<br/>・Self-Supervised Anchoring of Fingertip Sensing to Proprioception and Proactive Actions for Robot Imitation Learning (Motoda et al.) https://arxiv.org/abs/2609.29822</p><p>台本は AI が生成したものです。誤りを含む可能性があるため、正確な内容は原論文をご確認ください。<br/>音声: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏</p>]]></content:encoded>
+      <enclosure url="https://github.com/pn11/ai-podcast/releases/download/ep-0001/0001.mp3" length="5970925" type="audio/mpeg"/>
+      <itunes:duration>00:12:26</itunes:duration>
+      <itunes:episode>1</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <podcast:transcript url="https://pn11.github.io/ai-podcast/episodes/0001/" type="text/html" language="ja"/>
+      <podcast:chapters url="https://pn11.github.io/ai-podcast/episodes/0001/chapters.json" type="application/json+chapters"/>
+    </item>
+  </channel>
+</rss>

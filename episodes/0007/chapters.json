@@ -1,0 +1,46 @@
+{
+ "version": "1.2.0",
+ "title": "フライスのカッパってなに？ ― 判定の「一致」を測る",
+ "chapters": [
+  {
+   "startTime": 0.0,
+   "title": "オープニング"
+  },
+  {
+   "startTime": 43.92,
+   "title": "そもそも何を測りたいのか"
+  },
+  {
+   "startTime": 82.75,
+   "title": "一致率だけではだめな理由"
+  },
+  {
+   "startTime": 133.85,
+   "title": "コーエンのカッパ"
+  },
+  {
+   "startTime": 222.45,
+   "title": "偏りがあるときの落とし穴"
+  },
+  {
+   "startTime": 282.02,
+   "title": "フライスのカッパ"
+  },
+  {
+   "startTime": 335.84,
+   "title": "数字の読み方"
+  },
+  {
+   "startTime": 392.12,
+   "title": "惜しい不一致をどう扱うか"
+  },
+  {
+   "startTime": 449.48,
+   "title": "ロボット研究とのつながり"
+  },
+  {
+   "startTime": 512.76,
+   "title": "まとめ"
+  }
+ ]
+}
