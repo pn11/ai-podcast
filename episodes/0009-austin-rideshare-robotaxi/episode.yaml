@@ -1,0 +1,24 @@
+number: 9
+guid: 1d5e8b23-c04a-4f9e-b672-3a9f6e1c4d09   # 一度公開したら変更しない
+title: オースティンとアメリカの配車アプリ・ロボタクシー事情
+summary: >-
+  オースティンを中心に、テキサスとアメリカの配車アプリ・ロボタクシーの状況をまとめます。
+  Uber・Lyft の基本と使い方、2016年に Uber・Lyft がオースティンから撤退し州法で戻ってきた経緯、
+  オースティンの Waymo（Uber 経由）・Tesla Robotaxi・Zoox、2026年5月からのテキサス州の認可制度（SB 2807）、
+  ダラスなど他都市と全米の様子、乗るときの心得、ロボット研究とのつながり。
+  2026年11月6日時点の情報で、範囲や台数は資料によって食い違いがあり変化も速いため、利用前に各社の公式情報をご確認ください。
+published_at: 2026-11-07T09:30:00+09:00
+links_label: 参考にした情報
+papers:
+  - { title: "Waymo on Uber", url: "https://waymo.com/waymo-on-uber/" }
+  - { title: "Austin American-Statesman: Waymo expands Austin service area", url: "https://www.statesman.com/business/technology/article/austin-waymo-uber-service-area-expands-21294497.php" }
+  - { title: "Electrek: Tesla expands Robotaxi to entire Austin metro", url: "https://electrek.co/2026/06/03/tesla-robotaxi-expands-entire-austin-metro-only-20-vehicles/" }
+  - { title: "Not a Tesla App: Tesla's Robotaxi geofences are smaller than advertised", url: "https://notateslaapp.com/news/4953/teslas-robotaxi-geofences-are-smaller-than-advertised-their-actual-sizes" }
+  - { title: "Not a Tesla App: Tesla launches unsupervised Robotaxi rides in Austin", url: "https://www.notateslaapp.com/news/3527/tesla-launches-unsupervised-robotaxi-rides-in-austin" }
+  - { title: "TechCrunch: Zoox brings its robotaxis to Austin and Miami", url: "https://techcrunch.com/2026/03/24/zoox-brings-its-robotaxis-to-austin-and-miami" }
+  - { title: "TxDMV: Automated Vehicles Regulatory Program", url: "https://www.txdmv.gov/AVprogram" }
+  - { title: "Spectrum News: New Texas law for autonomous vehicles takes effect end of May", url: "https://spectrumlocalnews.com/tx/austin/news/2026/05/12/changes-coming-to-avs" }
+  - { title: "TechCrunch: Uber and Avride launch robotaxi service in Dallas", url: "https://techcrunch.com/2025/12/03/uber-and-avride-launch-robotaxi-service-in-dallas/" }
+  - { title: "CNN Money: Uber and Lyft leave Austin over fingerprinting (2016)", url: "https://money.cnn.com/2016/05/07/technology/uber-lyft-fingerprints-austin/" }
+  - { title: "Planetizen: State legislation forces Austin to lift ban on Lyft and Uber (2017)", url: "https://planetizen.com/node/92998/state-legislation-forces-austin-lift-ban-lyft-and-uber" }
+  - { title: "Austin-Bergstrom International Airport: Travel tips & FAQ", url: "https://www.flyaustin.com/aus-travel-tips-frequently-asked-questions" }
