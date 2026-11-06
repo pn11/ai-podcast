@@ -1,0 +1,16 @@
+number: 8
+guid: 6f2c9a84-1e5b-4d27-a3f9-9b4e7c0d2a08   # 一度公開したら変更しない
+title: ロボットと通信 ― 遅延、帯域、そして「つながらない」ときの設計
+summary: >-
+  ロボティクスと通信の組み合わせを、ロボットの中の配線から遠隔操作、クラウド、宇宙まで順に解説します。
+  遅延・帯域・ジッター・パケットロス、制御ループと通信の持ち時間、ROS 2 と通信の品質設定、遠隔操作と力覚の遅延、
+  火星探査車の監視型制御、クラウド・エッジ・手元での推論と非同期推論、Wi-Fi と 5G／ローカル5G、PTP による時刻同期、
+  マルチロボットと地下での通信中継、通信断のときの安全とセキュリティ。
+published_at: 2026-11-07T09:00:00+09:00
+links_label: もっと知りたい人向けの資料
+papers:
+  - { title: "ROS 2 Documentation: Quality of Service settings", url: "https://docs.ros.org/en/rolling/Concepts/Intermediate/About-Quality-of-Service-Settings.html" }
+  - { title: "ITU-R M.2410: Minimum requirements related to technical performance for IMT-2020 radio interface(s)", url: "https://www.itu.int/pub/R-REP-M.2410" }
+  - { title: "IEEE 1588 Precision Time Protocol", url: "https://standards.ieee.org/ieee/1588/6825/" }
+  - { title: "DARPA Subterranean (SubT) Challenge (Wikipedia)", url: "https://en.wikipedia.org/wiki/DARPA_Subterranean_Challenge" }
+  - { title: "EtherCAT Technology Group", url: "https://www.ethercat.org/" }
