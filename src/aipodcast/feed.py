@@ -44,7 +44,7 @@ def show_notes(podcast: dict, ep: Episode, info: dict) -> str:
     parts = [ep.meta["summary"].strip()]
     if info.get("chapters"):
         parts += ["", "チャプター:"] + [f"{_ts(c['start'])} {c['title']}" for c in info["chapters"]]
-    parts += ["", "紹介した論文:"]
+    parts += ["", ep.meta.get("links_label", "紹介した論文") + ":"]
     for p in ep.meta.get("papers", []):
         authors = f" ({p['authors']})" if p.get("authors") else ""
         parts.append(f"・{p['title']}{authors} {p['url']}")

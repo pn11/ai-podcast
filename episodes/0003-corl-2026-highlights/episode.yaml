@@ -1,0 +1,22 @@
+number: 3
+guid: 5a8d2f61-9c3e-4b7a-8e14-3f6b0c9d7e03   # 一度公開したら変更しない
+title: CoRL 2026 見どころガイド ― 基調講演・デモ・ワークショップ
+summary: >-
+  11月9日からオースティンで開かれる CoRL 2026 の見どころを紹介します。
+  基調講演・若手研究者の基調講演、実機デモ（AIRoA の YUBI 体験など）、企業展示、
+  これまでの回とつながるワークショップ（UMI Arena、How Real Is Real Enough?、Agentic Robotics、Physical AI Safety、Do Robots Need World Models?）を取り上げます。
+  内容は 2026年11月6日時点の公開情報にもとづきます。日程・会場は資料によって食い違いがあるため、必ず公式プログラムで確認してください。
+published_at: 2026-11-07T06:30:00+09:00
+links_label: 参考にした情報
+papers:
+  - { title: "CoRL 2026 公式サイト（プログラム・基調講演・デモ・ワークショップ）", url: "https://www.corl.org/" }
+  - { title: "CoRL 2026 Call for Demos", url: "https://www.corl.org/contributions/call-for-demos" }
+  - { title: "CoRL 2026 Early Career Keynotes", url: "https://www.corl.org/program/early-career-keynotes" }
+  - { title: "CoRL 2026 採択結果の告知（Georgia Chalvatzaki）", url: "https://x.com/GeorgiaChal/status/2095935964786954746" }
+  - { title: "NVIDIA at CoRL 2026", url: "https://www.nvidia.com/en-us/events/corl/" }
+  - { title: "AIRoA: Three Research Papers and a Demo Proposal Accepted to CoRL 2026", url: "https://airoa.org/updates/20261028/797/" }
+  - { title: "AIRoA、CoRL 2026 にてワークショップ「The UMI Arena」の開催が決定", url: "https://prtimes.jp/main/html/rd/p/000000017.000158322.html" }
+  - { title: "YUBI: Yielding Universal Bidigital Interface for Bimanual Dexterous Manipulation at Scale", url: "https://arxiv.org/abs/2606.10244" }
+  - { title: "How Real Is Real Enough? (CoRL 2026 Workshop)", url: "https://how-real-is-real-enough.github.io/" }
+  - { title: "Workshop on Agentic Robotics (CoRL 2026)", url: "https://agentic-robotics-workshop.github.io/" }
+  - { title: "The Science of Physical AI Safety (CoRL 2026 Workshop)", url: "https://spais-ws.org/" }
