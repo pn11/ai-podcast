@@ -1,0 +1,18 @@
+number: 7
+guid: 4b9e2d71-7a3c-4e65-8f10-6c2d8a5b3e07   # 一度公開したら変更しない
+title: フライスのカッパってなに？ ― 判定の「一致」を測る
+summary: >-
+  第1回で出てきた「フライスのカッパ 0.78 と 0.33」を入り口に、判定のそろい具合を測る指標を解説します。
+  一致率の落とし穴（偶然の一致）、コーエンのカッパの考え方と計算例、データが偏ったときのカッパのパラドックス、
+  3人以上で使えるフライスのカッパ、数字の読み方（Landis & Koch の目安）、重み付きカッパとクリッペンドルフのアルファ、
+  ロボット研究（ラベル付け・成功判定・AI による自動採点）とのつながり。
+published_at: 2026-11-07T08:30:00+09:00
+links_label: 参考文献
+papers:
+  - { title: "Cohen, A Coefficient of Agreement for Nominal Scales (1960)", url: "https://doi.org/10.1177/001316446002000104" }
+  - { title: "Cohen, Weighted kappa (1968)", url: "https://doi.org/10.1037/h0026256" }
+  - { title: "Fleiss, Measuring nominal scale agreement among many raters (1971)", url: "https://doi.org/10.1037/h0031619" }
+  - { title: "Landis & Koch, The Measurement of Observer Agreement for Categorical Data (1977)", url: "https://doi.org/10.2307/2529310" }
+  - { title: "Feinstein & Cicchetti, High agreement but low kappa: I. The problems of two paradoxes (1990)", url: "https://doi.org/10.1016/0895-4356(90)90158-L" }
+  - { title: "Krippendorff's alpha (Wikipedia)", url: "https://en.wikipedia.org/wiki/Krippendorff%27s_alpha" }
+  - { title: "第1回で紹介: The Embodiment Gap in Robot Foundation Models", url: "https://arxiv.org/abs/2608.18433" }
