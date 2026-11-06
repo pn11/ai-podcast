@@ -1,0 +1,17 @@
+number: 4
+guid: 9e3b7c15-2d6f-4a88-b0c4-7d1e5f2a8b04   # 一度公開したら変更しない
+title: テキサスの州都オースティンってどんな街？
+summary: >-
+  論文から少し離れて、テキサス州の州都オースティンを紹介します。
+  名前と歴史、議事堂、「ライブミュージックの世界の首都」、橋の下のコウモリ、湧き水のプール、
+  テキサス・バーベキューとブレックファスト・タコス、テックと大学の街としての顔、訪れるときのヒント。
+  数字や時期は資料によって幅があるため、最新情報は各公式サイトでご確認ください。
+published_at: 2026-11-07T07:00:00+09:00
+links_label: 参考にした情報
+papers:
+  - { title: "KUT: Field guide to Austin's bats — when to see them at Congress Bridge", url: "https://www.kut.org/austin/2024-09-16/field-guide-austin-tx-bats-when-to-see-congress-bridge" }
+  - { title: "Texas Historical Commission Atlas: Texas State Capitol", url: "https://atlas.thc.texas.gov/Details/5507014150" }
+  - { title: "Texas Highways: The lost history of Texas granite", url: "https://texashighways.com/culture/the-lost-history-of-texas-granite/" }
+  - { title: "KUT: How did Austin become the Live Music Capital of the World?", url: "https://www.kut.org/post/how-did-austin-become-live-music-capital-world" }
+  - { title: "UT Austin Life & Letters: How Austin became the Live Music Capital of the World", url: "https://lifeandletters.la.utexas.edu/2024/10/how-austin-became-the-live-music-capital-of-the-world/" }
+  - { title: "Barton Springs Pool (Wikipedia)", url: "https://en.wikipedia.org/wiki/Barton_Springs_Pool" }
