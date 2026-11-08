@@ -1,0 +1,18 @@
+number: 12
+guid: 0a8e3d6b-2f7c-4b19-a5d4-6e9c1b7f2a12   # 一度公開したら変更しない
+title: ROS ってなに？ ― 歴史と仕組み、そして Booster K1 は ROS を使っているのか
+summary: >-
+  ROS（Robot Operating System）を基礎から解説します。ミドルウェアとしての役割、ノード・トピック・サービス・アクション、
+  スタンフォードとウィロー・ガレージ、PR2 から始まる歴史、ROS 1 から DDS を土台にした ROS 2 への移行、Noetic のサポート終了（2025年5月）、
+  最新の LTS「Lyrical Luth」（2026年5月）。後半は Booster Robotics の小型ヒューマノイド K1 が ROS を使っているのかを整理します
+  （公式 SDK は Fast DDS ベースの独自 SDK で、ROS 2 とは組み合わせやすい。ROS 2 対応の程度は情報が食い違うため公式ドキュメントで確認を）。
+published_at: 2026-11-08T13:30:00+09:00
+links_label: 参考にした情報
+papers:
+  - { title: "IEEE Spectrum: The Origin Story of ROS, the Linux of Robotics", url: "https://spectrum.ieee.org/the-origin-story-of-ros-the-linux-of-robotics" }
+  - { title: "ROS 2 Documentation: Release Lyrical Luth", url: "https://docs.ros.org/en/lyrical/Releases/Release-Lyrical-Luth.html" }
+  - { title: "ROS Discourse: ROS 2 Lyrical Luth Released", url: "https://discourse.openrobotics.org/t/ros-2-lyrical-luth-released/55021" }
+  - { title: "ROS Discourse: ROS 2 Lyrical Luth and 11 Years of Fast DDS as ROS 2 Default Middleware", url: "https://discourse.openrobotics.org/t/ros-2-lyrical-luth-and-11-years-of-fast-dds-as-ros-2-default-middleware/55062" }
+  - { title: "BoosterRobotics/booster_robotics_sdk (GitHub)", url: "https://github.com/BoosterRobotics/booster_robotics_sdk" }
+  - { title: "RobotShop: Booster Robotics K1 Professional Humanoid Robot", url: "https://www.robotshop.com/products/booster-robotics-k1-professional-humanoid-robot" }
+  - { title: "Community ROS 2 workspace for Booster K1 (umn-cse-mnri/booster_ws, unofficial)", url: "https://github.com/umn-cse-mnri/booster_ws" }

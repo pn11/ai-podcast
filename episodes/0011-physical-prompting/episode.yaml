@@ -1,0 +1,24 @@
+number: 11
+guid: 7c4f1e92-5a3b-4d68-9e21-8b6d0f3a5c11   # 一度公開したら変更しない
+title: Physical Prompting の歴史 ― 「見せるだけ」でロボットに教える
+summary: >-
+  Generalist AI が GEN-1.5（2026年8月）で打ち出した「Physical Prompting」を入り口に、デモを見せるだけでロボットに教える研究の流れをたどります。
+  ワンショット模倣学習（2017）、人の動画からのまね、BC-Z と VIMA のマルチモーダル・プロンプト、RT-Trajectory、XSkill、
+  インコンテキスト模倣学習（Keypoint Action Tokens、Instant Policy など）、GEN-0 のスケーリング則、そして GEN-1.5 の主張と注意点。
+  GEN-1.5 の数字は会社の発表にもとづくものです。
+published_at: 2026-11-08T13:00:00+09:00
+links_label: 取り上げた論文・発表
+papers:
+  - { title: "Duan et al., One-Shot Imitation Learning (2017)", url: "https://arxiv.org/abs/1703.07326" }
+  - { title: "Finn et al., One-Shot Visual Imitation Learning via Meta-Learning (2017)", url: "https://arxiv.org/abs/1709.04905" }
+  - { title: "Yu et al., One-Shot Imitation from Observing Humans via Domain-Adaptive Meta-Learning (2018)", url: "https://arxiv.org/abs/1802.01557" }
+  - { title: "Brown et al., Language Models are Few-Shot Learners (2020)", url: "https://arxiv.org/abs/2005.14165" }
+  - { title: "Jang et al., BC-Z: Zero-Shot Task Generalization with Robotic Imitation Learning (2021)", url: "https://arxiv.org/abs/2202.02005" }
+  - { title: "Jiang et al., VIMA: General Robot Manipulation with Multimodal Prompts (2022)", url: "https://arxiv.org/abs/2210.03094" }
+  - { title: "Gu et al., RT-Trajectory: Robotic Task Generalization via Hindsight Trajectory Sketches (2023)", url: "https://arxiv.org/abs/2311.01977" }
+  - { title: "Xu et al., XSkill: Cross Embodiment Skill Discovery (2023)", url: "https://arxiv.org/abs/2307.09955" }
+  - { title: "Di Palo & Johns, Keypoint Action Tokens Enable In-Context Imitation Learning in Robotics (2024)", url: "https://arxiv.org/abs/2403.19578" }
+  - { title: "Fu et al., In-Context Imitation Learning via Next-Token Prediction (2024)", url: "https://arxiv.org/abs/2408.15980" }
+  - { title: "Vosylius & Johns, Instant Policy: In-Context Imitation Learning via Graph Diffusion (ICLR 2025)", url: "https://arxiv.org/abs/2411.12633" }
+  - { title: "Generalist AI, GEN-0: Embodied Foundation Models That Scale with Physical Interaction (2025-11)", url: "https://generalistai.com/blog/gen-0" }
+  - { title: "Generalist AI, GEN-1.5: Embodied Foundation Models are One-Shot Learners (2026-08)", url: "https://generalistai.com/blog/gen-1.5" }
