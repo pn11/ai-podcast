@@ -51,6 +51,9 @@ def test_end_to_end_dummy(tmp_path):
         assert int(enc.get("length")) == (audio / f"{num:04d}.mp3").stat().st_size == info["bytes"]
         assert enc.get("url").endswith(f"/ep-{num:04d}/{num:04d}.mp3")
     assert (site / "index.html").exists() and (site / "artwork.png").exists()
+    assert 'name="robots" content="noindex' in (site / "index.html").read_text()
+    assert 'name="robots" content="noindex' in (site / "episodes" / "0001" / "index.html").read_text()
+    assert (site / "robots.txt").read_text().startswith("User-agent: *")
     # chapters: embedded in the MP3 (ID3 CHAP) and published as Podcasting 2.0 JSON
     chaps = json.loads(subprocess.run(["ffprobe", "-v", "error", "-show_chapters", "-of", "json",
                                        str(audio / "0002.mp3")], capture_output=True, text=True).stdout)["chapters"]

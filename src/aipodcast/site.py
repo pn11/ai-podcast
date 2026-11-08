@@ -19,7 +19,7 @@ def _page(title: str, body: str, depth: int, podcast: dict) -> str:
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{escape(title)}</title>
+{'<meta name="robots" content="noindex, nofollow">' + chr(10) if podcast.get("noindex") else ""}<title>{escape(title)}</title>
 <link rel="alternate" type="application/rss+xml" title="{escape(podcast['title'])}" href="{up}feed.xml">
 <link rel="icon" href="{up}artwork.png">
 <link rel="stylesheet" href="{up}{_STYLE_HREF}">
@@ -54,6 +54,10 @@ def build_site(podcast: dict, episodes: list[Episode], audio: dict[int, dict], o
     for f in (ROOT / "site").iterdir():
         shutil.copy(f, out / f.name)
     (out / ".nojekyll").write_text("")
+    if podcast.get("noindex"):
+        # 注意: プロジェクトサイト（<user>.github.io/<repo>/）では、クローラーが読むのはホスト直下の
+        # /robots.txt だけなので、このファイル単体では効かない。各ページの meta robots が本命。
+        (out / "robots.txt").write_text("User-agent: *\nDisallow: /\n")
     (out / "feed.xml").write_text(build_feed(podcast, episodes, audio), encoding="utf-8")
 
     published = sorted((e for e in episodes if e.number in audio),

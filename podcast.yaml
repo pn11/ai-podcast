@@ -15,6 +15,9 @@ categories:
 explicit: false
 # true にすると Apple Podcasts 等のディレクトリに載らない（フィード URL を知っていれば購読は可能）
 block: false
+# true にすると全ページに <meta name="robots" content="noindex, nofollow"> を入れ、robots.txt も出力する
+# （robots.txt はホスト直下でないと効かないため、pn11.github.io/ai-podcast/ では meta タグのほうが効く）
+noindex: true
 copyright: 台本は CC BY 4.0。音声は各音声合成サービス・音声ライブラリの利用規約に従う（VOICEVOX 使用回は各キャラクターの規約）。原論文の著作権は各著者に帰属
 
 # 各回の冒頭に自動で挿入する断り書き
