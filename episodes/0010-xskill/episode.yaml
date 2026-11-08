@@ -1,0 +1,16 @@
+number: 10
+guid: 3e7a1c58-9b4d-4f02-8d6e-5c1f9a2b7e10   # 一度公開したら変更しない
+title: XSkill ― 人の動画からロボットのスキルを見つけ出す
+summary: >-
+  Shuran Song らのグループ（当時コロンビア大学）による CoRL 2023 の論文 XSkill を紹介します。
+  ラベルのない人とロボットの動画から、体を超えて共有できる「スキル・プロトタイプ」を見つけ（時間の対照学習と Sinkhorn-Knopp）、
+  スキルを条件にしたディフュージョン・ポリシーでロボットの動きに移し、人のお手本動画から新しいタスクを組み立てる（Skill Alignment Transformer で速さの違いを吸収）。
+  限界と後続研究、これまでの回とのつながりも。論文の概要・プロジェクトページ・後続研究の紹介をもとにしており、細かい数字は論文で確認してください。
+published_at: 2026-11-08T12:00:00+09:00
+papers:
+  - title: "XSkill: Cross Embodiment Skill Discovery"
+    authors: Mengda Xu, Zhenjia Xu, Cheng Chi, Manuela Veloso, Shuran Song (CoRL 2023)
+    url: https://arxiv.org/abs/2307.09955
+  - { title: "XSkill プロジェクトページ", url: "https://xskill.cs.columbia.edu/" }
+  - { title: "UniSkill: Imitating Human Videos via Cross-Embodiment Skill Representations（後続研究）", url: "https://arxiv.org/abs/2505.08787" }
+  - { title: "UniPrototype: Human-Robot Skill Learning with Uniform Prototypes（後続研究）", url: "https://arxiv.org/abs/2509.23021" }
