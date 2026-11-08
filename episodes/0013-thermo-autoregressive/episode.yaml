@@ -1,0 +1,17 @@
+number: 13
+guid: b2d84f1a-6c39-4e57-9a0b-3f7e2c8d1b13   # 一度公開したら変更しない
+title: 言語モデルに「時間の矢」はあるか ― 自己回帰生成モデルの熱力学
+summary: >-
+  東京大学・JST が2026年11月6日に発表した、沙川貴大教授（工学系研究科 物理工学専攻）の研究を解説します。
+  過去の出力から次の出力を作る自己回帰生成モデル（言語モデル、RNN、カルマンフィルター、状態空間モデル、Mamba など）を確率熱力学で統一的に扱い、
+  出力列の確率だけから「一方向性」を表すエントロピー生成を効率よく推定する枠組み。GPT-2 と Qwen3-4B-Base で文の並び順を逆にした実験、
+  世界モデルの理解への意味、注意点、ロボットのワールドモデル評価への応用の可能性（番組の感想）まで。
+  プレスリリースと論文の概要、解説記事にもとづいています。
+published_at: 2026-11-08T15:00:00+09:00
+papers:
+  - title: "Stochastic Thermodynamics for Autoregressive Generative Models: A Non-Markovian Perspective"
+    authors: Takahiro Sagawa (PRX Intelligence, DOI 10.1103/tv38-b23y)
+    url: https://arxiv.org/abs/2604.07867
+  - { title: "東京大学工学系研究科 プレスリリース（2026-11-06）", url: "https://www.t.u-tokyo.ac.jp/press/pr2026-11-06-001" }
+  - { title: "JST 共同発表：自己回帰生成モデルの熱力学を構築", url: "https://www.jst.go.jp/pr/announce/20261106-3/index.html" }
+  - { title: "PRX Intelligence: Accepted Paper", url: "https://journals.aps.org/prxintelligence/accepted/10.1103/tv38-b23y" }
