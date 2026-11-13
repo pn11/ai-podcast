@@ -68,6 +68,17 @@ jobs:
             gh release upload "$tag" "build/audio/$code.mp3" "build/audio/$code.json" --clobber
           done < build/audio/new.txt
 
+      - name: Remove releases of deleted episodes
+        run: |
+          # episodes/ から消した回の MP3 が Releases に残り続けないように片付ける
+          keep=$(uv run python -c "from aipodcast.model import *; print(' '.join(e.tag for e in load_episodes(load_podcast())))")
+          for tag in $(gh release list --limit 1000 --json tagName -q '.[].tagName' | grep '^ep-' || true); do
+            case " $keep " in
+              *" $tag "*) ;;
+              *) echo "deleting $tag"; gh release delete "$tag" --yes --cleanup-tag ;;
+            esac
+          done
+
       - name: Build site and feed
         run: uv run aipodcast site --audio build/audio --out build/site
 
