@@ -1,0 +1,50 @@
+{
+ "version": "1.2.0",
+ "title": "XSkill ― 人の動画からロボットのスキルを見つけ出す",
+ "chapters": [
+  {
+   "startTime": 0.0,
+   "title": "オープニング"
+  },
+  {
+   "startTime": 49.93,
+   "title": "著者と背景"
+  },
+  {
+   "startTime": 91.01,
+   "title": "何が問題なのか"
+  },
+  {
+   "startTime": 141.26,
+   "title": "三つの段階"
+  },
+  {
+   "startTime": 157.27,
+   "title": "スキルを見つける"
+  },
+  {
+   "startTime": 251.07,
+   "title": "スキルをロボットの動きに移す"
+  },
+  {
+   "startTime": 291.36,
+   "title": "スキルを組み合わせる"
+  },
+  {
+   "startTime": 351.93,
+   "title": "実験"
+  },
+  {
+   "startTime": 388.41,
+   "title": "限界と、その後の研究"
+  },
+  {
+   "startTime": 429.94,
+   "title": "これまでの回とのつながり"
+  },
+  {
+   "startTime": 487.95,
+   "title": "まとめ"
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+ "version": "1.2.0",
+ "title": "CoRL 2026 予習 ― 模倣学習からVLA、データ、実機RL、Sim-to-Realまで",
+ "chapters": [
+  {
+   "startTime": 0.0,
+   "title": "オープニング"
+  },
+  {
+   "startTime": 35.17,
+   "title": "ACT / ALOHA"
+  },
+  {
+   "startTime": 118.66,
+   "title": "Diffusion Policy"
+  },
+  {
+   "startTime": 176.99,
+   "title": "RT-2"
+  },
+  {
+   "startTime": 223.24,
+   "title": "OpenVLA"
+  },
+  {
+   "startTime": 258.76,
+   "title": "π0 / π0.5"
+  },
+  {
+   "startTime": 333.63,
+   "title": "SmolVLA"
+  },
+  {
+   "startTime": 391.18,
+   "title": "Open X-Embodiment / DROID"
+  },
+  {
+   "startTime": 457.1,
+   "title": "UMI"
+  },
+  {
+   "startTime": 517.81,
+   "title": "HIL-SERL"
+  },
+  {
+   "startTime": 582.73,
+   "title": "RMA / Domain Randomization"
+  },
+  {
+   "startTime": 677.65,
+   "title": "まとめ"
+  }
+ ]
+}

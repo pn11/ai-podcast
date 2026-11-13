@@ -1,0 +1,50 @@
+{
+ "version": "1.2.0",
+ "title": "強化学習と模倣学習の基礎 ― 方策ってなに？ DQN ってなに？",
+ "chapters": [
+  {
+   "startTime": 0.0,
+   "title": "オープニング"
+  },
+  {
+   "startTime": 33.33,
+   "title": "登場人物：エージェントと環境"
+  },
+  {
+   "startTime": 80.35,
+   "title": "方策ってなに？"
+  },
+  {
+   "startTime": 126.65,
+   "title": "価値と割引"
+  },
+  {
+   "startTime": 170.48,
+   "title": "キュー学習"
+  },
+  {
+   "startTime": 215.88,
+   "title": "DQN ってなに？"
+  },
+  {
+   "startTime": 323.57,
+   "title": "方策を直接学ぶ方法"
+  },
+  {
+   "startTime": 394.54,
+   "title": "強化学習をロボットで使う難しさ"
+  },
+  {
+   "startTime": 452.17,
+   "title": "模倣学習ってなに？"
+  },
+  {
+   "startTime": 542.67,
+   "title": "二つの組み合わせ"
+  },
+  {
+   "startTime": 604.6,
+   "title": "まとめ"
+  }
+ ]
+}

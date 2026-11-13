@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>SuperMimic ― 人型ロボットの全身制御を「GPU 1台・数時間」で</title>
+<link rel="alternate" type="application/rss+xml" title="AI論文ラジオ" href="../../feed.xml">
+<link rel="icon" href="../../artwork.png">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<main>
+<p><a href="../../">← AI論文ラジオ</a></p>
+<h1>#16 SuperMimic ― 人型ロボットの全身制御を「GPU 1台・数時間」で</h1>
+<audio controls preload="none" src="https://github.com/pn11/ai-podcast/releases/download/ep-0016/0016.mp3"></audio>
+<p>CoRL 2026 で口頭発表に選ばれた UC Berkeley の SuperMimic を解説します。人型ロボットに人の全身の動きをまねさせる学習を、 シミュレーターのデータから学んだ「一つの微分できるワールドモデル」を全動作で共有することで、GPU 時間を千分の一以下に。 12万9千あまりの動作のベンチマークで失敗25件（比較相手179件）、Unitree G1 の実機へも移行。ベストペーパーとする紹介記事もありますが公式発表は未確認です。</p>
+<p>チャプター:<br>00:00 オープニング<br>00:41 何をする研究か<br>01:28 計算量の問題<br>02:06 鍵は微分できるワールドモデル<br>03:07 結果<br>03:37 これまでの回とのつながり<br>04:28 注意して見たい点<br>04:55 まとめ</p>
+<p>紹介した論文:<br>・SuperMimic: Scaling Humanoid Whole-Body Control with One Differentiable World Model (Qiayuan Liao, Yiyang Shao, Junfeng Long, Kevin Zakka, Roberto Horowitz, Pieter Abbeel, Koushil Sreenath (CoRL 2026 Oral)) <a href="https://arxiv.org/abs/2610.28480">https://arxiv.org/abs/2610.28480</a><br>・論文 PDF（Hybrid Robotics Lab） <a href="https://hybrid-robotics.berkeley.edu/publications/CoRL2026_SuperMimic.pdf">https://hybrid-robotics.berkeley.edu/publications/CoRL2026_SuperMimic.pdf</a><br>・42how: UC Berkeley&#x27;s SuperMimic slashes compute for humanoid whole-body control <a href="https://ai.42how.com/en/article/cce1b2dc-cb7e-4e9e-b262-6e03b09b2c67">https://ai.42how.com/en/article/cce1b2dc-cb7e-4e9e-b262-6e03b09b2c67</a><br>・Corematter: CoRL 2026 recap <a href="https://read.corematter.com/p/corl-2026-recap">https://read.corematter.com/p/corl-2026-recap</a></p>
+<p>台本は AI が生成したものです。誤りを含む可能性があるため、正確な内容は原論文をご確認ください。<br>音声: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏</p>
+<h2>文字起こし（台本）</h2>
+<div class="transcript">
+<p class="line"><span class="who">ミナ</span>この番組は、AIが論文をもとに作った台本を、合成音声で読み上げています。内容の正確さは、概要欄の原論文でご確認ください。</p>
+<p class="line"><span class="who">ミナ</span>こんにちは。コール2026の話題、今回は人型ロボットの全身制御の研究、スーパーミミックです。</p>
+<p class="line"><span class="who">ケン</span>よろしくお願いします。カリフォルニア大学バークレー校の研究で、著者には、ピーター・アビールさんや、コウシル・スリーナスさんといった、強化学習や脚のロボットで知られる研究者が名を連ねています。コールでは口頭発表に選ばれていて、あるまとめ記事では、ベストペーパーとも紹介されていました。ただ、賞についての公式の発表は、まだ確認できていません。</p>
+<p class="line"><span class="who">ミナ</span>人型ロボットの全身制御というのは、具体的には何ですか。</p>
+<p class="line"><span class="who">ケン</span>ここでは、人の動きをお手本にして、人型ロボットに同じような全身の動きをさせる、モーション・トラッキングと呼ばれる課題です。歩く、走る、踊る、物を拾う、といった、人の動きをたくさん集めたライブラリーがあって、その一つ一つを、ロボットの体で再現させます。</p>
+<p class="line"><span class="who">ミナ</span>最近、人型ロボットが踊ったり、側転したりする動画をよく見ますね。</p>
+<p class="line"><span class="who">ケン</span>あれの土台になっている技術です。普通は、シミュレーションの中で強化学習を使って、ロボットがお手本の動きについていけるように学習させます。6回目で話した、試行錯誤で学ぶやり方ですね。問題は、たくさんの種類の動きを一つのコントローラーで扱おうとすると、とてつもない計算量が必要になることです。</p>
+<p class="line"><span class="who">ミナ</span>どれくらいの計算量なんですか。</p>
+<p class="line"><span class="who">ケン</span>まとめ記事では、比較の相手として、エヌビディアのソニックという、たくさんの動きを一つで扱う全身コントローラーが挙げられていて、その学習には、GPUで約2万1千時間かかった、と紹介されています。論文の概要では、スーパーミミックは、必要なGPU時間を千分の一以下に減らした、とされています。報道では、GPU1台で3時間ほどで、比較相手の性能を上回った、とも紹介されています。</p>
+<p class="line"><span class="who">ミナ</span>千分の一ですか。研究室のGPU1台で、人型ロボットの全身制御が学習できる、ということですね。</p>
+<p class="line"><span class="who">ミナ</span>どうやって、そんなに減らしたんですか。</p>
+<p class="line"><span class="who">ケン</span>タイトルにある、一つの微分できるワールドモデル、が鍵です。普通の強化学習では、シミュレーターの中で動かしてみて、その結果の良し悪しだけを手がかりに、少しずつ方策を直していきます。どちらに直せばいいかを、たくさん試して手探りで見つけるので、時間がかかります。</p>
+<p class="line"><span class="who">ケン</span>スーパーミミックは、まずシミュレーターで記録した動きのデータから、ロボットの体がどう動くかを予測するモデル、つまりワールドモデルを学習します。このモデルは、ニューラルネットワークなので、微分ができる。微分ができると、この行動を少し変えると、結果がどちらにどれだけ変わるか、が直接分かります。</p>
+<p class="line"><span class="who">ミナ</span>手探りではなく、坂の向きが見える、ということですね。</p>
+<p class="line"><span class="who">ケン</span>そうです。坂の向きが見えれば、一歩一歩が無駄にならないので、学習が速くなる。しかも、たくさんの種類の動きで、体の動き方そのものは共通なので、一つのワールドモデルを全部の動きで共有できる。これが、たくさんの動きを一つのコントローラーで扱っても計算が膨らみにくい理由です。</p>
+<p class="line"><span class="who">ミナ</span>結果はどうでしたか。</p>
+<p class="line"><span class="who">ケン</span>論文の概要によると、12万9千あまりの動きのベンチマークで、失敗したのは25個だけ。比較相手は179個失敗していた、とのことです。さらに、学習したコントローラーを、ユニツリーのジーワンという実機の人型ロボットにも移せた、と報告されています。</p>
+<p class="line"><span class="who">ケン</span>コードも公開されていて、ムジョコ系のシミュレーターの上で動く実装が出ています。研究室のGPU1台で試せる、というのは、多くの研究者にとって大きいと思います。</p>
+<p class="line"><span class="who">ミナ</span>これまでの回とつなげると、どう見えますか。</p>
+<p class="line"><span class="who">ケン</span>三つあります。一つは、ワールドモデルの使い方の多様さです。前回のグルート・ツーは、映像と行動を予測するワールドモデルを、方策そのものとして使っていました。スーパーミミックは、体の動き方を予測するワールドモデルを、方策を速く学習するための道具として使っています。同じワールドモデルという言葉でも、役割がかなり違うんです。</p>
+<p class="line"><span class="who">ケン</span>二つ目は、計算の民主化です。前回、エヌビディアが道具をオープンにしてロボティクスはエリートのスポーツではなくなった、と話しましたが、スーパーミミックは、必要な計算量そのものを減らすことで、同じ方向に貢献しています。</p>
+<p class="line"><span class="who">ケン</span>三つ目は、シミュレーションから実機へ、の流れです。2回目のアールエムエーやドメイン・ランダマイゼーションのように、シミュレーションで学んだものを実機に持っていく。その最新の形の一つです。</p>
+<p class="line"><span class="who">ミナ</span>気をつけて見るべき点はありますか。</p>
+<p class="line"><span class="who">ケン</span>ワールドモデルは、シミュレーターで記録したデータから学んでいるので、シミュレーター自体と現実の違いは、別の工夫で埋める必要があります。それから、モーション・トラッキングは、お手本の動きについていく課題なので、物をつかむ、扉を開ける、といった周りの物との接触を伴う作業に、そのまま広がるかは別の問題です。1回目のサーベイが言う、接触の実行のギャップですね。</p>
+<p class="line"><span class="who">ミナ</span>最後にまとめてください。</p>
+<p class="line"><span class="who">ケン</span>スーパーミミックは、人型ロボットに人の全身の動きをまねさせる学習を、一つの微分できるワールドモデルを共有することで、桁違いに少ない計算で実現した研究。必要なGPU時間を千分の一以下にし、大規模なベンチマークで失敗を大きく減らし、実機の人型ロボットにも移せた。ワールドモデルを、方策そのものではなく、学習を速くする道具として使った例として、前回のグルート・ツーと並べて見ると面白いと思います。</p>
+<p class="line"><span class="who">ミナ</span>ありがとうございました。</p>
+<p class="line"><span class="who">ケン</span>ありがとうございました。</p>
+</div>
+</main>
+</body>
+</html>

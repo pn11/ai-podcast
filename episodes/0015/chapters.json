@@ -1,0 +1,38 @@
+{
+ "version": "1.2.0",
+ "title": "NVIDIA の GR00T 2 ― ワールド・アクション・モデルは何を変えるか",
+ "chapters": [
+  {
+   "startTime": 0.0,
+   "title": "オープニング"
+  },
+  {
+   "startTime": 43.9,
+   "title": "グルートの流れ"
+  },
+  {
+   "startTime": 64.32,
+   "title": "ワールド・アクション・モデルとは"
+  },
+  {
+   "startTime": 133.78,
+   "title": "発表された数字"
+  },
+  {
+   "startTime": 180.04,
+   "title": "オープンにするもの"
+  },
+  {
+   "startTime": 219.78,
+   "title": "デモ：計画するモデルと動くモデル"
+  },
+  {
+   "startTime": 270.3,
+   "title": "注意して見たい点"
+  },
+  {
+   "startTime": 301.14,
+   "title": "まとめ"
+  }
+ ]
+}

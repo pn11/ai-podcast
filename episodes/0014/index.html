@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>CoRL 2026 振り返り ― 4日間で見えたこと</title>
+<link rel="alternate" type="application/rss+xml" title="AI論文ラジオ" href="../../feed.xml">
+<link rel="icon" href="../../artwork.png">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<main>
+<p><a href="../../">← AI論文ラジオ</a></p>
+<h1>#14 CoRL 2026 振り返り ― 4日間で見えたこと</h1>
+<audio controls preload="none" src="https://github.com/pn11/ai-podcast/releases/download/ep-0014/0014.mp3"></audio>
+<p>オースティンで開かれた CoRL 2026 の全体の振り返りです。過去最多の投稿 2094 件・採択 687 本、 基調講演（Burgard、Tedrake、Fei-Fei Li とリサ・スーの対談、NVIDIA の Jim Fan）、 会期中に目立った三つのテーマ（ワールドモデル、計画と動作の分業、データは安くなったが現場のデータは稼ぐもの）、展示とデモ。 公式アカウントの告知・企業発表・報道や参加者のまとめにもとづく内容で、講演そのものは未確認です（2026年11月13日時点）。</p>
+<p>チャプター:<br>00:00 オープニング<br>00:39 数字で見るコール2026<br>01:06 基調講演の顔ぶれ<br>02:08 会期中に目立ったテーマ<br>03:21 会場の展示とデモ<br>03:57 振り返って<br>04:39 まとめ</p>
+<p>参考にした情報:<br>・CoRL 2026 keynote schedule (@corl_conf on X) <a href="https://x.com/corl_conf/status/2119444841192976535">https://x.com/corl_conf/status/2119444841192976535</a><br>・CoRL 2026 Keynotes <a href="https://www.corl.org/program/keynotes">https://www.corl.org/program/keynotes</a><br>・Corematter: CoRL 2026 takeaways, launches and the papers to know <a href="https://read.corematter.com/p/corl-2026-recap">https://read.corematter.com/p/corl-2026-recap</a><br>・Tech Times: Li&#x27;s World Models vs Tedrake&#x27;s Factory Robots <a href="https://www.techtimes.com/articles/330272/20261109/corl-2026-robot-learning-conference-opens-monday-lis-world-models-vs-tedrakes-factory-robots.htm">https://www.techtimes.com/articles/330272/20261109/corl-2026-robot-learning-conference-opens-monday-lis-world-models-vs-tedrakes-factory-robots.htm</a><br>・BAIR at CoRL 2026 <a href="https://bair.berkeley.edu/blog/2026/11/09/bair-at-corl-2026/">https://bair.berkeley.edu/blog/2026/11/09/bair-at-corl-2026/</a><br>・Do Robots Need World Models? (CoRL 2026 Workshop) <a href="https://do-robots-need-world-models.github.io/">https://do-robots-need-world-models.github.io/</a></p>
+<p>台本は AI が生成したものです。誤りを含む可能性があるため、正確な内容は原論文をご確認ください。<br>音声: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏</p>
+<h2>文字起こし（台本）</h2>
+<div class="transcript">
+<p class="line"><span class="who">ミナ</span>この番組は、AIが論文をもとに作った台本を、合成音声で読み上げています。内容の正確さは、概要欄の原論文でご確認ください。</p>
+<p class="line"><span class="who">ミナ</span>こんにちは。11月9日からオースティンで開かれていたコール2026が終わりました。今回からしばらく、会期中に出てきた話題を取り上げていきます。まずは全体の振り返りです。</p>
+<p class="line"><span class="who">ケン</span>よろしくお願いします。最初にお断りです。今回の内容は、公式アカウントの告知、企業の発表、それから報道や参加者のまとめをもとにしています。講演の録画や資料をまだ直接見られていないものも多いので、細かいところは、それぞれの発表で確認してください。</p>
+<p class="line"><span class="who">ミナ</span>規模から振り返りましょう。</p>
+<p class="line"><span class="who">ケン</span>有効な投稿が2094件で過去最多、採択は687本。チケットは売り切れになったと報じられています。会場は、口頭発表と基調講演がヒルトン、ポスターと展示がJWマリオット、そして最終日の基調講演がバス・ホールでした。今年は、締め切りの後に出た新しい結果を発表する、レイト・ブレイキング・リザルツという枠も新しく設けられました。</p>
+<p class="line"><span class="who">ミナ</span>基調講演は誰が、何の話をしたんですか。</p>
+<p class="line"><span class="who">ケン</span>公式アカウントが会期直前に出した告知では、月曜にヴォルフラム・ブルガードさんが、体を持ったAIを実現するための課題、というテーマ。火曜にラス・テドレイクさんが、工場での学習。テドレイクさんの肩書きは、ウォールデン・ロボティクスという会社のCEOになっていました。そして水曜に、フェイフェイ・リーさんが、アトラスというワールドモデルについて話し、そのあとエーエムディーのリサ・スーさんとの対談がありました。</p>
+<p class="line"><span class="who">ケン</span>それとは別に、月曜の昼過ぎには、エヌビディアのジム・ファンさんが、ワールド・アクション・モデルとエージェント的なロボティクスについて講演しています。</p>
+<p class="line"><span class="who">ミナ</span>それぞれの中身は、次の回から詳しく話すんですよね。</p>
+<p class="line"><span class="who">ケン</span>はい。ジム・ファンさんの講演で発表されたグルート・ツー、口頭発表に選ばれ、まとめ記事ではベストペーパーとも紹介された、人型ロボットの全身制御の研究、テドレイクさんの工場の話、そしてフェイフェイ・リーさんのアトラスとワールドモデルの議論を、それぞれ1回ずつ取り上げます。</p>
+<p class="line"><span class="who">ミナ</span>全体を通して、どんなテーマが目立ちましたか。</p>
+<p class="line"><span class="who">ケン</span>いくつかのまとめ記事を読むと、大きく三つです。一つ目は、ワールドモデル。3回目と5回目で、今年のキーワードになりそうだと話しましたが、実際に、エヌビディアもフェイフェイ・リーさんも、ワールドモデルを講演の中心に置いていました。最終日には、ロボットにワールドモデルは必要か、という討論型のワークショップも開かれています。</p>
+<p class="line"><span class="who">ケン</span>二つ目は、計画する役と、動く役の分業です。ある投資家向けのまとめでは、ロボットの知能が、作業を分解して計画する大きなモデルと、実際に手を動かすモデルに分かれつつある、と書いています。ジム・ファンさんのデモでも、計画を担当する別の会社の大きなモデルが、作業を分解して、グルート・ツーに操作を頼む、という形が見せられたそうです。</p>
+<p class="line"><span class="who">ミナ</span>2回目のパイゼロテンゴで、サブタスクを言葉で決めてから動く、という話がありましたね。</p>
+<p class="line"><span class="who">ケン</span>その延長線上の話です。三つ目は、データです。人の動画や、手持ちのデバイス、遠隔操作のデータは、だんだん安く手に入るものになってきた。一方で、実際に現場で使われながら集まるデータは、自分で稼ぐしかない。これはテドレイクさんの講演の中心的な主張として紹介されています。</p>
+<p class="line"><span class="who">ミナ</span>展示やデモはどうでしたか。</p>
+<p class="line"><span class="who">ケン</span>報道で目立ったのは、エヌビディアのグルート・ツーのデモと、21の自由度を持つ器用なロボットハンドの初披露です。グルート・ツーは、両手にこのハンドを付けたロボットで、両手を使う作業を見せたと報じられています。ハンドの会社の名前は、記事によって表記が違っていたので、ここでは名前を挙げるのは控えます。</p>
+<p class="line"><span class="who">ケン</span>それから、3回目で紹介した、エアロアのユミ・アリーナのワークショップも最終日に開かれました。手持ちのデバイスで集めた大量のデータを使って、共通の実機で方策を競うコンペです。結果はまだ見つけられていないので、分かったら改めて紹介します。</p>
+<p class="line"><span class="who">ミナ</span>これまでの予習回と比べて、どうでしたか。</p>
+<p class="line"><span class="who">ケン</span>予習回で挙げた流れ、つまり、ワールドモデル、データの集め方、体の違うロボットへの転移、そして評価の仕方は、どれもそのまま会期中の中心的な話題でした。一方で、予想していなかったのは、研究者が会社を作って、工場や現場に出ていく動きの強さです。テドレイクさんがその象徴ですし、フェイフェイ・リーさんの会社も、大手半導体メーカーに買収されることが決まっています。</p>
+<p class="line"><span class="who">ミナ</span>研究と産業の距離が、いよいよ近くなっている。</p>
+<p class="line"><span class="who">ケン</span>はい。1回目のサーベイが言っていた、成功率の裏にある導入の手間、という話が、まさに産業の現場で問われ始めている、という印象です。</p>
+<p class="line"><span class="who">ミナ</span>最後にまとめてください。</p>
+<p class="line"><span class="who">ケン</span>コール2026は、投稿2094件、採択687本で過去最大。基調講演は、ブルガードさんの体を持ったAIの課題、テドレイクさんの工場での学習、フェイフェイ・リーさんのアトラス、そしてエヌビディアのジム・ファンさんのワールド・アクション・モデル。全体のテーマは、ワールドモデル、計画と動作の分業、そしてデータは安くなったが現場のデータは稼ぐもの、という三つでした。次の回から、一つずつ詳しく見ていきます。</p>
+<p class="line"><span class="who">ミナ</span>ありがとうございました。</p>
+<p class="line"><span class="who">ケン</span>ありがとうございました。</p>
+</div>
+</main>
+</body>
+</html>

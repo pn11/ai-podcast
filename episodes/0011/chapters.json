@@ -1,0 +1,38 @@
+{
+ "version": "1.2.0",
+ "title": "Physical Prompting の歴史 ― 「見せるだけ」でロボットに教える",
+ "chapters": [
+  {
+   "startTime": 0.0,
+   "title": "オープニング"
+  },
+  {
+   "startTime": 54.58,
+   "title": "出発点：ワンショット模倣学習"
+  },
+  {
+   "startTime": 124.02,
+   "title": "言葉と動画で指示する"
+  },
+  {
+   "startTime": 178.92,
+   "title": "軌跡やスケッチで伝える"
+  },
+  {
+   "startTime": 215.79,
+   "title": "インコンテキスト模倣学習"
+  },
+  {
+   "startTime": 275.68,
+   "title": "ジェネラリストとジェン・ワンテンゴ"
+  },
+  {
+   "startTime": 368.26,
+   "title": "慎重に見るべき点"
+  },
+  {
+   "startTime": 403.12,
+   "title": "まとめ"
+  }
+ ]
+}

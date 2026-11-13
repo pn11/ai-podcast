@@ -1,0 +1,38 @@
+{
+ "version": "1.2.0",
+ "title": "ROS ってなに？ ― 歴史と仕組み、そして Booster K1 は ROS を使っているのか",
+ "chapters": [
+  {
+   "startTime": 0.0,
+   "title": "オープニング"
+  },
+  {
+   "startTime": 59.86,
+   "title": "ロスの仕組み"
+  },
+  {
+   "startTime": 124.16,
+   "title": "ロスの歴史"
+  },
+  {
+   "startTime": 184.38,
+   "title": "ロス・ワンからロス・ツーへ"
+  },
+  {
+   "startTime": 252.74,
+   "title": "ロス・ツーの今"
+  },
+  {
+   "startTime": 324.14,
+   "title": "ブースター・ケーワンとは"
+  },
+  {
+   "startTime": 367.33,
+   "title": "ケーワンはロスを使っているのか"
+  },
+  {
+   "startTime": 469.38,
+   "title": "まとめ"
+  }
+ ]
+}

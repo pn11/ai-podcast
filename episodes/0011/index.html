@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Physical Prompting の歴史 ― 「見せるだけ」でロボットに教える</title>
+<link rel="alternate" type="application/rss+xml" title="AI論文ラジオ" href="../../feed.xml">
+<link rel="icon" href="../../artwork.png">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<main>
+<p><a href="../../">← AI論文ラジオ</a></p>
+<h1>#11 Physical Prompting の歴史 ― 「見せるだけ」でロボットに教える</h1>
+<audio controls preload="none" src="https://github.com/pn11/ai-podcast/releases/download/ep-0011/0011.mp3"></audio>
+<p>Generalist AI が GEN-1.5（2026年8月）で打ち出した「Physical Prompting」を入り口に、デモを見せるだけでロボットに教える研究の流れをたどります。 ワンショット模倣学習（2017）、人の動画からのまね、BC-Z と VIMA のマルチモーダル・プロンプト、RT-Trajectory、XSkill、 インコンテキスト模倣学習（Keypoint Action Tokens、Instant Policy など）、GEN-0 のスケーリング則、そして GEN-1.5 の主張と注意点。 GEN-1.5 の数字は会社の発表にもとづくものです。</p>
+<p>チャプター:<br>00:00 オープニング<br>00:54 出発点：ワンショット模倣学習<br>02:04 言葉と動画で指示する<br>02:58 軌跡やスケッチで伝える<br>03:35 インコンテキスト模倣学習<br>04:35 ジェネラリストとジェン・ワンテンゴ<br>06:08 慎重に見るべき点<br>06:43 まとめ</p>
+<p>取り上げた論文・発表:<br>・Duan et al., One-Shot Imitation Learning (2017) <a href="https://arxiv.org/abs/1703.07326">https://arxiv.org/abs/1703.07326</a><br>・Finn et al., One-Shot Visual Imitation Learning via Meta-Learning (2017) <a href="https://arxiv.org/abs/1709.04905">https://arxiv.org/abs/1709.04905</a><br>・Yu et al., One-Shot Imitation from Observing Humans via Domain-Adaptive Meta-Learning (2018) <a href="https://arxiv.org/abs/1802.01557">https://arxiv.org/abs/1802.01557</a><br>・Brown et al., Language Models are Few-Shot Learners (2020) <a href="https://arxiv.org/abs/2005.14165">https://arxiv.org/abs/2005.14165</a><br>・Jang et al., BC-Z: Zero-Shot Task Generalization with Robotic Imitation Learning (2021) <a href="https://arxiv.org/abs/2202.02005">https://arxiv.org/abs/2202.02005</a><br>・Jiang et al., VIMA: General Robot Manipulation with Multimodal Prompts (2022) <a href="https://arxiv.org/abs/2210.03094">https://arxiv.org/abs/2210.03094</a><br>・Gu et al., RT-Trajectory: Robotic Task Generalization via Hindsight Trajectory Sketches (2023) <a href="https://arxiv.org/abs/2311.01977">https://arxiv.org/abs/2311.01977</a><br>・Xu et al., XSkill: Cross Embodiment Skill Discovery (2023) <a href="https://arxiv.org/abs/2307.09955">https://arxiv.org/abs/2307.09955</a><br>・Di Palo &amp; Johns, Keypoint Action Tokens Enable In-Context Imitation Learning in Robotics (2024) <a href="https://arxiv.org/abs/2403.19578">https://arxiv.org/abs/2403.19578</a><br>・Fu et al., In-Context Imitation Learning via Next-Token Prediction (2024) <a href="https://arxiv.org/abs/2408.15980">https://arxiv.org/abs/2408.15980</a><br>・Vosylius &amp; Johns, Instant Policy: In-Context Imitation Learning via Graph Diffusion (ICLR 2025) <a href="https://arxiv.org/abs/2411.12633">https://arxiv.org/abs/2411.12633</a><br>・Generalist AI, GEN-0: Embodied Foundation Models That Scale with Physical Interaction (2025-11) <a href="https://generalistai.com/blog/gen-0">https://generalistai.com/blog/gen-0</a><br>・Generalist AI, GEN-1.5: Embodied Foundation Models are One-Shot Learners (2026-08) <a href="https://generalistai.com/blog/gen-1.5">https://generalistai.com/blog/gen-1.5</a></p>
+<p>台本は AI が生成したものです。誤りを含む可能性があるため、正確な内容は原論文をご確認ください。<br>音声: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏</p>
+<h2>文字起こし（台本）</h2>
+<div class="transcript">
+<p class="line"><span class="who">ミナ</span>この番組は、AIが論文をもとに作った台本を、合成音声で読み上げています。内容の正確さは、概要欄の原論文でご確認ください。</p>
+<p class="line"><span class="who">ミナ</span>こんにちは。今回のテーマは、フィジカル・プロンプティングです。最近よく聞くようになった言葉ですね。</p>
+<p class="line"><span class="who">ケン</span>よろしくお願いします。言葉としては、ジェネラリストという会社が、2026年の8月に発表したモデル、ジェン・ワンテンゴで使ったものが広まりました。ロボットの前で、数秒間、作業をやって見せる。すると、そのタスクを一度も学習していないのに、ロボットがまねしてやってくれる。言語モデルに例文を見せて答え方を教えるプロンプトの、体を使った版、というわけです。</p>
+<p class="line"><span class="who">ミナ</span>見せるだけで覚える、というのは、ずっと昔からの夢でしたよね。</p>
+<p class="line"><span class="who">ケン</span>そうなんです。なので今回は、この考え方が、どんな研究の流れの上に出てきたのか、という歴史をたどります。</p>
+<p class="line"><span class="who">ミナ</span>どこから始まるんですか。</p>
+<p class="line"><span class="who">ケン</span>一つの起点は、2017年ごろの、ワンショット模倣学習の研究です。6回目で、模倣学習はお手本をまねて学ぶ方法だと話しましたが、普通はタスクごとにたくさんのデモを集めて、そのタスク専用の方策を学習します。</p>
+<p class="line"><span class="who">ケン</span>それに対して、2017年のドゥアンさんたちの論文は、デモを一つ入力として受け取って、そのデモと同じことをする方策を学習しよう、と考えました。ブロックを積む課題で、どの順番で積むかを、一回のデモから読み取って実行します。</p>
+<p class="line"><span class="who">ミナ</span>方策の入力に、お手本そのものを入れてしまう。</p>
+<p class="line"><span class="who">ケン</span>はい。ここが今のフィジカル・プロンプティングと同じ発想です。同じ年には、フィンさんたちが、メタ学習、つまり、少ないデータで素早く適応するやり方そのものを学ぶ方法で、一回の映像のデモから新しい物の扱い方をまねる研究を出しています。2018年には、ロボットではなく、人がやって見せた動画一本からまねる研究も出ました。</p>
+<p class="line"><span class="who">ミナ</span>もう人の動画が出てきているんですね。</p>
+<p class="line"><span class="who">ケン</span>そうです。ただ、この頃は、扱えるタスクの種類も環境もかなり限られていて、学習した範囲のちょっとした変化に対応する、という段階でした。</p>
+<p class="line"><span class="who">ミナ</span>その次はどうなりますか。</p>
+<p class="line"><span class="who">ケン</span>2021年から22年ごろには、もっと大規模なデータで学習した方策に、タスクを指示する手段として、言葉か、人がやって見せた動画のどちらかを渡す、という研究が出てきます。グーグルのビーシー・ゼットという研究が代表例です。</p>
+<p class="line"><span class="who">ケン</span>同じ時期に、ヴィーマという研究は、マルチモーダル・プロンプトという言い方をしました。文章の中に、画像を混ぜて指示する。たとえば、この画像の物を、この画像の場所に置いて、という形です。言語モデルのプロンプトの考え方を、ロボットの指示にはっきり持ち込んだ研究だと言えます。</p>
+<p class="line"><span class="who">ミナ</span>言語モデルのブームとちょうど重なる頃ですね。</p>
+<p class="line"><span class="who">ケン</span>はい。2020年に、大きな言語モデルが、例をいくつか見せるだけで新しいタスクをこなせる、という論文が話題になりました。少数の例から学ぶ、インコンテキスト学習です。ロボットでも同じことができないか、という問題意識が強くなっていきます。</p>
+<p class="line"><span class="who">ミナ</span>言葉以外の指示の仕方も出てきたんですか。</p>
+<p class="line"><span class="who">ケン</span>2023年ごろには、言葉では伝えにくい動きを、絵で伝える研究が出ます。たとえば、アールティー・トラジェクトリーは、カメラ画像の上に、手先が通るべき道筋を線で描いて渡します。拭く、回す、といった動きの形は、言葉より線のほうがずっと伝わりやすい。</p>
+<p class="line"><span class="who">ケン</span>前回紹介したエックススキルも、この流れの中にあります。人がやって見せた動画を、プロンプトのように渡して、ロボットが学んだスキルの組み合わせとして実行する。ただし、エックススキルは、あらかじめ見つけたスキルの範囲で組み合わせる、という形でした。</p>
+<p class="line"><span class="who">ミナ</span>2024年あたりはどうですか。</p>
+<p class="line"><span class="who">ケン</span>インコンテキスト模倣学習、という言葉がはっきり使われるようになります。学習済みのモデルに、デモを文脈として入れるだけで、重みを更新せずに新しいタスクをこなす、という考え方です。</p>
+<p class="line"><span class="who">ケン</span>いくつか方向があって、一つは、手先の位置などを数字の列にして、大きな言語モデルに例として見せ、続きの行動を出させる研究。キーポイント・アクション・トークンという研究がその例です。もう一つは、ロボット用のトランスフォーマーを、前のデモの続きを予測するように学習しておく研究。それから、インスタント・ポリシーという研究は、デモと現在の状況をグラフとして表して、シミュレーションで作った大量の擬似的なデモで学習することで、一つか二つのデモから新しいタスクを実行できることを示しました。</p>
+<p class="line"><span class="who">ミナ</span>少しずつ、見せるだけで覚える、に近づいていますね。</p>
+<p class="line"><span class="who">ケン</span>はい。ただ、多くの研究は、そのために特別な学習の仕組みを用意していました。デモから学ぶように、わざわざ訓練していたわけです。</p>
+<p class="line"><span class="who">ミナ</span>そこで、今回の主役のジェネラリストです。</p>
+<p class="line"><span class="who">ケン</span>ジェネラリストは、グーグル・ディープマインド出身のピート・フローレンスさんらが創業した会社です。2025年の11月にジェン・ゼロという基盤モデルを発表して、ロボットの実データを増やすほど性能が予測どおりに伸びる、スケーリング則が見えた、と主張しました。会社の発表では、実世界の操作データが27万時間以上あって、毎週1万時間ずつ増えている、ということでした。</p>
+<p class="line"><span class="who">ミナ</span>桁違いの量ですね。</p>
+<p class="line"><span class="who">ケン</span>そして2026年の8月に発表されたのが、ジェン・ワンテンゴです。ブログのタイトルは、体を持った基盤モデルはワンショット学習者である、という趣旨で、2020年の言語モデルの有名な論文のタイトルを意識したものだと思います。</p>
+<p class="line"><span class="who">ケン</span>発表によると、3秒から12秒ほどのデモを一回見せるだけで、重みを更新せずに、そのタスクを実行できる。10種類の短い操作タスクで、平均の成功率はおよそ6割。さらに、タスクごとに5分ほどのデータで、ごく短い微調整をすると、8割を超えた、とのことです。</p>
+<p class="line"><span class="who">ミナ</span>しかも、そのために特別な訓練はしていない、と。</p>
+<p class="line"><span class="who">ケン</span>そこが一番の主張です。メタ学習の仕組みも、特別な目的関数も入れていない。大規模に学習したら、見せられたデモをまねる力が、勝手に現れた、と言っています。言語モデルで、規模を大きくしたら例から学ぶ力が現れたのと、同じ構図です。さらに、二つの別々のデモをつなげて長い動作にしたり、シミュレーションで作ったデモをプロンプトにしても効いたり、という結果も紹介されています。</p>
+<p class="line"><span class="who">ミナ</span>手放しで喜んでいいんでしょうか。</p>
+<p class="line"><span class="who">ケン</span>冷静に見るべき点もあります。まず、会社自身が、タスクは簡単なものだ、と認めています。それから、これは査読を経た論文ではなく、会社の発表です。データの量やスケーリング則の主張も、外部からの検証はこれからです。</p>
+<p class="line"><span class="who">ケン</span>1回目のサーベイの観点で言えば、どのロボットで、どんな環境で、何回試して、失敗はどんなものだったのか。そして、プロンプトとして見せたデモと、評価のときの状況が、どれくらい違ったのか。ここが分かると、見せるだけで覚える、の本当の範囲が見えてきます。</p>
+<p class="line"><span class="who">ミナ</span>最後に、歴史を振り返ってください。</p>
+<p class="line"><span class="who">ケン</span>2017年ごろのワンショット模倣学習で、デモを方策の入力にする、という発想が生まれた。人の動画一本からまねる研究も早くから出ていた。言語モデルのインコンテキスト学習が注目されると、ロボットでも、言葉と画像を混ぜたプロンプト、軌跡のスケッチ、人の動画、といったいろいろな指示の仕方が試された。2024年ごろには、重みを更新せずにデモから実行する、インコンテキスト模倣学習が一つの分野になった。そして2026年、大規模な実データで学習した基盤モデルで、特別な仕組みなしに、見せるだけでまねる力が現れた、という主張が出てきた。それがフィジカル・プロンプティングです。</p>
+<p class="line"><span class="who">ミナ</span>言語モデルの歴史を、ロボットが少し遅れて追いかけている感じですね。ありがとうございました。</p>
+<p class="line"><span class="who">ケン</span>ありがとうございました。</p>
+</div>
+</main>
+</body>
+</html>

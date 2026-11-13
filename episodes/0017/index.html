@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>工場で学ぶロボット ― テドレイクの講演と「稼ぐデータ」</title>
+<link rel="alternate" type="application/rss+xml" title="AI論文ラジオ" href="../../feed.xml">
+<link rel="icon" href="../../artwork.png">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<main>
+<p><a href="../../">← AI論文ラジオ</a></p>
+<h1>#17 工場で学ぶロボット ― テドレイクの講演と「稼ぐデータ」</h1>
+<audio controls preload="none" src="https://github.com/pn11/ai-podcast/releases/download/ep-0017/0017.mp3"></audio>
+<p>CoRL 2026 の Russ Tedrake の基調講演「Learning in the Factories」を、講演概要と報道から読み解きます。 2026年1月創業の Walden Robotics、配備と学習の繰り返しという主張、「事前学習〜仕上げ用のデータは安くなり、現場のデータは稼ぐもの」という論点、 UMI Arena で公開された大規模な手持ちデータ、事前学習モデルの価値、工場で求められる信頼性と復帰、研究者が会社を作る時代。 講演の録画・資料は未確認で、一部の数字は二次情報です。</p>
+<p>チャプター:<br>00:00 オープニング<br>00:48 ウォールデン・ロボティクス<br>01:30 安くなったデータと、稼ぐデータ<br>02:28 事前学習の価値<br>03:08 これまでの回とのつながり<br>04:31 研究者が会社を作る時代<br>05:21 まとめ</p>
+<p>参考にした情報:<br>・CoRL 2026 Keynotes <a href="https://www.corl.org/program/keynotes">https://www.corl.org/program/keynotes</a><br>・CoRL 2026 keynote schedule (@corl_conf on X) <a href="https://x.com/corl_conf/status/2119444841192976535">https://x.com/corl_conf/status/2119444841192976535</a><br>・Corematter: CoRL 2026 recap <a href="https://read.corematter.com/p/corl-2026-recap">https://read.corematter.com/p/corl-2026-recap</a><br>・財経新聞: CoRL 2026開幕、ワールドモデル「Atlas」と工場ロボットの学習に注目 <a href="https://www.zaikei.co.jp/article/20261110/876874.html">https://www.zaikei.co.jp/article/20261110/876874.html</a><br>・AIRoA: CoRL 2026 Workshop “The UMI Arena” <a href="https://airoa.org/updates/20260821/649/">https://airoa.org/updates/20260821/649/</a><br>・Hugging Face: airoa-org/yubi-corl2026-umi-arena <a href="https://huggingface.co/datasets/airoa-org/yubi-corl2026-umi-arena">https://huggingface.co/datasets/airoa-org/yubi-corl2026-umi-arena</a></p>
+<p>台本は AI が生成したものです。誤りを含む可能性があるため、正確な内容は原論文をご確認ください。<br>音声: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏</p>
+<h2>文字起こし（台本）</h2>
+<div class="transcript">
+<p class="line"><span class="who">ミナ</span>この番組は、AIが論文をもとに作った台本を、合成音声で読み上げています。内容の正確さは、概要欄の原論文でご確認ください。</p>
+<p class="line"><span class="who">ミナ</span>こんにちは。コール2026の話題、今回は火曜の基調講演、ラス・テドレイクさんの、工場での学習、です。</p>
+<p class="line"><span class="who">ケン</span>よろしくお願いします。テドレイクさんは、マサチューセッツ工科大学の教授で、ロボットの制御やシミュレーションの分野で長く第一線にいる人です。2回目で、拡散ポリシーなどの研究の流れを紹介しましたが、テドレイクさんは、ここ数年、トヨタ・リサーチ・インスティテュートで、大規模な行動モデルの研究も率いてきました。</p>
+<p class="line"><span class="who">ケン</span>今回の内容は、講演の概要と報道をもとにしています。講演そのものの録画や資料は、まだ確認できていません。</p>
+<p class="line"><span class="who">ミナ</span>肩書きが会社のCEOになっていたんですよね。</p>
+<p class="line"><span class="who">ケン</span>はい。ウォールデン・ロボティクスという会社を、2026年の1月に共同で創業しています。ロボットを研究室から出して、実際の仕事に使わなければいけない、という考えから始めた会社で、創業から2か月ほどで、最初のロボットを実際の生産の現場に入れた、と紹介されています。</p>
+<p class="line"><span class="who">ミナ</span>ずいぶん速いですね。</p>
+<p class="line"><span class="who">ケン</span>講演の概要によると、一番良いフィジカルAIは、実際の仕事に根ざした、配備と学習の絶え間ない繰り返しから生まれる、という主張です。それから、工場で過ごす時間が増えて、大量生産の専門家と話すうちに、自分の世界の見方がどう変わったか、についても話す、とされていました。</p>
+<p class="line"><span class="who">ミナ</span>講演で一番話題になったのは何ですか。</p>
+<p class="line"><span class="who">ケン</span>まとめ記事で紹介されていたのが、データについての主張です。人の動画、手持ちのグリッパーで集めたデータ、お金を払って集めた遠隔操作のデータ。こうした、事前学習と仕上げの間で使うデータは、もう誰でも手に入るものになった、とテドレイクさんは言ったそうです。それに対して、実際に現場に配備して、そこで集まるデータは、自分で稼ぐしかない。</p>
+<p class="line"><span class="who">ミナ</span>3回目で紹介したユミ・アリーナでは、手持ちのデバイスで集めた2万時間分のデータが配られていました。</p>
+<p class="line"><span class="who">ケン</span>まさに、その状況を指していると思います。エアロアのユミ・アリーナでは、ユービーという手持ちのデバイスで集めたデータが公開されていて、33万を超える、基本動作の単位のエピソードが含まれているそうです。こうした大規模なデータが公開されると、それを使えること自体は、もう差になりません。差がつくのは、現場で実際に働いて、失敗して、直して、という経験から得られるデータだ、というわけです。</p>
+<p class="line"><span class="who">ミナ</span>事前学習したモデルは、意味がないということですか。</p>
+<p class="line"><span class="who">ケン</span>いいえ、むしろ逆だと思います。ある日本語の報道では、講演の背景にある研究として、環境の変化に強くなければいけない条件で、事前学習したモデルを新しいタスクに合わせて微調整すると、ゼロから学習する場合の3分の1から5分の1のデータで同じくらいの性能になった、という結果が紹介されていました。この数字は、元の研究で確認できていないので、参考として聞いてください。</p>
+<p class="line"><span class="who">ケン</span>つまり、安くなったデータで作った事前学習モデルは、土台としては大事。でも、その上で現場の仕事をこなせるようにするのは、現場のデータだ、という分担です。</p>
+<p class="line"><span class="who">ミナ</span>これまでの回と、かなりつながりそうですね。</p>
+<p class="line"><span class="who">ケン</span>たくさんあります。まず、1回目のサーベイ。成功率の数字は、セットアップやリセット、人の介入の手間を省略していることが多い、そして、行動を実行可能にしていく過程そのものを記録すべきだ、という提案でした。テドレイクさんの、配備と学習の繰り返し、という主張は、その過程こそが価値の源泉だ、と言っているように聞こえます。</p>
+<p class="line"><span class="who">ケン</span>次に、2回目のヒルサール。少しのデモから始めて、実機で試行錯誤して、危ないときは人が介入する。人の介入も学習に取り込む。これは、現場で稼ぐデータの、研究室での原型と言えます。</p>
+<p class="line"><span class="who">ケン</span>それから、5回目で紹介した、コール初日のポスターに、運用しながらロボットの群れ全体で強化学習する、という研究がありました。テドレイクさんの講演と、まさに同じ方向です。</p>
+<p class="line"><span class="who">ミナ</span>6回目の基礎の回でいえば、模倣学習で土台を作って、強化学習で現場に合わせる、という組み合わせですね。</p>
+<p class="line"><span class="who">ケン</span>そうです。そして、工場という現場ならではの話もあります。工場では、同じ作業を何千回、何万回と繰り返します。成功率95パーセントでは足りなくて、99.9パーセント、あるいはそれ以上が求められる。そして、止まったときに、どれだけ早く復帰できるか。1回目で、安全とリカバリーの研究が手薄だと話しましたが、工場はまさにそこが問われる場所です。</p>
+<p class="line"><span class="who">ミナ</span>前回の振り返りで、研究者が会社を作って現場に出る動きが強い、という話もありました。</p>
+<p class="line"><span class="who">ケン</span>テドレイクさんは、その象徴だと思います。11回目で紹介したジェネラリストも、グーグル・ディープマインドの研究者が作った会社でした。大学の研究室で論文を書くだけでは、現場で稼ぐデータに手が届かない。だから会社を作る。こういう動きが、ロボット学習の研究の進め方そのものを変えつつあります。</p>
+<p class="line"><span class="who">ミナ</span>研究の世界にとっては、どういう意味があるんでしょう。</p>
+<p class="line"><span class="who">ケン</span>心配な面もあります。現場のデータは会社の中にあって、外に出てきにくい。オープンなデータや道具で研究してきた大学の研究室が、どう存在感を保つか。前々回のエヌビディアのように、道具をオープンにする動きや、ユミ・アリーナのように、共通の実機で競う場を作る動きは、その一つの答えかもしれません。</p>
+<p class="line"><span class="who">ミナ</span>最後にまとめてください。</p>
+<p class="line"><span class="who">ケン</span>テドレイクさんは、2026年にウォールデン・ロボティクスを創業し、すぐに工場にロボットを入れた。講演では、一番良いフィジカルAIは、実際の仕事に根ざした配備と学習の繰り返しから生まれる、と主張した。人の動画や手持ちデバイスや遠隔操作のデータは、もう誰でも手に入るものになり、差がつくのは現場で稼ぐデータ。事前学習モデルは土台として大事で、その上を現場のデータで仕上げる。そして、工場で求められる信頼性と復帰の速さは、これまでの回で話してきた、評価や安全とリカバリーの課題そのものです。</p>
+<p class="line"><span class="who">ミナ</span>ありがとうございました。</p>
+<p class="line"><span class="who">ケン</span>ありがとうございました。</p>
+</div>
+</main>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+ "version": "1.2.0",
+ "title": "SuperMimic ― 人型ロボットの全身制御を「GPU 1台・数時間」で",
+ "chapters": [
+  {
+   "startTime": 0.0,
+   "title": "オープニング"
+  },
+  {
+   "startTime": 41.15,
+   "title": "何をする研究か"
+  },
+  {
+   "startTime": 88.86,
+   "title": "計算量の問題"
+  },
+  {
+   "startTime": 126.04,
+   "title": "鍵は微分できるワールドモデル"
+  },
+  {
+   "startTime": 187.94,
+   "title": "結果"
+  },
+  {
+   "startTime": 217.54,
+   "title": "これまでの回とのつながり"
+  },
+  {
+   "startTime": 268.59,
+   "title": "注意して見たい点"
+  },
+  {
+   "startTime": 295.0,
+   "title": "まとめ"
+  }
+ ]
+}

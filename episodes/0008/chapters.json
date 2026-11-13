@@ -1,0 +1,50 @@
+{
+ "version": "1.2.0",
+ "title": "ロボットと通信 ― 遅延、帯域、そして「つながらない」ときの設計",
+ "chapters": [
+  {
+   "startTime": 0.0,
+   "title": "オープニング"
+  },
+  {
+   "startTime": 39.24,
+   "title": "通信の性能を表す四つの言葉"
+  },
+  {
+   "startTime": 94.27,
+   "title": "ロボットの中の通信"
+  },
+  {
+   "startTime": 166.3,
+   "title": "遠隔操作と遅延"
+  },
+  {
+   "startTime": 213.1,
+   "title": "宇宙では遅延が分単位"
+  },
+  {
+   "startTime": 264.37,
+   "title": "クラウドで考えるか、手元で考えるか"
+  },
+  {
+   "startTime": 332.01,
+   "title": "無線の進化：Wi-Fi と 5G"
+  },
+  {
+   "startTime": 395.61,
+   "title": "時刻をそろえる"
+  },
+  {
+   "startTime": 433.21,
+   "title": "たくさんのロボットと通信"
+  },
+  {
+   "startTime": 490.37,
+   "title": "安全とセキュリティ"
+  },
+  {
+   "startTime": 541.75,
+   "title": "まとめ"
+  }
+ ]
+}

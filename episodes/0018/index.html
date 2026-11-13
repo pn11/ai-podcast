@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>ロボットにワールドモデルは必要か ― アトラスと最終日の討論</title>
+<link rel="alternate" type="application/rss+xml" title="AI論文ラジオ" href="../../feed.xml">
+<link rel="icon" href="../../artwork.png">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<main>
+<p><a href="../../">← AI論文ラジオ</a></p>
+<h1>#18 ロボットにワールドモデルは必要か ― アトラスと最終日の討論</h1>
+<audio controls preload="none" src="https://github.com/pn11/ai-podcast/releases/download/ep-0018/0018.mp3"></audio>
+<p>CoRL 2026 で最もよく聞いた言葉「ワールドモデル」を、二つの出来事から整理します。 Fei-Fei Li の基調講演で紹介された World Labs の Atlas（文章・画像・動画・3D で学習した自己回帰型のワールドモデル、生成と 3D 復元を統一）と、 AMD による World Labs 買収（約82億ドル）とリサ・スーとの対談。最終日の討論型ワークショップ「Do Robots Need World Models?」の形式と登壇者、 明示派・暗黙派・組み合わせ派の争点。講演・討論の中身と投票結果は未確認です。</p>
+<p>チャプター:<br>00:00 オープニング<br>00:41 フェイフェイ・リーさんとワールド・ラボ<br>01:37 アトラスとは<br>03:01 討論：ロボットにワールドモデルは必要か<br>04:05 そもそも何が争点か<br>05:24 まとめ</p>
+<p>参考にした情報:<br>・CNBC: AMD acquiring Fei-Fei Li&#x27;s World Labs in deal worth $8.2 billion <a href="https://www.cnbc.com/2026/09/28/amd-fei-fei-li-world-labs.html">https://www.cnbc.com/2026/09/28/amd-fei-fei-li-world-labs.html</a><br>・Fortune: AMD acquires World Labs for $8.2 billion <a href="https://fortune.com/2026/09/28/amd-acquires-world-labs-startup-fei-fei-li-8-2-billion/">https://fortune.com/2026/09/28/amd-acquires-world-labs-startup-fei-fei-li-8-2-billion/</a><br>・36Kr: Fei-Fei Li &amp; Lisa Su dialogue on the Atlas world model <a href="https://eu.36kr.com/en/p/4066226367632263">https://eu.36kr.com/en/p/4066226367632263</a><br>・RuntimeWire: World Labs ships real-time Atlas demo before Fei-Fei Li&#x27;s CoRL talk <a href="https://runtimewire.com/article/fei-fei-li-atlas-corl-lisa-su-fireside">https://runtimewire.com/article/fei-fei-li-atlas-corl-lisa-su-fireside</a><br>・Do Robots Need World Models? (CoRL 2026 Workshop) <a href="https://do-robots-need-world-models.github.io/">https://do-robots-need-world-models.github.io/</a><br>・World-Action Models for Robot Learning and Control: A Survey (2026) <a href="https://arxiv.org/abs/2609.16074">https://arxiv.org/abs/2609.16074</a></p>
+<p>台本は AI が生成したものです。誤りを含む可能性があるため、正確な内容は原論文をご確認ください。<br>音声: VOICEVOX:春日部つむぎ、VOICEVOX:玄野武宏</p>
+<h2>文字起こし（台本）</h2>
+<div class="transcript">
+<p class="line"><span class="who">ミナ</span>この番組は、AIが論文をもとに作った台本を、合成音声で読み上げています。内容の正確さは、概要欄の原論文でご確認ください。</p>
+<p class="line"><span class="who">ミナ</span>こんにちは。コール2026の話題、今回はワールドモデルです。会期中、一番よく聞いた言葉だったかもしれません。</p>
+<p class="line"><span class="who">ケン</span>よろしくお願いします。今回は二つの出来事を取り上げます。一つは、フェイフェイ・リーさんの基調講演で紹介されたアトラスというワールドモデル。もう一つは、最終日に開かれた、ロボットにワールドモデルは必要か、という討論型のワークショップです。どちらも、講演や討論の中身を直接は確認できていないので、事前の情報と報道をもとに話します。</p>
+<p class="line"><span class="who">ミナ</span>フェイフェイ・リーさんは、画像認識の大規模データセット、イメージネットで有名な研究者ですよね。</p>
+<p class="line"><span class="who">ケン</span>はい。スタンフォード大学の教授で、ワールド・ラボという、空間を理解するAIの会社を作りました。そして2026年の9月末、半導体メーカーのエーエムディーが、ワールド・ラボを株式交換で約82億ドルで買収すると発表しました。年内に手続きが終わる見込みで、フェイフェイ・リーさんは、エーエムディーの上級副社長兼チーフ・サイエンティストになる、と報じられています。</p>
+<p class="line"><span class="who">ミナ</span>その流れで、リサ・スーさんとの対談があったわけですね。</p>
+<p class="line"><span class="who">ケン</span>はい。買収の発表後、二人がそろって公の場に出るのは初めてだったと報じられています。対談では、フィジカルAIやロボティクス、そして計算資源の需要について話したそうです。リサ・スーさんは、エーエムディーにはすでにフィジカルAIとロボティクスの研究チームがある、と話したと伝えられています。</p>
+<p class="line"><span class="who">ミナ</span>アトラスは、どんなワールドモデルなんですか。</p>
+<p class="line"><span class="who">ケン</span>ワールド・ラボが9月に発表したモデルで、報道によると、文章、画像、動画、3Dのデータで、ゼロから事前学習した、全部入りのワールドモデルとされています。特徴は、映像を1コマずつ順番に生成していく自己回帰型のモデルで、見た目の映像を作ることと、3次元の場面を復元することを、一つのモデルで同時に扱う点です。講演のタイトルも、生成と復元のための統一されたワールドモデル、という趣旨でした。</p>
+<p class="line"><span class="who">ミナ</span>13回目で、自己回帰生成モデルの熱力学の話をしましたね。</p>
+<p class="line"><span class="who">ケン</span>そうなんです。アトラスも、過去の出力から次の出力を作る自己回帰型なので、あの回の枠組みの対象になりうる形をしています。会期の少し前には、アトラスを高速化した、リアルタイムで動くデモも公開されたそうです。今のところは研究用の公開で、使うには申し込みが必要、とのことです。</p>
+<p class="line"><span class="who">ミナ</span>見た目と3次元の両方を扱えると、ロボットには何がうれしいんでしょう。</p>
+<p class="line"><span class="who">ケン</span>ロボットは、物がどこにあって、どんな形をしているかを、3次元で知る必要があります。でも、きれいな映像を作るだけのモデルだと、そこがあいまいになりがちです。見た目と形を同時に扱えれば、シミュレーションの環境づくりや、ロボットが行動したらどうなるかの予測に使いやすくなる。ただ、それが実際のロボットの作業でどこまで役立つかは、まだこれから、だと思います。</p>
+<p class="line"><span class="who">ミナ</span>では、最終日の討論のワークショップです。</p>
+<p class="line"><span class="who">ケン</span>ロボットにワールドモデルは必要か、という、そのものずばりのタイトルで、3回目の見どころガイドでも紹介しました。最終日の午前中、JWマリオットで開かれています。</p>
+<p class="line"><span class="who">ケン</span>形式がユニークで、分野の方向を左右している具体的な主張をいくつか取り上げて、討論のお題にする。招待講演者は、割り当てられた側に立って主張する。会場の参加者は、討論の前と後で投票する。そして、結果をコミュニティの白書としてまとめる、という段取りです。</p>
+<p class="line"><span class="who">ミナ</span>誰が登壇したんですか。</p>
+<p class="line"><span class="who">ケン</span>予定では、チェルシー・フィンさん、ユンジュ・リーさん、ジョージア・チャルヴァツァキさん、ヴィンセント・シッツマンさんが講演し、ユンジュ・リーさんが討論の司会をする、とされていました。チェルシー・フィンさんとシッツマンさんは、明示的なワールドモデルを持たずに、端から端まで学習する側、として紹介されていました。</p>
+<p class="line"><span class="who">ミナ</span>結果はどうなったんですか。</p>
+<p class="line"><span class="who">ケン</span>残念ながら、投票の結果や白書は、まだ見つけられていません。公開されたら、改めて紹介したいと思います。</p>
+<p class="line"><span class="who">ミナ</span>結果は分からなくても、何が争点なのかは整理できますよね。</p>
+<p class="line"><span class="who">ケン</span>はい。大きく三つの立場があります。一つ目は、明示的なワールドモデル派。世界がどう動くかを予測するモデルをはっきり持ち、それを使って先を読んで計画する。15回目のグルート・ツーや、16回目のスーパーミミックの使い方もここに近いです。</p>
+<p class="line"><span class="who">ケン</span>二つ目は、暗黙派、あるいは端から端まで学習する派。ワールドモデルを別に作らなくても、大量のデータで方策を学習すれば、必要な予測の力は方策の中に自然と入る。2回目のパイゼロや、11回目で紹介した、特別な仕組みなしにまねる力が現れたという主張は、この立場と相性がいい。</p>
+<p class="line"><span class="who">ケン</span>三つ目は、その間の、組み合わせ派。予測するモデルを、方策の学習を助ける道具として使う。スーパーミミックの、ワールドモデルを学習を速くするために使う、という使い方がまさにそうです。</p>
+<p class="line"><span class="who">ミナ</span>同じワールドモデルという言葉でも、立場によって意味が違うんですね。</p>
+<p class="line"><span class="who">ケン</span>そこが一番大事なポイントだと思います。映像を予測するもの、体の動きを予測するもの、3次元の場面を作るもの。ワールドモデルという言葉が指すものが広がっているので、議論するときは、何を予測して、何に使うのか、を確認しないと話がかみ合いません。このワークショップが、討論を設計の原則にまとめることを目標にしていたのも、そのためだと思います。</p>
+<p class="line"><span class="who">ミナ</span>最後にまとめてください。</p>
+<p class="line"><span class="who">ケン</span>フェイフェイ・リーさんは、エーエムディーに買収されることが決まったワールド・ラボのアトラスを紹介した。アトラスは、文章、画像、動画、3Dで学習した自己回帰型のワールドモデルで、映像の生成と3次元の復元を一つのモデルで扱う。最終日には、ロボットにワールドモデルは必要か、という討論型のワークショップが開かれ、明示派と暗黙派が論じ合った。結果はまだ分からないけれど、何を予測して何に使うのかを分けて考えることが、この議論の出発点だと思います。</p>
+<p class="line"><span class="who">ミナ</span>結果が出たら、続きを聞きたいですね。ありがとうございました。</p>
+<p class="line"><span class="who">ケン</span>ありがとうございました。</p>
+</div>
+</main>
+</body>
+</html>
