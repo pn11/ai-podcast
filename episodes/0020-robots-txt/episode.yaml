@@ -1,0 +1,13 @@
+number: 20
+guid: 9c1f5a3e-7b2d-4e64-a8f0-3d6b2c9e4a20   # 一度公開したら変更しない
+title: robots.txt の話 ― クローラーとの「紳士協定」
+summary: >-
+  この番組のサイトに robots.txt を置けないか、という相談から、robots.txt の仕組みと歴史を解説します。
+  1994年の提案と、2022年の正式な標準化（RFC 9309）、強制力がないこと、サイト直下にしか置けない落とし穴と noindex、
+  ロボッツ・テキストで禁止すると noindex が読めなくなる問題、AI の学習用クローラーをめぐる最近の議論、ポッドキャストのフィードとディレクトリー。
+published_at: 2026-11-13T21:30:00+09:00
+links_label: もっと知りたい人向けの資料
+papers:
+  - { title: "RFC 9309: Robots Exclusion Protocol (2022)", url: "https://www.rfc-editor.org/rfc/rfc9309" }
+  - { title: "Google Search Central: Introduction to robots.txt", url: "https://developers.google.com/search/docs/crawling-indexing/robots/intro" }
+  - { title: "Google Search Central: Block search indexing with noindex", url: "https://developers.google.com/search/docs/crawling-indexing/block-indexing" }

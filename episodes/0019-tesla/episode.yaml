@@ -1,0 +1,14 @@
+number: 19
+guid: 2b7e4c9f-5d1a-4f38-8c62-9a0e3d7b5f19   # 一度公開したら変更しない
+title: テスラってどんな会社？ ― 電気自動車からロボタクシー、人型ロボットまで
+summary: >-
+  ロボタクシーの回で何度も出てきたテスラを紹介します。本社はテキサス州オースティン（2021年にパロアルトから移転）、
+  社名の由来、2003年の創業とイーロン・マスクの参加、ロードスターからサイバートラックまでの戦略、カメラ中心の自動運転とロボタクシー、
+  人型ロボット「オプティマス」の2026年の状況（生産数などは報道で食い違いあり）、ロボット研究の視点からの見どころ。
+published_at: 2026-11-13T21:00:00+09:00
+links_label: 参考にした情報
+papers:
+  - { title: "Tesla, Inc. (Wikipedia)", url: "https://en.wikipedia.org/wiki/Tesla,_Inc." }
+  - { title: "Interesting Engineering: Tesla Optimus robot enters production", url: "https://interestingengineering.com/ai-robotics/tesla-optimus-robot-enters-production" }
+  - { title: "TechRepublic: Tesla Optimus timeline targets 2027", url: "https://www.techrepublic.com/article/news-tesla-optimus-robot-production-2027-sales-timeline/" }
+  - { title: "humanoid.guide: Tesla says Optimus production will start slowly", url: "https://humanoid.guide/?p=7683" }

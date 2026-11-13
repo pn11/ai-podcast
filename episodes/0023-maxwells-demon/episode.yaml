@@ -1,0 +1,16 @@
+number: 23
+guid: 5f0d2a8c-9e3b-4a16-87d4-6c1b9e5f3a23   # 一度公開したら変更しない
+title: マクスウェルの悪魔と情報熱力学 ― 「知ること」にエネルギーの値段はあるか
+summary: >-
+  第13回の背景にある情報熱力学を、マクスウェルの悪魔の150年の謎解きとして紹介します。
+  熱力学の第二法則、悪魔の思考実験、シラードの1ビットのエンジン、ランダウアーの原理（消すことのコスト）、ベネットの整理、
+  2010年の情報をエネルギーに換える実験（Toyabe, Sagawa ら）と2012年のランダウアーの原理の検証（Bérut ら）、
+  そしてフィードバック制御としてのロボットとのつながり。
+published_at: 2026-11-13T23:00:00+09:00
+links_label: もっと知りたい人向けの文献
+papers:
+  - { title: "Toyabe, Sagawa, Ueda, Muneyuki & Sano, Experimental demonstration of information-to-energy conversion and validation of the generalized Jarzynski equality (Nature Physics, 2010)", url: "https://arxiv.org/abs/1009.5287" }
+  - { title: "Bérut et al., Experimental verification of Landauer's principle linking information and thermodynamics (Nature, 2012)", url: "https://www.nature.com/articles/nature10872" }
+  - { title: "Sagawa & Ueda, Generalized Jarzynski Equality under Nonequilibrium Feedback Control (PRL, 2010)", url: "https://doi.org/10.1103/PhysRevLett.104.090602" }
+  - { title: "Maxwell's demon (Wikipedia)", url: "https://en.wikipedia.org/wiki/Maxwell%27s_demon" }
+  - { title: "第13回で紹介: Sagawa, Stochastic Thermodynamics for Autoregressive Generative Models (PRX Intelligence)", url: "https://arxiv.org/abs/2604.07867" }

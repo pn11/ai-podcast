@@ -1,0 +1,14 @@
+number: 22
+guid: 7e2b9d4c-6a1f-4835-9c0b-2e8f4a7d1c22   # 一度公開したら変更しない
+title: 合成音声の歴史とライセンス ― この番組の声はどこから来たのか
+summary: >-
+  この番組の声（VOICEVOX）をきっかけに、合成音声の歴史と、使うときのルールを紹介します。
+  機械で声をまねる装置から、ベル研究所の実演、80年代の合成音声、録音の切り貼りと統計モデル、2016年以降のニューラルな音声合成。
+  日本のキャラクター音声の文化と VOICEVOX、ソフトウェアと声の「二階建て」のライセンス、この番組が自由なライセンスを台本だけにした理由、声の権利という新しい問題。
+published_at: 2026-11-13T22:30:00+09:00
+links_label: もっと知りたい人向けの資料
+papers:
+  - { title: "VOICEVOX 公式サイト", url: "https://voicevox.hiroshiba.jp/" }
+  - { title: "VOICEVOX 利用規約", url: "https://voicevox.hiroshiba.jp/term/" }
+  - { title: "van den Oord et al., WaveNet: A Generative Model for Raw Audio (2016)", url: "https://arxiv.org/abs/1609.03499" }
+  - { title: "Speech synthesis (Wikipedia)", url: "https://en.wikipedia.org/wiki/Speech_synthesis" }

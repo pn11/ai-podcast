@@ -1,0 +1,14 @@
+number: 21
+guid: 3a6c8e2f-1d9b-4c75-b4e7-8f2a5d0c6b21   # 一度公開したら変更しない
+title: ポッドキャストの裏側 ― RSS、エンクロージャー、チャプターの仕組み
+summary: >-
+  この番組がどうやってアプリに届いているのか、ポッドキャストの仕組みと歴史を紹介します。
+  RSS とエンクロージャー、2004年の「ポッドキャスト」という言葉と2005年のアップルの対応、エピソードを見分ける GUID とファイルの大きさ、
+  チャプターの二つの入れ方（MP3 の ID3 チャプターと Podcasting 2.0 の chapters.json）、文字起こし、音声ファイルのメタデータとプライバシー。
+published_at: 2026-11-13T22:00:00+09:00
+links_label: もっと知りたい人向けの資料
+papers:
+  - { title: "RSS 2.0 Specification", url: "https://www.rssboard.org/rss-specification" }
+  - { title: "Podcast namespace (Podcasting 2.0)", url: "https://podcastindex.org/namespace/1.0" }
+  - { title: "ID3v2 Chapter Frame Addendum", url: "https://id3.org/id3v2-chapters-1.0" }
+  - { title: "Apple Podcasts: RSS feed requirements", url: "https://podcasters.apple.com/support/823-podcast-requirements" }
