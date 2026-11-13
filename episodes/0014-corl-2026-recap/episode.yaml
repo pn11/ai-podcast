@@ -1,0 +1,17 @@
+number: 14
+guid: e1c7a4f2-3b58-4d9e-8f06-2a9d5c1b7e14   # 一度公開したら変更しない
+title: CoRL 2026 振り返り ― 4日間で見えたこと
+summary: >-
+  オースティンで開かれた CoRL 2026 の全体の振り返りです。過去最多の投稿 2094 件・採択 687 本、
+  基調講演（Burgard、Tedrake、Fei-Fei Li とリサ・スーの対談、NVIDIA の Jim Fan）、
+  会期中に目立った三つのテーマ（ワールドモデル、計画と動作の分業、データは安くなったが現場のデータは稼ぐもの）、展示とデモ。
+  公式アカウントの告知・企業発表・報道や参加者のまとめにもとづく内容で、講演そのものは未確認です（2026年11月13日時点）。
+published_at: 2026-11-13T18:00:00+09:00
+links_label: 参考にした情報
+papers:
+  - { title: "CoRL 2026 keynote schedule (@corl_conf on X)", url: "https://x.com/corl_conf/status/2119444841192976535" }
+  - { title: "CoRL 2026 Keynotes", url: "https://www.corl.org/program/keynotes" }
+  - { title: "Corematter: CoRL 2026 takeaways, launches and the papers to know", url: "https://read.corematter.com/p/corl-2026-recap" }
+  - { title: "Tech Times: Li's World Models vs Tedrake's Factory Robots", url: "https://www.techtimes.com/articles/330272/20261109/corl-2026-robot-learning-conference-opens-monday-lis-world-models-vs-tedrakes-factory-robots.htm" }
+  - { title: "BAIR at CoRL 2026", url: "https://bair.berkeley.edu/blog/2026/11/09/bair-at-corl-2026/" }
+  - { title: "Do Robots Need World Models? (CoRL 2026 Workshop)", url: "https://do-robots-need-world-models.github.io/" }

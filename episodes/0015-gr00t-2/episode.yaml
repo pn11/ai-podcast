@@ -1,0 +1,17 @@
+number: 15
+guid: 4f8b2e6d-9a1c-4c73-b5e0-7d3f1a8c2b15   # 一度公開したら変更しない
+title: NVIDIA の GR00T 2 ― ワールド・アクション・モデルは何を変えるか
+summary: >-
+  CoRL 2026 の Jim Fan の講演で発表された NVIDIA GR00T 2 を解説します。未来の映像と行動を一緒に予測するワールド・アクション・モデル、
+  人の動画から学びやすくなる理由、発表された数字（タスクごと5デモで成功率95%、Turbo 版は搭載計算機で124ms）、
+  重みの公開予定と Isaac Lab 3.0、両手のデモと「計画する大きなモデル＋動くモデル」の分業、注意して見たい点。
+  数字は NVIDIA の発表によるもので、外部の検証はこれからです。
+published_at: 2026-11-13T18:30:00+09:00
+links_label: 参考にした情報
+papers:
+  - { title: "Humanoids Daily: NVIDIA unveils GR00T 2 and open-sources the stack behind it", url: "https://www.humanoidsdaily.com/news/nvidia-gr00t-2-world-action-model-corl-2026" }
+  - { title: "Crypto Briefing: Nvidia unveils GR00T 2 and Isaac Lab 3.0 at CoRL", url: "https://cryptobriefing.com/nvidia-gr00t-2-isaac-lab-3-corl/" }
+  - { title: "NVIDIA blog: robotics simulation advancements at CoRL", url: "https://blogs.nvidia.com/blog/robotics-simulation-advancements-corl/" }
+  - { title: "NVIDIA at CoRL 2026", url: "https://www.nvidia.com/en-us/events/corl/" }
+  - { title: "PR Newswire: 21-DoF dexterous hand debut at CoRL 2026 with GR00T 2 demo", url: "https://www.prnewswire.com/news-releases/tianji-intelligence-debuts-21-dof-dexterous-hand-at-corl-2026-as-nvidia-demos-gr00t-2-on-custom-marvin-pro-302934702.html" }
+  - { title: "Corematter: CoRL 2026 recap", url: "https://read.corematter.com/p/corl-2026-recap" }

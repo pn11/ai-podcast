@@ -1,0 +1,17 @@
+number: 18
+guid: 6d9f3b2a-8e14-4c05-b7a3-1e5c9f8d2b18   # 一度公開したら変更しない
+title: ロボットにワールドモデルは必要か ― アトラスと最終日の討論
+summary: >-
+  CoRL 2026 で最もよく聞いた言葉「ワールドモデル」を、二つの出来事から整理します。
+  Fei-Fei Li の基調講演で紹介された World Labs の Atlas（文章・画像・動画・3D で学習した自己回帰型のワールドモデル、生成と 3D 復元を統一）と、
+  AMD による World Labs 買収（約82億ドル）とリサ・スーとの対談。最終日の討論型ワークショップ「Do Robots Need World Models?」の形式と登壇者、
+  明示派・暗黙派・組み合わせ派の争点。講演・討論の中身と投票結果は未確認です。
+published_at: 2026-11-13T20:00:00+09:00
+links_label: 参考にした情報
+papers:
+  - { title: "CNBC: AMD acquiring Fei-Fei Li's World Labs in deal worth $8.2 billion", url: "https://www.cnbc.com/2026/09/28/amd-fei-fei-li-world-labs.html" }
+  - { title: "Fortune: AMD acquires World Labs for $8.2 billion", url: "https://fortune.com/2026/09/28/amd-acquires-world-labs-startup-fei-fei-li-8-2-billion/" }
+  - { title: "36Kr: Fei-Fei Li & Lisa Su dialogue on the Atlas world model", url: "https://eu.36kr.com/en/p/4066226367632263" }
+  - { title: "RuntimeWire: World Labs ships real-time Atlas demo before Fei-Fei Li's CoRL talk", url: "https://runtimewire.com/article/fei-fei-li-atlas-corl-lisa-su-fireside" }
+  - { title: "Do Robots Need World Models? (CoRL 2026 Workshop)", url: "https://do-robots-need-world-models.github.io/" }
+  - { title: "World-Action Models for Robot Learning and Control: A Survey (2026)", url: "https://arxiv.org/abs/2609.16074" }

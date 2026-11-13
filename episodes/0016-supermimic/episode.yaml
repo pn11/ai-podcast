@@ -1,0 +1,15 @@
+number: 16
+guid: 8a3d6f1e-2c94-4b57-9e18-5f0b7c3a9d16   # 一度公開したら変更しない
+title: SuperMimic ― 人型ロボットの全身制御を「GPU 1台・数時間」で
+summary: >-
+  CoRL 2026 で口頭発表に選ばれた UC Berkeley の SuperMimic を解説します。人型ロボットに人の全身の動きをまねさせる学習を、
+  シミュレーターのデータから学んだ「一つの微分できるワールドモデル」を全動作で共有することで、GPU 時間を千分の一以下に。
+  12万9千あまりの動作のベンチマークで失敗25件（比較相手179件）、Unitree G1 の実機へも移行。ベストペーパーとする紹介記事もありますが公式発表は未確認です。
+published_at: 2026-11-13T19:00:00+09:00
+papers:
+  - title: "SuperMimic: Scaling Humanoid Whole-Body Control with One Differentiable World Model"
+    authors: Qiayuan Liao, Yiyang Shao, Junfeng Long, Kevin Zakka, Roberto Horowitz, Pieter Abbeel, Koushil Sreenath (CoRL 2026 Oral)
+    url: https://arxiv.org/abs/2610.28480
+  - { title: "論文 PDF（Hybrid Robotics Lab）", url: "https://hybrid-robotics.berkeley.edu/publications/CoRL2026_SuperMimic.pdf" }
+  - { title: "42how: UC Berkeley's SuperMimic slashes compute for humanoid whole-body control", url: "https://ai.42how.com/en/article/cce1b2dc-cb7e-4e9e-b262-6e03b09b2c67" }
+  - { title: "Corematter: CoRL 2026 recap", url: "https://read.corematter.com/p/corl-2026-recap" }
